@@ -32,6 +32,7 @@ function App() {
         <button onClick={() => dispatch({type: ACTIONS.SLEEP})}>Sleep</button>
         <p>Pet name: {pets[0].name} Mood: {pets[0].mood}</p>
         <button onClick={()=> dispatch({type: ACTIONS.PERFORM_ACTION, value: pets[0].mood + 3})}>Feed</button>
+        <button onClick={() => dispatch({type: ACTIONS.SET_GAME_DATA})}>AXIOS</button>
       </header>
     </div>
   );

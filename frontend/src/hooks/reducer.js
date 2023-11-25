@@ -1,4 +1,5 @@
 import { pets } from "../mocks/pets";
+import axios from 'axios';
 
 export const ACTIONS = {
   SET_EVENT_DATA: 'SET_EVENT_DATA',
@@ -7,7 +8,8 @@ export const ACTIONS = {
   SET_ENERGY_DATA: 'SET_ENERGY_DATA',
   SET_PETS_DATA: 'SET_PETS_DATA',
   PERFORM_ACTION: 'PERFORM_ACTION',
-  SLEEP: 'SLEEP'
+  SLEEP: 'SLEEP',
+  SET_GAME_DATA: 'SET_GAME_DATA'
 }
 
 export function reducer(state, action) {
@@ -31,6 +33,12 @@ export function reducer(state, action) {
     case 'SLEEP':
       return { ...state, energy: 5, day: state.day + 1 };
 
+    case 'SET_GAME_DATA':
+        return axios.get("/games/1.json")
+          .then(res => res.data)
+          .then(data => data && console.log(data))
+          .catch(err => console.err)
+        
     default:
     throw new Error(
       `Tried to reduce with unsupported action type: ${action.type}`

@@ -12,7 +12,8 @@ export default function useApplicationData() {
     day: 0,
     energy: 5,
     pets: [getById(1, pets), getById(2, pets), getById(3, pets)],
-    events: events
+    events: events,
+    game: 0
   }
 
   const [state, dispatch] = useReducer(reducer, initialState)
