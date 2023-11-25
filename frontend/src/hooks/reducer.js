@@ -26,7 +26,7 @@ export function reducer(state, action) {
       return { ...state, energy: action.value };
 
     case 'PERFORM_ACTION':
-      return { ...state, pets:[...pets, pets[0].mood = action.value], energy: state.energy - 1 };
+      return { ...state, pets:[...pets, pets[action.value.id - 1].mood = action.value.value], energy: state.energy - 1 };
 
     case 'SLEEP':
       return { ...state, energy: 5, day: state.day + 1 };

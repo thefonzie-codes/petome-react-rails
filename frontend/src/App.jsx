@@ -3,6 +3,8 @@ import useApplicationData from './hooks/useApplicationData';
 import { getById } from './hooks/helpers';
 import cat from './mocks/sprites/neko.png';
 import background from './mocks/background/image1_0.png';
+import PetStats from './components/PetStats';
+import PlayerStats from './components/PlayerStats';
 
 function App() {
   const {state, dispatch, ACTIONS} = useApplicationData();
@@ -16,9 +18,13 @@ function App() {
     events,
     } = state;
 
+    const petStats = pets.map((pet) => <PetStats key={pet.id} pet={pet} dispatch={dispatch} ACTIONS={ACTIONS} />)
+
   return (
     <div className="App">
       <header className="App-header" style={{backgroundImage: `${background}`}}>
+      <PlayerStats player={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
+      {petStats}
         <img src={cat} className="App-logo" alt="logo" />
         <p>Event: {event}</p>
           <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: event + 1})}>Next</button>
@@ -28,10 +34,6 @@ function App() {
           <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: getById(event, events).options[1].nextEvent})}>{getById(event, events).options[1].text}</button>
         <p>User: {user}</p>
         <p>Day: {day}</p>
-        <p>Energy: {energy}</p>
-        <button onClick={() => dispatch({type: ACTIONS.SLEEP})}>Sleep</button>
-        <p>Pet name: {pets[0].name} Mood: {pets[0].mood}</p>
-        <button onClick={()=> dispatch({type: ACTIONS.PERFORM_ACTION, value: pets[0].mood + 3})}>Feed</button>
       </header>
     </div>
   );

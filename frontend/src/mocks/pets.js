@@ -19,6 +19,5 @@ export const pets = [
     name: "Spike",
     mood: 3,
     user: 1,
-  },
-
+  }
 ];
