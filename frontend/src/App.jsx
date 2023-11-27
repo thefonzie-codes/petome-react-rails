@@ -1,21 +1,23 @@
 import './App.css';
 import useApplicationData from './hooks/useApplicationData';
-import { getById } from './hooks/helpers';
+import { getById, fetchData } from './hooks/helpers';
 import cat from './mocks/sprites/neko.png';
 import background from './mocks/background/image1_0.png';
+import { useEffect } from 'react';
 
 function App() {
   const {state, dispatch, ACTIONS} = useApplicationData();
 
-<<<<<<< Updated upstream
+  console.log(state);
+
   const {
-    event,
+    event: eventId,
     user,
     day,
     energy,
     pets,
-    events,
-    } = state;
+    event
+    } = state.game;
 
 =======
   // console.log(state);
@@ -25,19 +27,19 @@ function App() {
     <div className="App">
       <header className="App-header" style={{backgroundImage: `${background}`}}>
         <img src={cat} className="App-logo" alt="logo" />
-        <p>Event: {event}</p>
-          <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: event + 1})}>Next</button>
+        <p>Event: {eventId}</p>
+          <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: eventId + 1})}>Next</button>
           <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: 2})}>Click Me</button>
-          <p>{getById(event, events).dialogue}</p>
-          <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: getById(event, events).options[0].nextEvent})}>{getById(event, events).options[0].text}</button>
-          <button onClick={() => dispatch({type: ACTIONS.SET_EVENT_DATA, value: getById(event, events).options[1].nextEvent})}>{getById(event, events).options[1].text}</button>
+          {console.log(('inApp:', 1, state.event))}
+          <p>{getById(1, state.event).dialogue}</p>
         <p>User: {user}</p>
         <p>Day: {day}</p>
         <p>Energy: {energy}</p>
         <button onClick={() => dispatch({type: ACTIONS.SLEEP})}>Sleep</button>
-        <p>Pet name: {pets[0].name} Mood: {pets[0].mood}</p>
-        <button onClick={()=> dispatch({type: ACTIONS.PERFORM_ACTION, value: pets[0].mood + 3})}>Feed</button>
-        <button onClick={() => dispatch({type: ACTIONS.SET_GAME_DATA})}>AXIOS</button>
+        <button onClick={() => {
+          fetchData(dispatch);
+        }}>AXIOS</button>
+
       </header>
     </div>
   );

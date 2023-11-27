@@ -16,6 +16,7 @@ export function reducer(state, action) {
   switch (action.type) {
 
     case 'SET_EVENT_DATA':
+      console.log('in reducer:', action.value)
       return { ...state, event: action.value };
 
     case 'SET_USER_DATA':
@@ -28,16 +29,7 @@ export function reducer(state, action) {
       return { ...state, game: {...state.game, energy: action.value }};
 
     case 'SET_GAME_DATA':
-      return { ...state, game: action.value};
-
-    // case 'PERFORM_ACTION':
-    //   return { ...state, pets:[...pets, pets[0].mood = action.value], energy: state.energy - 1 };
-
-    case 'NEXT_EVENT' :
-      return { ...state, game: {...state.game, event: action.value}};
-
-    case 'SLEEP':
-      return { ...state, game: {...state.game, energy: 5, day: state.game.day + 1 }};
+        return { ...state, game: action.value};
         
     default:
     throw new Error(
