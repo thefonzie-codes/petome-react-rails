@@ -6,15 +6,18 @@ import { events } from "../mocks/event";
 
 export default function useApplicationData() { 
 
-  const initialState = {
+  const initialState = {}
+  
+  initialState.game = {
     event: 1,
     user: "Moi",
     day: 0,
     energy: 5,
     pets: [getById(1, pets), getById(2, pets), getById(3, pets)],
-    events: events,
     game: 0
   }
+  
+  initialState.event = events
 
   const [state, dispatch] = useReducer(reducer, initialState)
 

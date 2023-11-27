@@ -20,5 +20,4 @@ export const pets = [
     mood: 3,
     user: 1,
   },
-
 ];

@@ -16,6 +16,7 @@ export function reducer(state, action) {
   switch (action.type) {
 
     case 'SET_EVENT_DATA':
+      console.log('in reducer:', action.value)
       return { ...state, event: action.value };
 
     case 'SET_USER_DATA':
@@ -34,10 +35,7 @@ export function reducer(state, action) {
       return { ...state, energy: 5, day: state.day + 1 };
 
     case 'SET_GAME_DATA':
-        return axios.get("/games/1.json")
-          .then(res => res.data)
-          .then(data => data && console.log(data))
-          .catch(err => console.err)
+        return { ...state, game: action.value};
         
     default:
     throw new Error(
