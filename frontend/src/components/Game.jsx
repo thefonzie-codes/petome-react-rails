@@ -1,5 +1,6 @@
 import { getById } from "../hooks/helpers";
 import Event from "./Event";
+import UserStats from "./UserStats";
 
 export default function Game(props) {
 
@@ -17,6 +18,8 @@ export default function Game(props) {
 
   return <div className="game">
     <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
+    <UserStats game={state.game}/>
+
     <p>User: {user}</p>
     <p>Day: {day}</p>
     <p>Energy: {energy}</p>
