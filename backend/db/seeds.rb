@@ -18,31 +18,88 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}", 
-    option2: "{ text: 'Play with your pet', nextEvent: 3, energy: -1}", 
-    option3: "{ text: 'Go back to sleep', nextEvent: 4}")
+    option1: '[
+      {
+        "text": "Go for a walk",
+        "nextEvent": 2,
+        "energy": -1
+      },
+      {
+        "text": "Play with your pet",
+        "nextEvent": 3,
+        "energy": -1
+      },
+      {
+        "text": "Go back to sleep",
+        "nextEvent": 4
+      }
+    ]'
+)
 
 # event 2
 Event.create!(
   img: "", 
-  dialogue: "You go for a walk. What do you want to do?",
-    option1: "{ text: 'Play with your pets', nextEvent: 3, energy: -1}",
-    option2: "{ text: 'Go back home and sleep', nextEvent: 4, energy: 5}")
+  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
+  option1: '[
+    {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+    },
+    {
+      "text": "Play with your pet",
+      "nextEvent": 3,
+      "energy": -1
+    },
+    {
+      "text": "Go back to sleep",
+      "nextEvent": 4
+    }
+  ]'
+)
 
 # event 3
 Event.create!(
   img: "",
   dialogue: "You play with your pets. What do you want to do?",
-    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}",
-    option2: "{ text: 'Go back home and sleep', nextEvent: 4, energy: 5}")
+  option1: '[
+    {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+    }
+  ]',
+  option2: '[
+    {
+      "text": "Go back home and sleep",
+      "nextEvent": 4,
+      "energy": 5
+    }
+  ]'
+)
+
 
 # event 4
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You wake up and its a new day. What do you want to do?",
-    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}", 
-    option2: "{ text: 'Play with your pet', nextEvent: 3, energy: -1}", 
-    option3: "{ text: 'Go back to sleep', nextEvent: 4}")
+  dialogue: "You wake up and it's a new day. What do you want to do?",
+  option1: '[
+    {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+    },
+    {
+      "text": "Play with your pet",
+      "nextEvent": 3,
+      "energy": -1
+    },
+    {
+      "text": "Go back to sleep",
+      "nextEvent": 4
+    }
+  ]'
+)
 
 # Create one pet
 Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: -1, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
