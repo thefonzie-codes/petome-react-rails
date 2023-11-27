@@ -2,7 +2,6 @@ import axios from "axios";
 import { ACTIONS } from "./reducer";
 
 export function getById (id, array) {
-  console.log('in helpers:', array)
   return array.find((item) => item.id === id);
 }
 
