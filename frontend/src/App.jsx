@@ -7,6 +7,7 @@ import background from './mocks/background/image1_0.png';
 function App() {
   const {state, dispatch, ACTIONS} = useApplicationData();
 
+<<<<<<< Updated upstream
   const {
     event,
     user,
@@ -16,6 +17,10 @@ function App() {
     events,
     } = state;
 
+=======
+  // console.log(state);
+  
+>>>>>>> Stashed changes
   return (
     <div className="App">
       <header className="App-header" style={{backgroundImage: `${background}`}}>
