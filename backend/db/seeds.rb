@@ -14,7 +14,7 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 # Create event
 # Event.create!(img: "", dialogue: "", option1: "", option2: "", option3: "", option4: "")
 
-# event 1
+# event 1 - start of day
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
@@ -31,12 +31,13 @@ Event.create!(
     },
     {
       "text": "Go back to sleep",
-      "nextEvent": 4
+      "nextEvent": 4,
+      "energy": 0
     }
   ]'
 )
 
-# event 2
+# event 2 - walk
 Event.create!(
   img: "",
   dialogue: "You go for a walk. What do you want to do?",
@@ -49,15 +50,15 @@ Event.create!(
     {
       "text": "Go back home and sleep",
       "nextEvent": 4,
-      "energy": 5
+      "energy": 0
     }
   ]'
 )
 
-# event 3
+# event 3 - play with pet
 Event.create!(
   img: "",
-  dialogue: "You play with your pets. What do you want to do?",
+  dialogue: "You play with your pet. What do you want to do?",
   options: '[
     {
       "text": "Go for a walk",
@@ -67,74 +68,21 @@ Event.create!(
     {
       "text": "Go back home and sleep",
       "nextEvent": 4,
-      "energy": 5
-    }
-  ]'
-)
-
-# event 3
-Event.create!(
-  img: "", 
-  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-  options: '[
-    {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-    },
-    {
-      "text": "Play with your pet",
-      "nextEvent": 1,
-      "energy": -1
-    },
-    {
-      "text": "Go back to sleep",
-      "nextEvent": 4
-    }
-  ]'
-)
-
-# event 3
-Event.create!(
-  img: "", 
-  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-  options: '[
-    {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-    },
-    {
-      "text": "Play with your pet",
-      "nextEvent": 1,
-      "energy": -1
-    },
-    {
-      "text": "Go back to sleep",
-      "nextEvent": 4
+      "energy": 0
     }
   ]'
 )
 
 
-# event 4
+# event 4 - end of day
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
   dialogue: "You wake up and it's a new day. What do you want to do?",
   options: '[
     {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-    },
-    {
-      "text": "Play with your pet",
-      "nextEvent": 3,
-      "energy": -1
-    },
-    {
       "text": "Go back to sleep",
-      "nextEvent": 1
+      "nextEvent": 1,
+      "energy": 5
     }
   ]'
 )
