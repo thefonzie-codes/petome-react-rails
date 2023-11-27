@@ -10,19 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_25_201546) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_201905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string "img"
     t.text "dialogue"
-    t.string "option1"
-    t.string "option2"
-    t.string "option3"
-    t.string "option4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "options"
   end
 
   create_table "games", force: :cascade do |t|
@@ -45,6 +42,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_25_201546) do
     t.integer "to_pet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pet_happy"
+    t.string "pet_sad"
+    t.string "pet_neutral"
   end
 
 end
