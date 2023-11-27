@@ -1,4 +1,5 @@
 import { getById } from "../hooks/helpers";
+import Event from "./Event";
 
 export default function Game(props) {
 
@@ -15,14 +16,11 @@ export default function Game(props) {
 
 
   return <div className="game">
-    <p>Event: {eventId}</p>
-    <button onClick={() => dispatch({ type: ACTIONS.NEXT_EVENT, value: eventId + 1 })}>Next</button>
-    <button onClick={() => dispatch({ type: ACTIONS.NEXT_EVENT, value: 1 })}>Reset to 1</button>
-    <p>{getById(eventId, state.events).dialogue}</p>
+    <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
     <p>User: {user}</p>
     <p>Day: {day}</p>
     <p>Energy: {energy}</p>
     <button onClick={() => dispatch({ type: ACTIONS.SLEEP })}>Sleep</button>
-    game
+    <button onClick={() => dispatch({ type: ACTIONS.SET_ENERGY_DATA, value: energy - 1 })}>Burn energy</button>
   </div>;
 }

@@ -26,7 +26,7 @@ export function reducer(state, action) {
       return { ...state, pets: action.value };
 
     case 'SET_ENERGY_DATA':
-      return { ...state, energy: action.value };
+      return { ...state, game: {...state.game, energy: action.value }};
 
     case 'SET_GAME_DATA':
       return { ...state, game: action.value};
