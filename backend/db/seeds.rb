@@ -38,8 +38,26 @@ Event.create!(
 
 # event 2
 Event.create!(
-  img: "", 
-  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
+  img: "",
+  dialogue: "You go for a walk. What do you want to do?",
+  options: '[
+    {
+      "text": "Play with your pets",
+      "nextEvent": 3,
+      "energy": -1
+    },
+    {
+      "text": "Go back home and sleep",
+      "nextEvent": 4,
+      "energy": 5
+    }
+  ]'
+)
+
+# event 3
+Event.create!(
+  img: "",
+  dialogue: "You play with your pets. What do you want to do?",
   options: '[
     {
       "text": "Go for a walk",
@@ -47,17 +65,12 @@ Event.create!(
       "energy": -1
     },
     {
-      "text": "Play with your pet",
-      "nextEvent": 3,
-      "energy": -1
-    },
-    {
-      "text": "Go back to sleep",
-      "nextEvent": 4
+      "text": "Go back home and sleep",
+      "nextEvent": 4,
+      "energy": 5
     }
   ]'
 )
-
 
 # event 4
 Event.create!(
