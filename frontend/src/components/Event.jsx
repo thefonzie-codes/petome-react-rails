@@ -11,11 +11,44 @@ export default function Event({ state, dispatch, ACTIONS }) {
     events
     } = state.game;
 
-    const options = JSON.parse(getById(eventId, state.events).options).map(option => <button onClick={() => {
+    const hasEnergy = (option => <button onClick={() => {
       console.log(option.nextEvent); 
       dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
       dispatch({ type: ACTIONS.SET_ENERGY_DATA, value: energy + option.energy });
-    }}>{option.text}</button>);
+    }}>{option.text}</button>)
+
+    const needEnergy = (option) => (
+      <button
+        onClick={() => {
+          dispatch({ type: ACTIONS.NEXT_EVENT, value: 4 });
+        }}
+      >
+        {option.text}
+      </button>
+    );
+
+    const noEnergy = (option) => (
+      <button
+        onClick={() => {
+         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+         dispatch({ type: ACTIONS.SLEEP });
+        }}
+      >
+        {option.text}
+      </button>
+    );
+
+    const options = JSON.parse(getById(eventId, state.events).options).map(
+      (option) => {
+        if (eventId === 4) {
+          return noEnergy(option);
+        } else if (energy === 0) {
+          return needEnergy(option);
+        } else {
+          return hasEnergy(option);
+        }
+      }
+    );
 
   return (
     <div className="event">

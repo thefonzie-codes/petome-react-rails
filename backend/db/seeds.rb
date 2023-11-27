@@ -77,12 +77,12 @@ Event.create!(
 # event 4 - end of day
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You wake up and it's a new day. What do you want to do?",
+  dialogue: "Oops! You're out of energy so you went home. Time to rest.",
   options: '[
     {
       "text": "Go back to sleep",
       "nextEvent": 1,
-      "energy": 5
+      "energy": 0
     }
   ]'
 )
