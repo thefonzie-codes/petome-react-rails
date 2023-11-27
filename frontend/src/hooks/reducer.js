@@ -6,14 +6,15 @@ export const ACTIONS = {
   SET_PETS_DATA: 'SET_PETS_DATA',
   PERFORM_ACTION: 'PERFORM_ACTION',
   SLEEP: 'SLEEP',
-  SET_GAME_DATA: 'SET_GAME_DATA'
+  SET_GAME_DATA: 'SET_GAME_DATA',
+  NEXT_EVENT: 'NEXT_EVENT'
 }
 
 export function reducer(state, action) {
   switch (action.type) {
 
     case 'SET_EVENT_DATA':
-      return { ...state, event: action.value };
+      return { ...state, events: action.value };
 
     case 'SET_USER_DATA':
       return { ...state, user: action.value };
@@ -27,14 +28,18 @@ export function reducer(state, action) {
     case 'SET_ENERGY_DATA':
       return { ...state, energy: action.value };
 
+    case 'SET_GAME_DATA':
+      return { ...state, game: action.value};
+
     // case 'PERFORM_ACTION':
     //   return { ...state, pets:[...pets, pets[0].mood = action.value], energy: state.energy - 1 };
 
-    case 'SLEEP':
-      return { ...state, energy: 5, day: state.day + 1 };
+    case 'NEXT_EVENT' :
+      console.log(state)
+      return { ...state, game: {...state.game, event: action.value}};
 
-    case 'SET_GAME_DATA':
-        return { ...state, game: action.value};
+    case 'SLEEP':
+      return { ...state, game: {...state.game, energy: 5, day: state.game.day + 1 }};
         
     default:
     throw new Error(

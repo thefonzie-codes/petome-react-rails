@@ -10,15 +10,15 @@ export default function Game(props) {
     day,
     energy,
     pets,
-    event
+    events
     } = state.game;
 
 
   return <div className="game">
     <p>Event: {eventId}</p>
-    <button onClick={() => dispatch({ type: ACTIONS.SET_EVENT_DATA, value: eventId + 1 })}>Next</button>
-    <button onClick={() => dispatch({ type: ACTIONS.SET_EVENT_DATA, value: 2 })}>Click Me</button>
-    <p>{getById(1, state.event).dialogue}</p>
+    <button onClick={() => dispatch({ type: ACTIONS.NEXT_EVENT, value: eventId + 1 })}>Next</button>
+    <button onClick={() => dispatch({ type: ACTIONS.NEXT_EVENT, value: 1 })}>Reset to 1</button>
+    <p>{getById(eventId, state.events).dialogue}</p>
     <p>User: {user}</p>
     <p>Day: {day}</p>
     <p>Energy: {energy}</p>
