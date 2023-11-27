@@ -3,7 +3,6 @@ import Event from "./Event";
 import UserStats from "./UserStats";
 import "../styles/Game.scss"
 import logo from '../mocks/sprites/neko.png';
-import Energy from "./Energy";
 import bg from '../mocks/background/image1_0.png';
 
 export default function Game(props) {
