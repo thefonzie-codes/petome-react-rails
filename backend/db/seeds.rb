@@ -18,7 +18,7 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-    option1: '[
+    options: '[
       {
         "text": "Go for a walk",
         "nextEvent": 2,
@@ -40,7 +40,7 @@ Event.create!(
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-  option1: '[
+  options: '[
     {
       "text": "Go for a walk",
       "nextEvent": 2,
@@ -58,32 +58,12 @@ Event.create!(
   ]'
 )
 
-# event 3
-Event.create!(
-  img: "",
-  dialogue: "You play with your pets. What do you want to do?",
-  option1: '[
-    {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-    }
-  ]',
-  option2: '[
-    {
-      "text": "Go back home and sleep",
-      "nextEvent": 4,
-      "energy": 5
-    }
-  ]'
-)
-
 
 # event 4
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
   dialogue: "You wake up and it's a new day. What do you want to do?",
-  option1: '[
+  options: '[
     {
       "text": "Go for a walk",
       "nextEvent": 2,
