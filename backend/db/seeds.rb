@@ -11,14 +11,40 @@
 # Create one game
 Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 
-# Create one event
+# Create event
+# Event.create!(img: "", dialogue: "", option1: "", option2: "", option3: "", option4: "")
+
+# event 1
 Event.create!(
-  img: "https://i.imgur.com/0Q8Z6ZP.png", 
-  dialogue: "You wake up in a strange place. You don't remember how you got here. You look around and see a door, a window, and a bed.", 
-  option1: "Go to the door", 
-  option2: "Go to the window", 
-  option3: "Go to the bed", 
-  option4: "Go to the bed")
+  img: "", 
+  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
+    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}", 
+    option2: "{ text: 'Play with your pet', nextEvent: 3, energy: -1}", 
+    option3: "{ text: 'Go back to sleep', nextEvent: 4}")
+
+# event 2
+Event.create!(
+  img: "", 
+  dialogue: "You go for a walk. What do you want to do?",
+    option1: "{ text: 'Play with your pets', nextEvent: 3, energy: -1}",
+    option2: "{ text: 'Go back home and sleep', nextEvent: 4, energy: 5}")
+
+# event 3
+Event.create!(
+  img: "",
+  dialogue: "You play with your pets. What do you want to do?",
+    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}",
+    option2: "{ text: 'Go back home and sleep', nextEvent: 4, energy: 5}")
+
+# event 4
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You wake up and its a new day. What do you want to do?",
+    option1: "{ text: 'Go for a walk', nextEvent: 2, energy: -1}", 
+    option2: "{ text: 'Play with your pet', nextEvent: 3, energy: -1}", 
+    option3: "{ text: 'Go back to sleep', nextEvent: 4}")
 
 # Create one pet
-Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: -1, to_pet: 3)
+Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: -1, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: -1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: -1, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
