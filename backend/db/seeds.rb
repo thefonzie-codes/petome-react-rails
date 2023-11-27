@@ -18,25 +18,47 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
-    options: '[
-      {
-        "text": "Go for a walk",
-        "nextEvent": 2,
-        "energy": -1
-      },
-      {
-        "text": "Play with your pet",
-        "nextEvent": 3,
-        "energy": -1
-      },
-      {
-        "text": "Go back to sleep",
-        "nextEvent": 4
-      }
-    ]'
+  options: '[
+    {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+    },
+    {
+      "text": "Play with your pet",
+      "nextEvent": 3,
+      "energy": -1
+    },
+    {
+      "text": "Go back to sleep",
+      "nextEvent": 4
+    }
+  ]'
 )
 
 # event 2
+Event.create!(
+  img: "", 
+  dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
+  options: '[
+    {
+      "text": "Go for a walk",
+      "nextEvent": 1,
+      "energy": -1
+    },
+    {
+      "text": "Play with your pet",
+      "nextEvent": 3,
+      "energy": -1
+    },
+    {
+      "text": "Go back to sleep",
+      "nextEvent": 4
+    }
+  ]'
+)
+
+# event 3
 Event.create!(
   img: "", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
@@ -48,7 +70,7 @@ Event.create!(
     },
     {
       "text": "Play with your pet",
-      "nextEvent": 3,
+      "nextEvent": 1,
       "energy": -1
     },
     {
@@ -76,7 +98,7 @@ Event.create!(
     },
     {
       "text": "Go back to sleep",
-      "nextEvent": 4
+      "nextEvent": 1
     }
   ]'
 )
