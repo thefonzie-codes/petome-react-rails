@@ -14,6 +14,8 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 # Create event
 # Event.create!(img: "", dialogue: "", option1: "", option2: "", option3: "", option4: "")
 
+Event.destroy_all
+
 # event 1 - start of day
 Event.create!(
   img: "http://localhost:3001/images/background.jpg", 
@@ -26,7 +28,7 @@ Event.create!(
     },
     {
       "text": "Play with your pet",
-      "nextEvent": 3,
+      "nextEvent": 5,
       "energy": -1
     },
     {
@@ -44,7 +46,7 @@ Event.create!(
   options: '[
     {
       "text": "Play with your pets",
-      "nextEvent": 3,
+      "nextEvent": 5,
       "energy": -1
     },
     {
@@ -55,7 +57,7 @@ Event.create!(
   ]'
 )
 
-# event 3 - play with pet
+# event 3 - OLD play with pet
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
   dialogue: "You play with your pets. What do you want to do?",
@@ -94,18 +96,22 @@ Event.create!(
       {
         "text": "Give your pet a treat",
         "nextEvent": 6,
+        "energy": 0
       },
       {
         "text": "Play with your pet",
         "nextEvent": 7,
+        "energy": 0
       },
       {
         "text": "Talk to your pet",
         "nextEvent": 8,
+        "energy": 0
       },
       {
         "text": "Pet your pet",
         "nextEvent": 9,
+        "energy": 0
     }
   ]'
 )
@@ -116,8 +122,19 @@ Event.create!(
   dialogue: "You give your pet a treat, yum!",
     options: '[
       {
-        "text": "Go back to actions"
+        "text": "Go back to pet actions"
         "nextEvent": 5,
+        "energy": 0
+      },
+      {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+      },
+      {
+        "text": "Go back home and sleep",
+        "nextEvent": 4,
+        "energy": 0
       }
     ]'
 )
@@ -128,8 +145,19 @@ Event.create!(
   dialogue: "You play with your pet, yay!",
     options: '[
       {
-        "text": "Go back to actions"
+        "text": "Go back to pet actions"
         "nextEvent": 5,
+        "energy": 0
+      },
+      {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+      },
+      {
+        "text": "Go back home and sleep",
+        "nextEvent": 4,
+        "energy": 0
       }
     ]'
 )
@@ -140,8 +168,19 @@ Event.create!(
   dialogue: "You talk to your pet, how cute!",
     options: '[
       {
-        "text": "Go back to actions"
+        "text": "Go back to pet actions"
         "nextEvent": 5,
+        "energy": 0
+      },
+      {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+      },
+      {
+        "text": "Go back home and sleep",
+        "nextEvent": 4,
+        "energy": 0
       }
     ]'
 )
@@ -152,8 +191,19 @@ Event.create!(
   dialogue: "You pet your pet, aww!",
     options: '[
       {
-        "text": "Go back to actions"
+        "text": "Go back to pet actions"
         "nextEvent": 5,
+        "energy": 0
+      },
+      {
+      "text": "Go for a walk",
+      "nextEvent": 2,
+      "energy": -1
+      },
+      {
+        "text": "Go back home and sleep",
+        "nextEvent": 4,
+        "energy": 0
       }
     ]'
 )
