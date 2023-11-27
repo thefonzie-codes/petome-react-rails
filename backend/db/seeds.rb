@@ -16,7 +16,7 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 
 # event 1
 Event.create!(
-  img: "", 
+  img: "http://localhost:3001/images/background.jpg", 
   dialogue: "You wake up in the morning and you feel rested. What do you want to do?", 
     options: '[
       {
@@ -38,7 +38,7 @@ Event.create!(
 
 # event 2
 Event.create!(
-  img: "",
+  img: "http://localhost:3001/images/background.jpg",
   dialogue: "You go for a walk. What do you want to do?",
   options: '[
     {
@@ -56,18 +56,16 @@ Event.create!(
 
 # event 3
 Event.create!(
-  img: "",
+  img: "http://localhost:3001/images/background.jpg",
   dialogue: "You play with your pets. What do you want to do?",
   options: '[
     {
       "text": "Go for a walk",
       "nextEvent": 2,
-      "energy": -1
     },
     {
       "text": "Go back home and sleep",
       "nextEvent": 4,
-      "energy": 5
     }
   ]'
 )
@@ -80,12 +78,10 @@ Event.create!(
     {
       "text": "Go for a walk",
       "nextEvent": 2,
-      "energy": -1
     },
     {
       "text": "Play with your pet",
       "nextEvent": 3,
-      "energy": -1
     },
     {
       "text": "Go back to sleep",
@@ -93,6 +89,81 @@ Event.create!(
     }
   ]'
 )
+
+# event 5 - pet interaction choices
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You are playing with your pet, what do you want to do?",
+    options: '[
+      {
+        "text": "Give your pet a treat",
+        "nextEvent": 6,
+      },
+      {
+        "text": "Play with your pet",
+        "nextEvent": 7,
+      },
+      {
+        "text": "Talk to your pet",
+        "nextEvent": 8,
+      },
+      {
+        "text": "Pet your pet",
+        "nextEvent": 9,
+    }
+  ]'
+)
+
+# event 6 - pet treat
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You give your pet a treat, yum!",
+    options: '[
+      {
+        "text": "Go back to actions"
+        "nextEvent": 5,
+      }
+    ]'
+)
+
+# event 7 - pet play
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You play with your pet, yay!",
+    options: '[
+      {
+        "text": "Go back to actions"
+        "nextEvent": 5,
+      }
+    ]'
+)
+
+# event 8 - pet talk
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You talk to your pet, how cute!",
+    options: '[
+      {
+        "text": "Go back to actions"
+        "nextEvent": 5,
+      }
+    ]'
+)
+
+# event 9 - pet pet
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You pet your pet, aww!",
+    options: '[
+      {
+        "text": "Go back to actions"
+        "nextEvent": 5,
+      }
+    ]'
+)
+
+
+
 
 # Create one pet
 Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: -1, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
