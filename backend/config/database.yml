@@ -21,6 +21,8 @@ default: &default
 
 development:
   <<: *default
+  user: labber
+  password: "123"
   database: backend_development
 
   # The specified database role being used to connect to PostgreSQL.
@@ -55,6 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  user: labber
+  password: "123"
   database: backend_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
