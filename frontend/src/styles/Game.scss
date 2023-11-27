@@ -1,0 +1,50 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.user-stats {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  margin-top: 2em;
+  margin-left: 2em;
+  background-color: whitesmoke;
+  color: black;
+  width: 30%;
+  border-radius: 25px;
+  border: black solid 2px;
+}
+
+.event {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  background-color: white;
+  color: black;
+  top: 50%;
+  left: 2.5%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 30px;
+  border: black solid 2px;
+  box-shadow: 2px 2px 5px 2px black;
+}
+
+.sprite {
+  position: absolute;
+  height: 40%;
+  top: 15%;
+  left: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// .background {
+//   position: sticky;
+//   top: 0;
+//   left: 0;
+//   z-index: 0;
+// }

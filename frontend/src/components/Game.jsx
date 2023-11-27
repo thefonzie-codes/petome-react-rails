@@ -1,6 +1,10 @@
 import { getById } from "../hooks/helpers";
 import Event from "./Event";
 import UserStats from "./UserStats";
+import "../styles/Game.scss"
+import logo from '../mocks/sprites/neko.png';
+import Energy from "./Energy";
+import bg from '../mocks/background/image1_0.png';
 
 export default function Game(props) {
 
@@ -12,18 +16,13 @@ export default function Game(props) {
     day,
     energy,
     pets,
-    events
     } = state.game;
 
 
-  return <div className="game">
+  return <div className="game" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover"}}>
+    <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS}/>
+    <img className="sprite" src={logo}/>
+    {/* <img className="background" src={bg}/> */}
     <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
-    <UserStats game={state.game}/>
-
-    <p>User: {user}</p>
-    <p>Day: {day}</p>
-    <p>Energy: {energy}</p>
-    <button onClick={() => dispatch({ type: ACTIONS.SLEEP })}>Sleep</button>
-    <button onClick={() => dispatch({ type: ACTIONS.SET_ENERGY_DATA, value: energy - 1 })}>Burn energy</button>
   </div>;
 }
