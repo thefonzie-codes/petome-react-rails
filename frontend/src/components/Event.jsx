@@ -56,7 +56,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
     <button className="option"
       onClick={() => {
         fadeIn();
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 4 });
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
       }}
     >
       {option.text}
@@ -77,7 +77,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   const options = JSON.parse(event.options).map(
     (option) => {
-      if (eventId === 4) {
+      if (eventId === 27) {
         return noEnergy(option);
       } else if (energy === 0) {
         return needEnergy(option);
