@@ -7,9 +7,9 @@ export default function StartScreen(props) {
   const { state, dispatch, ACTIONS } = props;
 
   return <header className="App-header" style={{ backgroundImage: `${background}` }}>
-    <img src={cat} className="App-logo" alt="logo" />
-    <button onClick={() => {
-      fetchData(dispatch);
-    }}>AXIOS</button>
+    <h1 className='welcome'>Welcome to Petome!</h1>
+    <img src={cat} className="mascot"/>
+    {/* <input type="text" placeholder="What's your name?" onSubmit={(event) => dispatch({ type: ACTIONS.SET_USER, value: event.target.value })} /> */}
+    <button onClick={() => fetchData(dispatch)}>New Game</button>
   </header>;
 }
