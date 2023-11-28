@@ -4,6 +4,8 @@ import UserStats from "./UserStats";
 import "../styles/Game.scss"
 import logo from '../mocks/sprites/neko.png';
 import bg from '../mocks/background/image1_0.png';
+import { Transition } from "react-transition-group";
+import { useState, useRef } from "react";
 
 export default function Game(props) {
 
