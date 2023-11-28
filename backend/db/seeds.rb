@@ -21,18 +21,15 @@ Event.create!(
   options: '[
     {
       "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
+      "nextEvent": 2
     },
     {
       "text": "Play with your pets",
-      "nextEvent": 5,
-      "energy": 0
+      "nextEvent": 5
     },
     {
       "text": "Go back to sleep",
-      "nextEvent": 4,
-      "energy": 0
+      "nextEvent": 4
     }
   ]'
 )
@@ -44,13 +41,11 @@ Event.create!(
   options: '[
     {
       "text": "Play with your pets",
-      "nextEvent": 5,
-      "energy": 0
+      "nextEvent": 5
     },
     {
       "text": "Go back home and sleep",
-      "nextEvent": 4,
-      "energy": 0
+      "nextEvent": 4
     }
   ]'
 )
@@ -62,13 +57,11 @@ Event.create!(
   options: '[
     {
       "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
+      "nextEvent": 2
     },
     {
       "text": "Go back home and sleep",
-      "nextEvent": 4,
-      "energy": 0
+      "nextEvent": 4
     }
   ]'
 )
@@ -81,136 +74,183 @@ Event.create!(
   options: '[
     {
       "text": "Go back to sleep",
-      "nextEvent": 1,
-      "energy": 0
+      "nextEvent": 1
     }
   ]'
 )
 
-# event 5 - pet interaction choices
+# event 5 - dog interaction choices
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You are playing with your pet, what do you want to do?",
+  dialogue: "You are playing with Rover, what do you want to do?",
+    petId: 1,
+    options: '[
+      {
+        "text": "Give your pet a treat",
+        "nextEvent": 5,
+        "actionLabel": "treat"
+      },
+      {
+        "text": "Play with your pet",
+        "nextEvent": 5,
+        "actionLabel": "play"
+      },
+      {
+        "text": "Talk to your pet",
+        "nextEvent": 5,
+        "actionLabel": "talk"
+      },
+      {
+        "text": "Pet your pet",
+        "nextEvent": 5,
+        "actionLabel": "to_pet"
+    }
+  ]'
+)
+
+# event 6 - cat interaction choices
+Event.create!(
+  img: "http://localhost:3001/images/background.jpg",
+  dialogue: "You are playing with Papaya, what do you want to do?",
+    petId: 2,
     options: '[
       {
         "text": "Give your pet a treat",
         "nextEvent": 6,
-        "energy": -1
+        "actionLabel": "treat"
       },
       {
         "text": "Play with your pet",
-        "nextEvent": 7,
-        "energy": -1
+        "nextEvent": 6,
+        "actionLabel": "play"
       },
       {
         "text": "Talk to your pet",
-        "nextEvent": 8,
-        "energy": -1
+        "nextEvent": 6,
+        "actionLabel": "talk"
       },
       {
         "text": "Pet your pet",
-        "nextEvent": 9,
-        "energy": -1
+        "nextEvent": 6,
+        "actionLabel": "to_pet"
     }
   ]'
 )
 
-# event 6 - pet treat
+# event 7 - lizard interaction choices
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You give your pet a treat, yum!",
+  dialogue: "You are playing with Godzilla, what do you want to do?",
+    petId: 3,
     options: '[
       {
-        "text": "Go back to actions",
-        "nextEvent": 5,
-        "energy": 0
+        "text": "Give your pet a treat",
+        "nextEvent": 7,
+        "actionLabel": "treat"
       },
       {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
+        "text": "Play with your pet",
+        "nextEvent": 7,
+        "actionLabel": "play"
       },
       {
-        "text": "Go back home and sleep",
-        "nextEvent": 4,
-        "energy": 0
-      }
-    ]'
+        "text": "Talk to your pet",
+        "nextEvent": 7,
+        "actionLabel": "talk"
+      },
+      {
+        "text": "Pet your pet",
+        "nextEvent": 7,
+        "actionLabel": "to_pet"
+    }
+  ]'
 )
 
-# event 7 - pet play
-Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You play with your pet, yay!",
-    options: '[
-      {
-        "text": "Go back to actions",
-        "nextEvent": 5,
-        "energy": 0
-      },
-      {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-      },
-      {
-        "text": "Go back home and sleep",
-        "nextEvent": 4,
-        "energy": 0
-      }
-    ]'
-)
+# # event 6 - pet treat
+# Event.create!(
+#   img: "http://localhost:3001/images/background.jpg",
+#   dialogue: "You give your pet a treat, yum!",
+#   petId: 1,
+#     options: '[
+#       {
+#         "text": "Go back to actions",
+#         "nextEvent": 5
+#       },
+#       {
+#       "text": "Go for a walk",
+#       "nextEvent": 2
+#       },
+#       {
+#         "text": "Go back home and sleep",
+#         "nextEvent": 4
+#       }
+#     ]'
+# )
 
-# event 8 - pet talk
-Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You talk to your pet, how cute!",
-    options: '[
-      {
-        "text": "Go back to actions",
-        "nextEvent": 5,
-        "energy": 0
-      },
-      {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-      },
-      {
-        "text": "Go back home and sleep",
-        "nextEvent": 4,
-        "energy": 0
-      }
-    ]'
-)
+# # event 7 - pet play
+# Event.create!(
+#   img: "http://localhost:3001/images/background.jpg",
+#   dialogue: "You play with your pet, yay!",
+#   petId: 1,
+#     options: '[
+#       {
+#         "text": "Go back to actions",
+#         "nextEvent": 5
+#       },
+#       {
+#       "text": "Go for a walk",
+#       "nextEvent": 2
+#       },
+#       {
+#         "text": "Go back home and sleep",
+#         "nextEvent": 4
+#       }
+#     ]'
+# )
 
-# event 9 - pet pet
-Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You pet your pet, aww!",
-    options: '[
-      {
-        "text": "Go back to actions",
-        "nextEvent": 5,
-        "energy": 0
-      },
-      {
-      "text": "Go for a walk",
-      "nextEvent": 2,
-      "energy": -1
-      },
-      {
-        "text": "Go back home and sleep",
-        "nextEvent": 4,
-        "energy": 0
-      }
-    ]'
-)
+# # event 8 - pet talk
+# Event.create!(
+#   img: "http://localhost:3001/images/background.jpg",
+#   dialogue: "You talk to your pet, how cute!",
+#   petId: 1,
+#     options: '[
+#       {
+#         "text": "Go back to actions",
+#         "nextEvent": 5
+#       },
+#       {
+#       "text": "Go for a walk",
+#       "nextEvent": 2
+#       },
+#       {
+#         "text": "Go back home and sleep",
+#         "nextEvent": 4
+#       }
+#     ]'
+# )
 
-
-
+# # event 9 - pet pet
+# Event.create!(
+#   img: "http://localhost:3001/images/background.jpg",
+#   dialogue: "You pet your pet, aww!",
+#   petId: 1,
+#     options: '[
+#       {
+#         "text": "Go back to actions",
+#         "nextEvent": 5
+#       },
+#       {
+#       "text": "Go for a walk",
+#       "nextEvent": 2
+#       },
+#       {
+#         "text": "Go back home and sleep",
+#         "nextEvent": 4
+#       }
+#     ]'
+# )
 
 # Create one pet
-Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: -1, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
-Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: -1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
-Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: -1, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
