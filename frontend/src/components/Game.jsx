@@ -23,5 +23,9 @@ export default function Game(props) {
     <img className="sprite" src={logo}/>
     {/* <img className="background" src={bg}/> */}
     <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
+    {/* <UserStats game={state.game}/>
+
+    <p>User: {user}</p>
+    <p>Day: {day}</p> */}
   </div>;
 }
