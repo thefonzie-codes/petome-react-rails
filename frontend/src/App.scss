@@ -7,6 +7,20 @@
   pointer-events: none;
 }
 
+.mascot {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.welcome {
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,6 +40,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+button:hover {
+  box-shadow: 2px 2px 2px 2px #888888;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

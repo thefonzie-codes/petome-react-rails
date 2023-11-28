@@ -1,0 +1,16 @@
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2.5rem;
+  margin: .5rem;
+  border-radius: 30px;
+  border-style: solid;
+  font-family: 'Mansalva', sans-serif;
+} 
