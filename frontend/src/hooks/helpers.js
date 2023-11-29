@@ -23,3 +23,21 @@ export const adoptedPet = (pets) => {
   const adoptedPet = pets.find((pet) => pet.mood >= 15);
   return adoptedPet;
 }
+
+export const showReaction = (actionValue) => {
+  if (actionValue === 0) {
+    return "😑";
+  }
+  if (actionValue === 1) {
+    return "😄";
+  }
+  if (actionValue === 2) {
+    return "💓";
+  }
+  if (actionValue === -1) {
+    return "💢";
+  }
+  if (actionValue === null) {
+    return "";
+  }
+}

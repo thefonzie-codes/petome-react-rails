@@ -1,7 +1,8 @@
-import { getById, adoptedPet } from "../hooks/helpers";
+import { getById, adoptedPet, showReaction } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
+import Reaction from "./Reaction";
 // import sprite from '../mocks/sprites/neko.png';
 
 
@@ -9,11 +10,18 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const { event: eventId, user, day, energy, pets, events } = state.game;
 
   const [isEntering, setIsEntering] = useState(true);
+  const [isReacting, setIsReacting] = useState(false);
+  const [lastAction, setLastAction] = useState(null);
 
   const fadeIn = () => {
     setIsEntering(v => !v);
     setTimeout(() => (setIsEntering(v => !v), 700));
   };
+
+  const react = () => {
+    setIsReacting(v => !v);
+    setTimeout(() => (setIsReacting(true), 2000));
+  }
 
   // these are ids of events that affect energy and pet mood - they will also contain a petId
   const actionEvents = [6, 7, 8, 9];
@@ -33,6 +41,8 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const performAction = (option) => (
     <button className="option"
       onClick={() => {
+        react();
+        setLastAction(pet[option.actionLabel]);
         // dispatch action to update pet mood and drain energy
         dispatch({
           type: ACTIONS.PERFORM_ACTION,
@@ -102,7 +112,9 @@ export default function Event({ state, dispatch, ACTIONS }) {
       in={isEntering}
       duration={700}
       classNames="event-contents">
-    <div className="event">
+        <div className="event">
+      {/* <div className={ isReacting ? "reaction-hidden" : "reaction" }>💓</div> */}
+      <Reaction isReacting={isReacting} lastAction={lastAction}/>
       {petId && <img className="sprite" src={pet.pet_neutral} />}
       <div className="event-box">
         <p>Event: {eventId}</p>
@@ -110,7 +122,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         <div className="options-container">
           {options}
           {/* {petId && <p>mood: {pet.mood}</p>} */}
-        </div>
+          </div>
         </div>
       </div>
     </CSSTransition>
