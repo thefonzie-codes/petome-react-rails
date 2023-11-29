@@ -86,7 +86,8 @@ export default function Event({ state, dispatch, ACTIONS }) {
       if (eventId === 27) {
         return noEnergy(option);
       } else if (energy === 0) {
-        return needEnergy(option);
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 27});
+        // return needEnergy(option);
       } else if (option.actionLabel) {
         return performAction(option);
       } else {
@@ -107,7 +108,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         <p>{getById(eventId, state.events).dialogue}</p>
         <div className="options-container">
           {options}
-          {petId && <p>mood: {pet.mood}</p>}
+          {/* {petId && <p>mood: {pet.mood}</p>} */}
         </div>
         </div>
       </div>
