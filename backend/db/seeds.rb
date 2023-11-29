@@ -13,9 +13,9 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 
 
 # Create pets
-Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/wolf.png")
-Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/cat.png")
-Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/slime.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/sprites/", pet_sad: "http://localhost:3001/images/sprites/", pet_neutral: "http://localhost:3001/images/sprites/wolf.png")
+Pet.create!(species: "Cat", name: "Noir", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/cat.png")
+Pet.create!(species: "Slime", name: "Slime", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/slime.png")
 
 
 Event.destroy_all
@@ -114,7 +114,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "A wolf jumps out of the bush and growls at you.",
-  # petId: 1,
+  petId: 1,
   options: '[
     {
       "text": "Maybe he’s hungry",
@@ -127,7 +127,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "You toss it a piece of jerky and it eats it, sniffs your hand, and leaves.",
-  # petId: 1,
+  petId: 1,
   options: '[
     {
       "text": "Next",
@@ -175,7 +175,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "You turn away to keep walking and you hear a meow down at your feet.",
-  # petId: 2,
+  petId: 2,
   options: '[
     { "text": "“Hey little grimmelkin, what can I do for you?”",
       "nextEvent": 14
@@ -190,7 +190,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "The cat rubs against your leg and trots away.",
-  # petId: 2,
+  petId: 2,
   options: '[
     { "text": "Go drop off lumber and axe at the shop",
       "nextEvent": 15
@@ -224,7 +224,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "You get up and look down to see a slime. “Ah, sorry bud...”",
-  # petId: 3,
+  petId: 3,
   options: '[
     { "text": "Sit down next it",
       "nextEvent": 18
@@ -239,7 +239,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "The slime stares at you, boops your foot, pops out a flower",
-  # petId: 3,
+  petId: 3,
   options: '[
     { "text": "”...what is this all about?”",
       "nextEvent": 19
@@ -251,7 +251,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "The slime squishes away into the distance.",
-  # petId: 3,
+  petId: 3,
   options: '[
     { "text": "Go back home",
       "nextEvent": 20
