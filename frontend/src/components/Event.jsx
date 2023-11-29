@@ -121,7 +121,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       classNames="event-contents">
         <div className="event">
       {/* <div className={ isReacting ? "reaction-hidden" : "reaction" }>💓</div> */}
-      <Reaction isReacting={isReacting} lastAction={lastAction}/>
+      <Reaction isReacting={isReacting} lastAction={lastAction} eventId={eventId}/>
       {petId && <img className="sprite" src={pet.pet_neutral} />}
       <div className="event-box">
         <p>Event: {eventId}</p>
