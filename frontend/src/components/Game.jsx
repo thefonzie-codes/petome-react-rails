@@ -2,8 +2,7 @@ import { getById } from "../hooks/helpers";
 import Event from "./Event";
 import UserStats from "./UserStats";
 import "../styles/Game.scss"
-import logo from '../mocks/sprites/neko.png';
-import bg from '../mocks/background/image1_0.png';
+
 
 export default function Game(props) {
 
@@ -25,7 +24,6 @@ export default function Game(props) {
 
   return <div className="game" style={{backgroundImage: `url(${event.img})`, backgroundSize: "cover"}}>
     <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS}/>
-    <img className="sprite" src={logo}/>
     <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
   </div>;
 }

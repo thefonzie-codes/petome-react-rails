@@ -1,5 +1,7 @@
 import { getById } from "../hooks/helpers";
 import "../styles/Event.scss";
+import sprite from '../mocks/sprites/neko.png';
+
 
 export default function Event({ state, dispatch, ACTIONS }) {
   const { event: eventId, user, day, energy, pets, events } = state.game;
@@ -77,12 +79,15 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   return (
-    <div className="event" >
-      <p>Event: {eventId}</p>
-      <p>{getById(eventId, state.events).dialogue}</p>
-      <div className="options-container">
-        {options}
-        {petId && <p>mood: {pet.mood}</p>}
+    <div className="event">
+      <img className="sprite" src={sprite} />
+      <div className="event-box">
+        <p>Event: {eventId}</p>
+        <p>{getById(eventId, state.events).dialogue}</p>
+        <div className="options-container">
+          {options}
+          {petId && <p>mood: {pet.mood}</p>}
+        </div>
       </div>
     </div>
   );

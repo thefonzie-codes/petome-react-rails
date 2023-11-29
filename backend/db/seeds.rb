@@ -272,7 +272,7 @@ Event.create!(
 
 # Event 21
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/dream.jpeg",
   dialogue: "“...am I dreaming?”",
   options: '[
     { "text": "Wake up",
@@ -410,7 +410,7 @@ Event.create!(
 
 # event 27 - end of day 
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/rest.jpeg",
   dialogue: "...been a long day.",
   options: '[
     {
