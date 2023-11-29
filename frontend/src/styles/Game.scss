@@ -1,8 +1,11 @@
 .game {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  background-color: black;
+  z-index: 99;
 }
 
 .user-stats {
@@ -20,10 +23,10 @@
 
 .event {
   font-family: Arial, Helvetica, sans-serif;
-  position: fixed;
+  position: absolute;
   background-color: white;
   color: black;
-  top: 50%;
+  bottom: 5%;
   left: 2.5%;
   width: 90%;
   margin: 0 auto;
@@ -33,11 +36,16 @@
   box-shadow: 2px 2px 5px 2px black;
 }
 
+.event-box {
+  position: relative;
+  z-index: 5;
+}
+
 .sprite {
   position: absolute;
-  height: 40%;
-  top: 15%;
-  left: 15%;
+  width: 15em;
+  z-index: -1;
+  transform: translate(-50%, -100%);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
