@@ -1,6 +1,6 @@
 import { getById } from "../hooks/helpers";
 import "../styles/Event.scss";
-import sprite from '../mocks/sprites/neko.png';
+// import sprite from '../mocks/sprites/neko.png';
 
 
 export default function Event({ state, dispatch, ACTIONS }) {
@@ -15,6 +15,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const pet = getById(petId, state.pets);
   // get pet mood from pet object
   const event = getById(eventId, state.events);
+  // get sprite from petId
+  // const sprite = pet.pet_neutral;
+  // console.log(sprite)
+
 
   // play with pet
   const performAction = (option) => (
@@ -23,7 +27,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         // dispatch action to update pet mood and drain energy
         dispatch({
           type: ACTIONS.PERFORM_ACTION,
-          value: { petId: petId, newMood: pet.mood - (pet[option.actionLabel]), nextEvent: option.nextEvent },
+          value: { petId: petId, newMood: pet.mood + (pet[option.actionLabel]), nextEvent: option.nextEvent },
         });
       }}
     >
@@ -70,7 +74,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         return noEnergy(option);
       } else if (energy === 0) {
         return needEnergy(option);
-      } else if (event.petId) {
+      } else if (option.actionLabel) {
         return performAction(option);
       } else {
         return hasEnergy(option);
@@ -80,7 +84,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   return (
     <div className="event">
-      <img className="sprite" src={sprite} />
+      {petId && <img className="sprite" src={pet.pet_neutral} />}
       <div className="event-box">
         <p>Event: {eventId}</p>
         <p>{getById(eventId, state.events).dialogue}</p>

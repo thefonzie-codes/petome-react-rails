@@ -35,7 +35,7 @@ export function reducer(state, action) {
       return { 
         ...state, 
         pets: [...state.pets, state.pets[action.value.petId - 1].mood = action.value.newMood], 
-        game: {...state.game, energy: state.game.energy - 1, event: action.value.nextEvent}
+        game: {...state.game, energy: state.game.energy - 1}
       };
 
     case 'NEXT_EVENT' :

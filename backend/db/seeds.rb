@@ -13,9 +13,9 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 
 
 # Create pets
-Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
-Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
-Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
+Pet.create!(species: "Dog", name: "Rover", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/wolf.png")
+Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/cat.png")
+Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/sprites/slime.png")
 
 
 Event.destroy_all
@@ -388,17 +388,17 @@ Event.create!(
     },
     {
       "text": "Roll around with it",
-      "nextEvent": 24,
+      "nextEvent": 26,
       "actionLabel": "play"
     },
     {
       "text": "Lay down and talk to it",
-      "nextEvent": 24,
+      "nextEvent": 26,
       "actionLabel": "talk"
     },
     {
       "text": "Poke it with a stick",
-      "nextEvent": 24,
+      "nextEvent": 26,
       "actionLabel": "to_pet"
     },
     {
