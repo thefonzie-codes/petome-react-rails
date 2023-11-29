@@ -21,7 +21,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const react = () => {
     setIsReacting(v => !v);
     setTimeout(() => (setIsReacting(true), 2000));
-  }
+  };
 
   // these are ids of events that affect energy and pet mood - they will also contain a petId
   const actionEvents = [6, 7, 8, 9];
@@ -41,7 +41,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const performAction = (option) => (
     <button className="option"
       onClick={() => {
-        react();
+        option.actionLabel && react();
         setLastAction(pet[option.actionLabel]);
         // dispatch action to update pet mood and drain energy
         dispatch({
@@ -112,16 +112,15 @@ export default function Event({ state, dispatch, ACTIONS }) {
       in={isEntering}
       duration={700}
       classNames="event-contents">
-        <div className="event">
-      {/* <div className={ isReacting ? "reaction-hidden" : "reaction" }>💓</div> */}
-      <Reaction isReacting={isReacting} lastAction={lastAction}/>
-      {petId && <img className="sprite" src={pet.pet_neutral} />}
-      <div className="event-box">
-        <p>Event: {eventId}</p>
-        <p>{getById(eventId, state.events).dialogue}</p>
-        <div className="options-container">
-          {options}
-          {/* {petId && <p>mood: {pet.mood}</p>} */}
+      <div className="event">
+        <Reaction isReacting={isReacting} lastAction={lastAction} />
+        {petId && <img className="sprite" src={pet.pet_neutral} />}
+        <div className="event-box">
+          {/* <p>Event: {eventId}</p> */}
+          <p>{getById(eventId, state.events).dialogue}</p>
+          <div className="options-container">
+            {options}
+            {/* {petId && <p>mood: {pet.mood}</p>} */}
           </div>
         </div>
       </div>
