@@ -18,3 +18,8 @@ export const fetchData = async (dispatch) => {
     console.error(err);
   }
 }
+
+export const adoptedPet = (pets) => {
+  const adoptedPet = pets.find((pet) => pet.mood >= 15);
+  return adoptedPet;
+}

@@ -1,4 +1,4 @@
-import { getById } from "../hooks/helpers";
+import { getById, adoptedPet } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
@@ -21,7 +21,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // get petId from event
   const petId = getById(eventId, state.events).petId;
   // get pet object from pet state using petId
-  const pet = getById(petId, state.pets);
+  const pet = adoptedPet(state.pets) || getById(petId, state.pets);
   // get pet mood from pet object
   const event = getById(eventId, state.events);
   // get sprite from petId
@@ -85,10 +85,12 @@ export default function Event({ state, dispatch, ACTIONS }) {
       if (eventId === 27) {
         return noEnergy(option);
       } else if (energy === 0) {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 27});
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
         // return needEnergy(option);
       } else if (option.actionLabel) {
         return performAction(option);
+      } else if ((eventId === 24 || eventId === 25 || eventId === 26) && pet.mood >= 15) {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 14 });
       } else {
         return hasEnergy(option);
       }
