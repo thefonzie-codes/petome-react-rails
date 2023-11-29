@@ -13,9 +13,9 @@ Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
 
 
 # Create pets
-Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: 3, pet_happy: "http://localhost:3001/images/sprites/", pet_sad: "http://localhost:3001/images/sprites/", pet_neutral: "http://localhost:3001/images/sprites/wolf.png")
-Pet.create!(species: "Cat", name: "Noir", mood: 5, treat: 3, play: 2, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/cat.png")
-Pet.create!(species: "Slime", name: "Slime", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/slime.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/", pet_sad: "http://localhost:3001/images/sprites/", pet_neutral: "http://localhost:3001/images/sprites/wolf.png")
+Pet.create!(species: "Cat", name: "Noir", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/cat.png")
+Pet.create!(species: "Slime", name: "Slime", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/", pet_sad: "http://localhost:3001/images/", pet_neutral: "http://localhost:3001/images/sprites/slime.png")
 
 
 Event.destroy_all
@@ -538,6 +538,18 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "The end.",
+  options: '[
+    {
+      "text": "End",
+      "nextEvent": 38
+    }
+  ]'
+)
+
+# event 38 - Restart event page 
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "Restart?",
   options: '[
     {
       "text": "Restart",
