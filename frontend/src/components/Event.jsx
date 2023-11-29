@@ -33,7 +33,6 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const performAction = (option) => (
     <button className="option"
       onClick={() => {
-        fadeIn();
         // dispatch action to update pet mood and drain energy
         dispatch({
           type: ACTIONS.PERFORM_ACTION,
