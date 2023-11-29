@@ -18,11 +18,13 @@ Pet.create!(species: "Cat", name: "Papaya", mood: 5, treat: 3, play: 2, talk: 1,
 Pet.create!(species: "Bearded Lizard", name: "Godzilla", mood: 5, treat: 0, play: 3, talk: 2, to_pet: 1, pet_happy: "http://localhost:3001/images/neko.png", pet_sad: "http://localhost:3001/images/neko.png", pet_neutral: "http://localhost:3001/images/neko.png")
 
 
+Event.destroy_all
+
 # Create events
 
 # Event 1
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
   dialogue: "You wake up and open your eyes, staring blankly at the ceiling.",
   options: '[
     {
@@ -34,7 +36,7 @@ Event.create!(
 
 # Event 2
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
   dialogue: "“Lucia... it feels like a dream.”",
   options: '[
     {
@@ -46,7 +48,7 @@ Event.create!(
 
 # Event 3
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
   dialogue: "“... you wouldn’t want me to keep sulking here, would you?”",
   options: '[
     {
@@ -58,7 +60,7 @@ Event.create!(
 
 # Event 4
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
   dialogue: "“Heh, I guess not.”",
   options: '[
     {
@@ -70,7 +72,7 @@ Event.create!(
 
 # Event 5
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/depart.jpeg",
   dialogue: "“...I should probably drop off the wood I chopped up yesterday to the town. The axe needs sharpening too, anyway. ”",
   options: '[
     {
@@ -82,7 +84,7 @@ Event.create!(
 
 # Event 6
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "You get up and walk through the woods and hear some rustling in a nearby bush.",
   options: '[
     {
@@ -94,8 +96,8 @@ Event.create!(
 
 # Event 7
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "“There's never anything around here… wonder what that could be…“",
+  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  dialogue: "“There's never anything around here… wonder what that could be…”",
   options: '[
     {
       "text": "I dont have time for this.",
@@ -110,7 +112,7 @@ Event.create!(
 
 # Event 8
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "A wolf jumps out of the bush and growls at you.",
   # petId: 1,
   options: '[
@@ -123,7 +125,7 @@ Event.create!(
 
 # Event 9
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "You toss it a piece of jerky and it eats it, sniffs your hand, and leaves.",
   # petId: 1,
   options: '[
@@ -136,7 +138,7 @@ Event.create!(
 
 # Event 10
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
   dialogue: "“Never seen one of those around here before…”",
   options: '[
     {
@@ -148,7 +150,7 @@ Event.create!(
 
 # Event 11
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "You enter the town and hear a loud BOOM coming from a nearby shop.",
   options: '[
     {
@@ -160,7 +162,7 @@ Event.create!(
 
 # Event 12
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "“...what are those magicians up to this time?”",
   options: '[
     { "text": "Next",
@@ -171,11 +173,11 @@ Event.create!(
 
 # Event 13
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "You turn away to keep walking and you hear a meow down at your feet.",
   # petId: 2,
   options: '[
-    { "text": "”Hey little grimmelkin, what can I do for you?”",
+    { "text": "“Hey little grimmelkin, what can I do for you?”",
       "nextEvent": 14
     },
     { "text": "Shoo it away",
@@ -186,7 +188,7 @@ Event.create!(
 
 # Event 14
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "The cat rubs against your leg and trots away.",
   # petId: 2,
   options: '[
@@ -198,7 +200,7 @@ Event.create!(
 
 # Event 15
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
   dialogue: "“Lumber’s been dropped off, and the smith’s got my axe for a bit… might as well sit.”",
   options: '[
     { "text": "Go sit in the field",
@@ -209,7 +211,7 @@ Event.create!(
 
 # Event 16
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "You sit in the field and hear a loud *SQUISH*",
   options: '[
     { "text": "”What in the?...”",
@@ -220,8 +222,8 @@ Event.create!(
 
 # Event 17
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "You get up and look down to see a slime. “Ah, sorry bud...“",
+  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
+  dialogue: "You get up and look down to see a slime. “Ah, sorry bud...”",
   # petId: 3,
   options: '[
     { "text": "Sit down next it",
@@ -235,7 +237,7 @@ Event.create!(
 
 # Event 18
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "The slime stares at you, boops your foot, pops out a flower",
   # petId: 3,
   options: '[
@@ -247,7 +249,7 @@ Event.create!(
 
 # Event 19
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "The slime squishes away into the distance.",
   # petId: 3,
   options: '[
@@ -259,8 +261,8 @@ Event.create!(
 
 # Event 20
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
-  dialogue: "“What a strange day... lots of them monsters out and about...“",
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "“What a strange day... lots of them monsters out and about...”",
   options: '[
     { "text": "Go to sleep",
       "nextEvent": 21
@@ -271,7 +273,7 @@ Event.create!(
 # Event 21
 Event.create!(
   img: "http://localhost:3001/images/background.jpg",
-  dialogue: "“...am I dreaming?“",
+  dialogue: "“...am I dreaming?”",
   options: '[
     { "text": "Wake up",
       "nextEvent": 22
@@ -281,7 +283,7 @@ Event.create!(
 
 # Event 22
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
   dialogue: "“Strange... I guess I should get my day started now.”",
   options: '[
     { "text": "Next",
@@ -292,7 +294,7 @@ Event.create!(
 
 # Event 23 - controller event
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "What should I do today?",
   options: '[
     { "text": "Go chop some wood",
@@ -309,7 +311,7 @@ Event.create!(
 
 # Event 24 - Wolf interaction event
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/forest_2.jpeg",
   dialogue: "You go to the woods to chop some wood. You hear a rustling in the bushes and out comes the same wolf from before.",
   petId: 1,
   options: '[
@@ -342,7 +344,7 @@ Event.create!(
 
 # Event 25 - Cat interaction event
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/market_2.jpeg",
   dialogue: "You go to the town. You hear the same meow down at your feet again.",
   petId: 2,
   options: '[
@@ -375,7 +377,7 @@ Event.create!(
 
 # Event 26 - Slime interaction event
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/field_2.jpeg",
   dialogue: "You go to the field. You see the same slime from before.",
   petId: 3,
   options: '[
@@ -420,7 +422,7 @@ Event.create!(
 
 # event 28 - New day
 Event.create!(
-  img: "http://localhost:3001/images/background.jpg",
+  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
   dialogue: "You wake up and it's time to start the next day.",
   options: '[
     {

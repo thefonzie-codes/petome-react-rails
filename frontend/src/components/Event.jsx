@@ -77,7 +77,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   return (
-    <div className="event">
+    <div className="event" >
       <p>Event: {eventId}</p>
       <p>{getById(eventId, state.events).dialogue}</p>
       <div className="options-container">
