@@ -90,8 +90,15 @@ export default function Event({ state, dispatch, ACTIONS }) {
       } else if (option.actionLabel) {
         return performAction(option);
       } else if ((eventId === 24 || eventId === 25 || eventId === 26) && pet.mood >= 15) {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 14 });
-      } else {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 29 });
+      } else if (eventId === 31 && pet.id===1) {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 32 });
+      } else if (eventId === 31 && pet.id===2) {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 33 });
+      } else if (eventId === 31 && pet.id===3) {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 34 });
+      }
+      else {
         return hasEnergy(option);
       }
     }

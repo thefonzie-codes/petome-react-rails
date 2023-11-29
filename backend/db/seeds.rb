@@ -251,7 +251,6 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "The slime squishes away into the distance.",
-  petId: 3,
   options: '[
     { "text": "Go back home",
       "nextEvent": 20
@@ -432,3 +431,117 @@ Event.create!(
   ]'
 )
 
+# event 29 - success event start
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/rest.jpeg",
+  dialogue: "“...huh?“",
+  petId: 1,
+  options: '[
+    {
+      "text": "Next",
+      "nextEvent": 30
+    }
+  ]'
+)
+
+# event 30
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/rest.jpeg",
+  dialogue: "“where are you headed, little guy?”",
+  petId: 1,
+  options: '[
+    {
+      "text": "Head back home",
+      "nextEvent": 31
+    }
+  ]'
+)
+
+# event 31 - back home with monster
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "They follow you home and look around curiously.",
+  petId: 1,
+  options: '[
+    {
+      "text": "Sit in chair",
+      "nextEvent": 32
+    }
+  ]'
+)
+
+# event 32 - success event end wolf
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "As you sit in the chair, the wolf barks and curls up at your feet.",
+  petId: 1,
+  options: '[
+    {
+      "text": "Next",
+      "nextEvent": 35
+    }
+  ]'
+)
+
+# event 33 - success event end cat
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "As you sit in the chair, the cat hops on your lap and falls asleep.",
+  petId: 2,
+  options: '[
+    {
+      "text": "Next",
+      "nextEvent": 35
+    }
+  ]'
+)
+
+# event 34 - success event end slime
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "As you sit in the chair, the slime hops in the sink and settles in.",
+  petId: 3,
+  options: '[
+    {
+      "text": "Next",
+      "nextEvent": 35
+    }
+  ]'
+)
+
+# event 35 - success event ending
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "You feel a smile creep across your face.",
+  petId: 1,
+  options: '[
+    {
+      "text": "“I guess you can stay.”",
+      "nextEvent": 36
+    }
+  ]'
+)
+
+# event 36 - success event ending with wife
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
+  dialogue: "“Lucia, looks like we just got adopted.”",
+  options: '[
+    {
+      "text": "Next",
+      "nextEvent": 37
+    }
+  ]'
+)
+
+# event 37 - Outro event
+Event.create!(
+  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  dialogue: "The end.",
+  options: '[
+    {
+      "text": "Restart",
+      "nextEvent": 1
+    }
+  ]'
+)
