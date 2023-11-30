@@ -9,7 +9,7 @@
 #   end
 
 # Create one game
-Game.create!(user: "default", day: 1, event: 1, energy: 5, pet: "[1, 2, 3]")
+Game.create!(user: "default")
 
 
 # Create pets
