@@ -10,7 +10,7 @@
 
 .mood-bar-container {
   display: flex;
-  margin: .3em;
+  margin: 0.3em;
   flex-wrap: wrap;
   object-fit: cover;
   border-radius: 10px;
@@ -20,7 +20,7 @@
   height: 1em;
   z-index: 900;
   align-content: flex-start;
-  padding: .25em;
+  padding: 0.25em;
 }
 
 .mood-bar {

@@ -4,19 +4,18 @@ import { pets } from "../mocks/pets";
 import { getById } from "./helpers";
 import { events } from "../mocks/event";
 
-export default function useApplicationData() { 
-  
+export default function useApplicationData() {
   const initialState = {
     game: {},
     events: {},
     pets: {},
-  }
+  };
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  return { 
-    state, 
+  return {
+    state,
     dispatch,
-    ACTIONS
-  }
+    ACTIONS,
+  };
 }
