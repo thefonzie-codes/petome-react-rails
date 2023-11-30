@@ -22,9 +22,6 @@ export default function Event({ state, dispatch, ACTIONS }) {
     setTimeout(() => (setIsReacting(true), 2000));
   };
 
-  // these are ids of events that affect energy and pet mood - they will also contain a petId
-  const actionEvents = [6, 7, 8, 9];
-
   // get petId from event
   const petId = getById(eventId, state.events).petId;
   // get pet object from pet state using petId
@@ -96,13 +93,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
     // if event is sleep event, sleep
     if (eventId === 27) {
       return sleep(option);
-    // if energy is drained, send to sleep event
+      // if energy is drained, send to sleep event
     } else if (energy === 0) {
-      dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
-    // if event is an action event, perform action
+      setTimeout(() => dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 }), 1000);
+      // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
-    // if pet mood reaches 
+      // if pet mood reaches
     } else if (
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 15
