@@ -1,9 +1,8 @@
-import { getById, adoptedPet, showReaction } from "../hooks/helpers";
+import { getById, adoptedPet, showReaction, getBySpecies } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
 import Reaction from "./Reaction";
-// import sprite from '../mocks/sprites/neko.png';
 
 export default function Event({ state, dispatch, ACTIONS }) {
   const { event: eventId, user, day, energy, pets, events } = state.game;
@@ -23,11 +22,12 @@ export default function Event({ state, dispatch, ACTIONS }) {
   };
 
   // get petId from event
-  const petId = getById(eventId, state.events).petId;
+  const event = getById(eventId, state.events);
+  const petId = event.species ? getBySpecies(event.species, state.pets).id : null;
+  console.log("petId:", petId)
+  // const petSpecies = getBySpecies(event.species, state.pets);
   // get pet object from pet state using petId
   const pet = adoptedPet(state.pets) || getById(petId, state.pets);
-  // get pet mood from pet object
-  const event = getById(eventId, state.events);
   // get sprite from petId
   const sprite = () => {
     if (pet.mood <= 4) {
@@ -105,11 +105,11 @@ export default function Event({ state, dispatch, ACTIONS }) {
       pet.mood >= 15
     ) {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 29 });
-    } else if (eventId === 31 && pet.id === 1) {
+    } else if (eventId === 31 && pet.species === "Wolf") {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 32 });
-    } else if (eventId === 31 && pet.id === 2) {
+    } else if (eventId === 31 && pet.species === "Cat") {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 33 });
-    } else if (eventId === 31 && pet.id === 3) {
+    } else if (eventId === 31 && pet.species === "Slime") {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 34 });
     } else {
       return hasEnergy(option);

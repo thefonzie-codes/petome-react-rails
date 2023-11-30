@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      {state.game.user ? (
+      {state.pets[2] ? (
         <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
       ) : (
         <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />

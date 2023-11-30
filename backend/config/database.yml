@@ -21,8 +21,8 @@ default: &default
 
 development:
   <<: *default
-  # username: labber
-  # password: 123
+  username: labber
+  password: 123
   database: backend_development
 
   # The specified database role being used to connect to PostgreSQL.
@@ -57,7 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  # password: 123
+  username: labber
+  password: 123
   # database: backend_development
   database: backend_test
 

@@ -13,9 +13,27 @@ Game.create!(user: "default")
 
 
 # Create pets
-Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 2, play: 1, talk: -1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
-Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 1, play: -1, talk: 0, to_pet: 2, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
-Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 0, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
 
 
 Event.destroy_all
@@ -114,7 +132,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "You get close and a wolf pounces out of the bush with a low growl.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Maybe he’s hungry?",
@@ -127,7 +145,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats, sniffs your hand, then leaves.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Keep going",
@@ -175,7 +193,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "You lurk outside the perimeter of a gathering crowd as your left ankle is met with a soft nudge and a *meow*.",
-  petId: 2,
+  species: "Cat",
   options: '[
     { "text": "“Oh hey little grimmelkin, what can I do for you?”",
       "nextEvent": 14
@@ -190,7 +208,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "The cat rubs its cheek against your leg then daintily trots away.",
-  petId: 2,
+  species: "Cat",
   options: '[
     { "text": "Go drop your axe off at the smithy",
       "nextEvent": 15
@@ -224,7 +242,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "Alarmed, you jump to your feet and look down to see a slime. “Ah, sorry bud...”",
-  petId: 3,
+  species: "Slime",
   options: '[
     { "text": "Sit down next it",
       "nextEvent": 18
@@ -239,7 +257,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "The slime stares at you, boops your foot, then gloops out a flower from its belly.",
-  petId: 3,
+  species: "Slime",
   options: '[
     { "text": "“...thanks?”",
       "nextEvent": 19
@@ -312,7 +330,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_3.jpeg",
   dialogue: "You go to your site to chop some wood. Rustling from a familiar bush reveals the same wolf from before, Fang.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Give him some more jerky",
@@ -345,7 +363,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_3.jpeg",
   dialogue: "You head into town. You hear a familiar meow at your feet and find Noctis, the cat from before.",
-  petId: 2,
+  species: "Cat",
   options: '[
     {
       "text": "Give her a nibble of cheese",
@@ -378,7 +396,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_2.jpeg",
   dialogue: "You go to the field. At the bottom of a willow tree you meet same slime from before, Wiggy.",
-  petId: 3,
+  species: "Slime",
   options: '[
     {
       "text": "Toss it some leftovers",
@@ -435,7 +453,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
   dialogue: "“...huh?”",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Next",
@@ -448,7 +466,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
   dialogue: "“Hold on there, where are you headed little guy?”",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Head back home",
@@ -461,7 +479,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "Your curious friend follows you home, entering comfortably as ever with a curious look around the room.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Sit in your chair",
@@ -474,7 +492,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, the wolf gives a shy quip and curls up at your feet.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "Next",
@@ -487,7 +505,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, the cat gracefully hops onto your lap, tucks into a ball, and falls asleep.",
-  petId: 2,
+  species: "Cat",
   options: '[
     {
       "text": "Next",
@@ -500,7 +518,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, the slime promptly jumps into your sink and settles in.",
-  petId: 3,
+  species: "Slime",
   options: '[
     {
       "text": "Next",
@@ -513,7 +531,7 @@ Event.create!(
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
   dialogue: "You discover a smile creeping across your face... it's been a while since you've had a friend around.",
-  petId: 1,
+  species: "Wolf",
   options: '[
     {
       "text": "“I guess you can stay.”",
