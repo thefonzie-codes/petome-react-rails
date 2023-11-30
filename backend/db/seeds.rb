@@ -13,9 +13,9 @@ Game.create!(user: "default")
 
 
 # Create pets
-Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 1, play: 2, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
-Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 2, play: -1, talk: 1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
-Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 1, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 2, play: 1, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 1, play: -1, talk: 2, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 0, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
 
 
 Event.destroy_all
@@ -25,7 +25,7 @@ Event.destroy_all
 # Event 1
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "You wake up and open your eyes, staring blankly at the ceiling.",
+  dialogue: "You wake up to the sun filtering into your eyes from the skylight, early birds still making their victory songs. 'Another day, more to do...' you take a moment to stare blankly at the ceiling.",
   options: '[
     {
       "text": "Next",
@@ -37,7 +37,7 @@ Event.create!(
 # Event 2
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "“Lucia... it feels like a dream.”",
+  dialogue: "With a deep sigh, your body finds itself again. “Lucia... it feels like a dream.” ...the war was over, and you were finally home.",
   options: '[
     {
       "text": "Next",
@@ -49,7 +49,7 @@ Event.create!(
 # Event 3
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“... you wouldn’t want me to keep sulking here, would you?”",
+  dialogue: "But it's not the same without her. “... you wouldn’t want me to keep sulking here, would you?”",
   options: '[
     {
       "text": "Next",
@@ -61,7 +61,7 @@ Event.create!(
 # Event 4
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“Heh, I guess not.”",
+  dialogue: "“Heh, defintiely not. You'd have a lot to say. I guess you're right, it's time to work.”",
   options: '[
     {
       "text": "Next",
@@ -73,10 +73,10 @@ Event.create!(
 # Event 5
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/depart.jpeg",
-  dialogue: "“...I should probably drop off the wood I chopped up yesterday to the town. The axe needs sharpening too, anyway. ”",
+  dialogue: "“...I should probably drop yesterday's cord into the town. The axe could use a sharpening too.”",
   options: '[
     {
-      "text": "Leave home",
+      "text": "Head Out",
       "nextEvent": 6
     }
   ]'
@@ -85,7 +85,7 @@ Event.create!(
 # Event 6
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "You get up and walk through the woods and hear some rustling in a nearby bush.",
+  dialogue: "As you walk an ever-familiar path from your secret lot into town you hear rustling from a bush beside you.",
   options: '[
     {
       "text": "Next",
@@ -97,14 +97,14 @@ Event.create!(
 # Event 7
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "“There's never anything around here… wonder what that could be…”",
+  dialogue: "“Hm. There's never anything around here… wonder what that could be…”",
   options: '[
     {
-      "text": "I dont have time for this.",
+      "text": "Proably just a tree sprite.",
       "nextEvent": 8
     },
     {
-      "text": "I should check it out.",
+      "text": "I should check that out.",
       "nextEvent": 8
     }
   ]'
@@ -113,11 +113,11 @@ Event.create!(
 # Event 8
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "A wolf jumps out of the bush and growls at you.",
+  dialogue: "You get close and a wolf pounces out of the bush with a low growl.",
   petId: 1,
   options: '[
     {
-      "text": "Maybe he’s hungry",
+      "text": "Maybe he’s hungry?",
       "nextEvent": 9
     }
   ]'
@@ -126,11 +126,11 @@ Event.create!(
 # Event 9
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "You toss it a piece of jerky and it eats it, sniffs your hand, and leaves.",
+  dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats it, sniffs your hand, then leaves.",
   petId: 1,
   options: '[
     {
-      "text": "Next",
+      "text": "Keep going",
       "nextEvent": 10
     }
   ]'
@@ -151,7 +151,7 @@ Event.create!(
 # Event 11
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "You enter the town and hear a loud BOOM coming from a nearby shop.",
+  dialogue: "You finish selling your firewood to a loyal partner close to market when you catch a loud *BOOM* coming from a nearby shop.",
   options: '[
     {
       "text": "Next",
@@ -163,9 +163,9 @@ Event.create!(
 # Event 12
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "“...what are those magicians up to this time?”",
+  dialogue: "“Egh... what are those magicians up to this time?”",
   options: '[
-    { "text": "Next",
+    { "text": "Get a little closer",
       "nextEvent": 13
     }
   ]'
@@ -174,10 +174,10 @@ Event.create!(
 # Event 13
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "You turn away to keep walking and you hear a meow down at your feet.",
+  dialogue: "You lurk outside the perimeter of a gathering crowd as your left ankle is met with a soft nudge and a *meow*.",
   petId: 2,
   options: '[
-    { "text": "“Hey little grimmelkin, what can I do for you?”",
+    { "text": "“Oh hey little grimmelkin, what can I do for you?”",
       "nextEvent": 14
     },
     { "text": "Shoo it away",
@@ -189,10 +189,10 @@ Event.create!(
 # Event 14
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "The cat rubs against your leg and trots away.",
+  dialogue: "The cat rubs its cheek against your leg then daintily trots away.",
   petId: 2,
   options: '[
-    { "text": "Go drop off lumber and axe at the shop",
+    { "text": "Go drop your axe off at the smithy",
       "nextEvent": 15
     }
   ]'
@@ -201,7 +201,7 @@ Event.create!(
 # Event 15
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "“Lumber’s been dropped off, and the smith’s got my axe for a bit… might as well sit.”",
+  dialogue: "“Wood’s been dropped, and the smith’s got my axe for a bit… might as well sit.”",
   options: '[
     { "text": "Go sit in the field",
       "nextEvent": 16
@@ -212,7 +212,7 @@ Event.create!(
 # Event 16
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "You sit in the field and hear a loud *SQUISH*",
+  dialogue: "You find a lonely patch of shade and close your eyes for all but two minutes before you're shaken by a giant *SQUISH*",
   options: '[
     { "text": "“What in the?...”",
       "nextEvent": 17
@@ -223,7 +223,7 @@ Event.create!(
 # Event 17
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "You get up and look down to see a slime. “Ah, sorry bud...”",
+  dialogue: "Alarmed, you jump to your feet and look down to see a slime. “Ah, sorry bud...”",
   petId: 3,
   options: '[
     { "text": "Sit down next it",
@@ -238,10 +238,10 @@ Event.create!(
 # Event 18
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "The slime stares at you, boops your foot, pops out a flower",
+  dialogue: "The slime stares at you, boops your foot, then gloops a flower from its belly for you.",
   petId: 3,
   options: '[
-    { "text": "“...what is this all about?”",
+    { "text": "“...thanks?”",
       "nextEvent": 19
     }
   ]'
@@ -250,9 +250,9 @@ Event.create!(
 # Event 19
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "The slime squishes away into the distance.",
+  dialogue: "Content, the slime squishes away into an alley.",
   options: '[
-    { "text": "Go back home",
+    { "text": "Retrieve your axe and head home",
       "nextEvent": 20
     }
   ]'
@@ -261,7 +261,7 @@ Event.create!(
 # Event 20
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "“What a strange day... lots of them monsters out and about...”",
+  dialogue: "“What a strange day... lots of them monsters out and about now...”",
   options: '[
     { "text": "Go to sleep",
       "nextEvent": 21
@@ -272,7 +272,7 @@ Event.create!(
 # Event 21
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/dream_2.jpeg",
-  dialogue: "“...am I dreaming?”",
+  dialogue: "“mhmmm...am I dreaming? Who...”",
   options: '[
     { "text": "Wake up",
       "nextEvent": 22
@@ -283,7 +283,7 @@ Event.create!(
 # Event 22
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "“Strange... I guess I should get my day started now.”",
+  dialogue: "“Wha? Strange... Anyway. Time to get going.”",
   options: '[
     { "text": "Next",
       "nextEvent": 23
@@ -294,7 +294,7 @@ Event.create!(
 # Event 23 - controller event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "What should I do today?",
+  dialogue: "What should I get up to?",
   options: '[
     { "text": "Go chop some wood",
       "nextEvent": 24
@@ -311,7 +311,7 @@ Event.create!(
 # Event 24 - Wolf interaction event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_2.jpeg",
-  dialogue: "You go to the woods to chop some wood. You hear a rustling in the bushes and out comes the same wolf from before.",
+  dialogue: "You go to your site to chop some wood. Rustling from a familiar bush reveals the same wolf from before, Fang.",
   petId: 1,
   options: '[
     {
@@ -325,12 +325,12 @@ Event.create!(
       "actionLabel": "play"
     },
     {
-      "text": "Talk to him",
+      "text": "Tell him about your day",
       "nextEvent": 24,
       "actionLabel": "talk"
     },
     {
-      "text": "He looks fluffy. Risk it and pet him",
+      "text": "Hes really fluffy. Risk it and pet him",
       "nextEvent": 24,
       "actionLabel": "to_pet"
     },
