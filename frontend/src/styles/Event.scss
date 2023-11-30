@@ -1,17 +1,40 @@
+
+.event {
+  position: absolute;
+  background-color: white;
+  color: black;
+  bottom: 3%;
+  left: 2.5%;
+  width: 90%;
+  max-height: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 30px;
+  border: black solid 3px;
+  box-shadow: 2px 2px 5px 2px black;
+}
+
+.event-box {
+  position: relative;
+  z-index: 5;
+}
+
+
 .options-container {
   // display: grid;
   // grid-template-columns: 1fr;
   // grid-template-rows: 1fr;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
 
 .option, .next {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 2.5rem;
-  margin: 0.5rem;
+  // display: flex;
+  font-size: calc(.001em + 2vmin);
+  height: calc(1em + 18px);
+  margin-top: .5em;
+  // margin-bottom: -1rem;
   border-radius: 30px;
   border-style: solid;
 } 
@@ -54,5 +77,3 @@
   opacity: 1;
   transition: opacity 1000ms;
 }
-
-// Pet reaction

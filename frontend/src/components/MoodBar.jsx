@@ -13,7 +13,7 @@ export default function MoodBar({ pets, event }) {
       <div className="mood-bar-container">
         <div
           className="mood-bar"
-          style={{ width: `${(pet.mood / 15) * 100}` + "%" }}
+          style={{ width: `${(pet.mood / 16) * 100}` + "%" }}
         ></div>
       </div>
     </div>

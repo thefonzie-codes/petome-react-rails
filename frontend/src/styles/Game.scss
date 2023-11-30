@@ -15,46 +15,6 @@
   font-family: 'Roboto Mono', monospace;
 }
 
-.user-stats {
-  position: absolute;
-  margin-top: 2em;
-  margin-left: 2em;
-  background-color: whitesmoke;
-  color: black;
-  width: 30%;
-  border-radius: 25px;
-  border: black solid 3px;
-  box-shadow: 2px 2px 5px 2px black;
-  padding: 0.5em;
-}
-
-.event {
-  position: absolute;
-  background-color: white;
-  color: black;
-  bottom: 5%;
-  left: 2.5%;
-  width: 90%;
-  max-height: fit-content;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 30px;
-  border: black solid 3px;
-  box-shadow: 2px 2px 5px 2px black;
-}
-
-.event-box {
-  position: relative;
-  z-index: 5;
-}
-
-.option {
-  font-size: calc(.001em + 2vmin);
-  height: calc(1em + 18px);
-  // margin-top: -.1px;
-  margin-bottom: -.1px;
-}
-
 .sprite {
   position: absolute;
   width: 15em;

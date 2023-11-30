@@ -37,7 +37,7 @@ Event.create!(
 # Event 2
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "With a deep sigh, your body finds itself again. “Lucia... it feels like a dream.” ...the war was over, and you were finally home.",
+  dialogue: "With a deep sigh, your body finds itself again. It feels like a dream ...the war is over, you're finally home.",
   options: '[
     {
       "text": "Next",
@@ -61,7 +61,7 @@ Event.create!(
 # Event 4
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“Heh, defintiely not. You'd have a lot to say. I guess you're right, it's time to work.”",
+  dialogue: "“Heh, definitely not. You'd have a lot to say. I guess you're right, it's time to work.”",
   options: '[
     {
       "text": "Next",
