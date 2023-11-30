@@ -1,6 +1,7 @@
 import { getById, fetchData } from '../hooks/helpers';
 import cat from '../mocks/sprites/neko.png';
 import background from '../mocks/background/image1_0.png';
+import '../styles/StartScreen.scss';
 
 export default function StartScreen(props) {
 
