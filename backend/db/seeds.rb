@@ -84,7 +84,7 @@ Event.create!(
 
 # Event 6
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "As you walk an ever-familiar path from your secret lot into town you hear rustling from a bush beside you.",
   options: '[
     {
@@ -96,7 +96,7 @@ Event.create!(
 
 # Event 7
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "“Hm. There's never anything around here… wonder what that could be…”",
   options: '[
     {
@@ -112,7 +112,7 @@ Event.create!(
 
 # Event 8
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "You get close and a wolf pounces out of the bush with a low growl.",
   petId: 1,
   options: '[
@@ -125,7 +125,7 @@ Event.create!(
 
 # Event 9
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats it, sniffs your hand, then leaves.",
   petId: 1,
   options: '[
@@ -138,7 +138,7 @@ Event.create!(
 
 # Event 10
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "“Never seen one of those around here before…”",
   options: '[
     {
@@ -150,7 +150,7 @@ Event.create!(
 
 # Event 11
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "You finish selling your firewood to a loyal partner close to market when you catch a loud *BOOM* coming from a nearby shop.",
   options: '[
     {
@@ -162,7 +162,7 @@ Event.create!(
 
 # Event 12
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "“Egh... what are those magicians up to this time?”",
   options: '[
     { "text": "Get a little closer",
@@ -173,7 +173,7 @@ Event.create!(
 
 # Event 13
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "You lurk outside the perimeter of a gathering crowd as your left ankle is met with a soft nudge and a *meow*.",
   petId: 2,
   options: '[
@@ -188,7 +188,7 @@ Event.create!(
 
 # Event 14
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "The cat rubs its cheek against your leg then daintily trots away.",
   petId: 2,
   options: '[
@@ -200,7 +200,7 @@ Event.create!(
 
 # Event 15
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
   dialogue: "“Wood’s been dropped, and the smith’s got my axe for a bit… might as well sit.”",
   options: '[
     { "text": "Go sit in the field",
@@ -211,7 +211,7 @@ Event.create!(
 
 # Event 16
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "You find a lonely patch of shade and close your eyes for all but two minutes before you're shaken by a giant *SQUISH*",
   options: '[
     { "text": "“What in the?...”",
@@ -222,7 +222,7 @@ Event.create!(
 
 # Event 17
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "Alarmed, you jump to your feet and look down to see a slime. “Ah, sorry bud...”",
   petId: 3,
   options: '[
@@ -237,7 +237,7 @@ Event.create!(
 
 # Event 18
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "The slime stares at you, boops your foot, then gloops a flower from its belly for you.",
   petId: 3,
   options: '[
@@ -249,7 +249,7 @@ Event.create!(
 
 # Event 19
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
   dialogue: "Content, the slime squishes away into an alley.",
   options: '[
     { "text": "Retrieve your axe and head home",
@@ -310,7 +310,7 @@ Event.create!(
 
 # Event 24 - Wolf interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_2.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_3.jpeg",
   dialogue: "You go to your site to chop some wood. Rustling from a familiar bush reveals the same wolf from before, Fang.",
   petId: 1,
   options: '[
@@ -343,7 +343,7 @@ Event.create!(
 
 # Event 25 - Cat interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_2.jpeg",
+  img: "http://localhost:3001/images/backgrounds/town_3.jpeg",
   dialogue: "You head into town. You hear a familiar meow at your feet and find Noctis, the cat from before.",
   petId: 2,
   options: '[
