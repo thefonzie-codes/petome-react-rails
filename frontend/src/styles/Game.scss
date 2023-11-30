@@ -17,7 +17,8 @@
   color: black;
   width: 30%;
   border-radius: 25px;
-  border: black solid 2px;
+  border: black solid 3px;
+  box-shadow: 2px 2px 5px 2px black;
   padding: .5em;
 }
 
@@ -32,7 +33,7 @@
   margin: 0 auto;
   padding: 10px;
   border-radius: 30px;
-  border: black solid 2px;
+  border: black solid 3px;
   box-shadow: 2px 2px 5px 2px black;
 }
 
@@ -51,9 +52,29 @@
   background-position: center;
 }
 
-// .background {
-//   position: sticky;
-//   top: 0;
-//   left: 0;
-//   z-index: 0;
-// }
+.reaction {
+  position: absolute;
+  right: 30%;
+  bottom: 120%;
+}
+
+.reaction-hidden {
+  position: absolute;
+  right: 30%;
+  bottom: 120%;
+  font-size: 5em;
+  opacity: 0;
+  transform: translate(50px, 20px);
+  animation-duration: 3s;
+  animation-name: slidein, fadeOut;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}

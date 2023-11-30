@@ -2,6 +2,7 @@ import { getById } from "../hooks/helpers";
 import Event from "./Event";
 import UserStats from "./UserStats";
 import "../styles/Game.scss"
+import MoodBar from "./MoodBar";
 
 
 export default function Game(props) {
@@ -23,6 +24,8 @@ export default function Game(props) {
 
 
   return <div className="game" style={{backgroundImage: `url(${event.img})`, backgroundSize: "cover"}}>
+    {/* <MoodBar pet={getById(1, state.pets)}/> */}
+    <MoodBar pets={state.pets}/>
     <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS}/>
     <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS}/>
   </div>;

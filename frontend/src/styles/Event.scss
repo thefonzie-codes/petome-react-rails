@@ -14,3 +14,37 @@
   border-style: solid;
   font-family: 'Mansalva', sans-serif;
 } 
+
+// Fade out
+
+.event-contents-exit {
+  opacity: 1;
+}
+
+.event-contents-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.event-contents-exit-done {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+// Fade in
+
+.event-contents-enter {
+  opacity: 0;
+}
+
+.event-contents-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.event-contents-enter-done {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+// Pet reaction

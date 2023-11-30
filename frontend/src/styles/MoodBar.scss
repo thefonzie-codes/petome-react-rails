@@ -1,5 +1,16 @@
-.energy-bar-container {
+.pet-stats {
   display: flex;
+  flex-direction: column;
+  width: 30%;
+  position: fixed;
+  margin-top: 2em;
+  right: 0%;
+  margin-right: 2em;
+}
+
+.mood-bar-container {
+  display: flex;
+  margin: .3em;
   flex-wrap: wrap;
   object-fit: cover;
   border-radius: 10px;
@@ -12,31 +23,14 @@
   padding: .25em;
 }
 
-.energy-bar {
+.mood-bar {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 100%;
+  max-width: 100%;
   background-color: #4caf50;
   border-radius: 10px;
   overflow: hidden;
   transition: width 0.6s;
-}
-
-.energy {
-  height: 100%;
-  background-color: #4caf50;
-  border-radius: 10px;
-  transition: width 0.3s ease-in-out;
-}
-
-.energy-green {
-  display: flex;
-  align-self: flex-start;
-  background-color: green;
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
-  padding: none;
-  z-index: 900;
 }
