@@ -18,3 +18,17 @@ export const fetchData = async (dispatch) => {
     console.error(err);
   }
 }
+
+export const createGame = (input) => {
+  const obj = { game :{
+    user: input
+  }}
+
+  const JSONobj = JSON.stringify(obj);
+
+  axios.post("/games.json", {
+    JSONobj
+  })
+  .then((response) => console.log(response))
+  .catch((error) => {console.error(error)})
+}

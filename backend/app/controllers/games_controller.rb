@@ -21,6 +21,7 @@ class GamesController < ApplicationController
 
   # POST /games or /games.json
   def create
+    data = game_params(:data)
     @game = Game.new(game_params)
 
     respond_to do |format|
