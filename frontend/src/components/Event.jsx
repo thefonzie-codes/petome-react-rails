@@ -24,7 +24,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // get petId from event
   const event = getById(eventId, state.events);
   const petId = event.species ? getBySpecies(event.species, state.pets).id : null;
-  console.log("petId:", petId)
+  console.log("petId:", petId);
   // const petSpecies = getBySpecies(event.species, state.pets);
   // get pet object from pet state using petId
   const pet = adoptedPet(state.pets) || getById(petId, state.pets);
@@ -63,18 +63,23 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   // onclick, move to next event
-  const hasEnergy = (option) => (
-    <button
-      className="option"
-      onClick={() => {
-        fadeIn();
-        setLastAction(null);
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
-      }}
-    >
-      {option.text}
-    </button>
+  const hasEnergy = (option) => (<button
+    className={option.text === "next" ? "next" : "option"}
+    onClick={() => {
+      fadeIn();
+      setLastAction(null);
+      dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+    }}
+    onKeyUp={() => {
+      fadeIn();
+      setLastAction(null);
+      dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+    }}
+  >
+    {option.text}
+  </button>
   );
+
 
   const sleep = (option) => (
     <button
@@ -140,7 +145,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         />
         {petId && <img className="sprite" src={sprite()} />}
         <div className="event-box">
-          <p>Event: {eventId}</p>
+          {/* <p>Event: {eventId}</p> */}
           <p>{getById(eventId, state.events).dialogue}</p>
           <div className="options-container">{options}</div>
         </div>
