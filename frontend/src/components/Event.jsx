@@ -1,4 +1,4 @@
-import { getById, adoptedPet, showReaction, getBySpecies } from "../hooks/helpers";
+import { getById, adoptedPet, showReaction, getBySpecies, createGame } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
@@ -92,6 +92,17 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
+  const newGame = (option) => (
+    <button
+      className="option"
+      onClick={() => {
+        createGame(state.game.user, dispatch)
+      }}
+    >
+      {option.text}
+    </button>
+  );
+
   const options = JSON.parse(event.options).map((option) => {
     // if event is sleep event, sleep
     if (eventId === 27) {
@@ -114,6 +125,9 @@ export default function Event({ state, dispatch, ACTIONS }) {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 33 });
     } else if (eventId === 31 && pet.species === "Slime") {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 34 });
+    } 
+    else if (eventId === 38){
+      return newGame(option);
     } else {
       return hasEnergy(option);
     }
