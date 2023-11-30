@@ -1,10 +1,12 @@
 .options-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
-.option {
+.option, .next {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13,6 +15,13 @@
   border-radius: 30px;
   border-style: solid;
 } 
+
+.next {
+  align-self: flex-end;
+  justify-self: flex-end;
+  justify-content: center;
+  width: 5rem;
+}
 
 // Fade out
 

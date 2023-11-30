@@ -27,7 +27,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // get petId from event
   const event = getById(eventId, state.events);
   const petId = event.species ? getBySpecies(event.species, state.pets).id : null;
-  console.log("petId:", petId)
+  console.log("petId:", petId);
   // const petSpecies = getBySpecies(event.species, state.pets);
   // get pet object from pet state using petId
   const pet = adoptedPet(state.pets) || getById(petId, state.pets);
@@ -66,18 +66,23 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   // onclick, move to next event
-  const hasEnergy = (option) => (
-    <button
-      className="option"
-      onClick={() => {
-        fadeIn();
-        setLastAction(null);
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
-      }}
-    >
-      {option.text}
-    </button>
+  const hasEnergy = (option) => (<button
+    className={option.text === "next" ? "next" : "option"}
+    onClick={() => {
+      fadeIn();
+      setLastAction(null);
+      dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+    }}
+    onKeyUp={() => {
+      fadeIn();
+      setLastAction(null);
+      dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+    }}
+  >
+    {option.text}
+  </button>
   );
+
 
   const sleep = (option) => (
     <button
@@ -96,13 +101,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
     // if event is sleep event, sleep
     if (eventId === 27) {
       return sleep(option);
-    // if energy is drained, send to sleep event
+      // if energy is drained, send to sleep event
     } else if (energy === 0) {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
-    // if event is an action event, perform action
+      // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
-    // if pet mood reaches 
+      // if pet mood reaches 
     } else if (
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 15
@@ -129,7 +134,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         />
         {petId && <img className="sprite" src={sprite()} />}
         <div className="event-box">
-          <p>Event: {eventId}</p>
+          {/* <p>Event: {eventId}</p> */}
           <p>{getById(eventId, state.events).dialogue}</p>
           <div className="options-container">{options}</div>
         </div>
