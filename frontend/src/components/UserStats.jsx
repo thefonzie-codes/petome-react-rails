@@ -6,8 +6,9 @@ export default function UserStats({ game, dispatch, ACTIONS }) {
 
   return (
     <div className="user-stats">
-      <p>Name: {user}</p>
-      <p>Day: {day}</p>
+      <p className="energy-text">Name: </p>
+      <p className="energy-text" style={{marginTop: "-.5em"}}>{user}</p>
+      <p className="energy-text">Day: {day}</p>
       Energy: <Energy energy={energy} />
     </div>
   );

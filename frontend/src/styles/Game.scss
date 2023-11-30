@@ -6,10 +6,10 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  width: 768px;
-  height: 1024px;
-  max-width: 768px;
-  max-height: 1024px;
+  height: 100vh;
+  width: 100vw;
+  max-width: 40%;
+  max-height: 100%;
   background-color: black;
   z-index: 99;
   font-family: 'Roboto Mono', monospace;
@@ -35,6 +35,7 @@
   bottom: 5%;
   left: 2.5%;
   width: 90%;
+  max-height: fit-content;
   margin: 0 auto;
   padding: 10px;
   border-radius: 30px;
@@ -45,6 +46,13 @@
 .event-box {
   position: relative;
   z-index: 5;
+}
+
+.option {
+  font-size: calc(.001em + 2vmin);
+  height: calc(1em + 18px);
+  // margin-top: -.1px;
+  margin-bottom: -.1px;
 }
 
 .sprite {

@@ -2,6 +2,7 @@
   background-color: black;
   width: 100vw;
   height: 100vh;
+  font-size: calc(.001em + 2vmin);
 }
 
 .App {
@@ -73,12 +74,4 @@ button:hover {
   to {
     transform: rotate(360deg);
   }
-}
-
-
-.intro {
-  width: 70%;
-  font-size: .75em;
-  text-align: left;
-  margin-top: -.75em;
 }

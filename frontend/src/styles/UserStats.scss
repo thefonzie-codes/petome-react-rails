@@ -1,3 +1,7 @@
+.user-stats {
+  max-height: calc(fit-content + 1px);
+}
+
 .energy-bar-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +14,8 @@
   z-index: 900;
   align-content: flex-start;
   padding: 0.25em;
+  margin-top: .4em;
+  margin-bottom: .4em;
 }
 
 .energy-bar {
@@ -39,4 +45,9 @@
   vertical-align: middle;
   padding: none;
   z-index: 900;
+}
+
+.energy-text {
+  margin-top: .4em;
+  margin-bottom: .6em;
 }
