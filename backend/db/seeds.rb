@@ -214,7 +214,7 @@ Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
   dialogue: "You sit in the field and hear a loud *SQUISH*",
   options: '[
-    { "text": "”What in the?...”",
+    { "text": "“What in the?...”",
       "nextEvent": 17
     }
   ]'
@@ -241,7 +241,7 @@ Event.create!(
   dialogue: "The slime stares at you, boops your foot, pops out a flower",
   petId: 3,
   options: '[
-    { "text": "”...what is this all about?”",
+    { "text": "“...what is this all about?”",
       "nextEvent": 19
     }
   ]'
@@ -271,7 +271,7 @@ Event.create!(
 
 # Event 21
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/dream.jpeg",
+  img: "http://localhost:3001/images/backgrounds/dream_2.jpeg",
   dialogue: "“...am I dreaming?”",
   options: '[
     { "text": "Wake up",
@@ -434,7 +434,7 @@ Event.create!(
 # event 29 - success event start
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
-  dialogue: "“...huh?“",
+  dialogue: "“...huh?”",
   petId: 1,
   options: '[
     {
@@ -536,7 +536,7 @@ Event.create!(
 
 # event 37 - Outro event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "http://localhost:3001/images/backgrounds/end.jpeg",
   dialogue: "The end.",
   options: '[
     {
@@ -548,7 +548,7 @@ Event.create!(
 
 # event 38 - Restart event page 
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "http://localhost:3001/images/backgrounds/end.jpeg",
   dialogue: "Restart?",
   options: '[
     {
