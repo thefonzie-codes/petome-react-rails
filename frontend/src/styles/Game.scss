@@ -67,19 +67,21 @@
 
 .reaction {
   position: absolute;
-  right: 30%;
+  right: 28%;
   bottom: 120%;
+  z-index: 5;
 }
 
 .reaction-hidden {
   position: absolute;
-  right: 30%;
+  right: 28%;
   bottom: 120%;
   font-size: 5em;
   opacity: 0;
   transform: translate(50px, 20px);
   animation-duration: 3s;
   animation-name: slidein, fadeOut;
+  z-index: 5;
 }
 
 @keyframes slidein {
@@ -88,6 +90,6 @@
   }
 
   to {
-    transform: translateY(-100%);
+    transform: translateY(-150%);
   }
 }
