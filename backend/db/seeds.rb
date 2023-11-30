@@ -85,7 +85,7 @@ Event.create!(
 # Event 6
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
-  dialogue: "As you walk an ever-familiar path from your secret lot into town you hear rustling from a bush beside you.",
+  dialogue: "As you walk the familiar path from your secret lot into town you hear rustling from a bush beside you.",
   options: '[
     {
       "text": "Next",
@@ -126,7 +126,7 @@ Event.create!(
 # Event 9
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
-  dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats it, sniffs your hand, then leaves.",
+  dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats, sniffs your hand, then leaves.",
   petId: 1,
   options: '[
     {
@@ -151,7 +151,7 @@ Event.create!(
 # Event 11
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
-  dialogue: "You finish selling your firewood to a loyal partner close to market when you catch a loud *BOOM* coming from a nearby shop.",
+  dialogue: "You finish selling your firewood to close to market when you catch a loud *BOOM* coming from a nearby shop.",
   options: '[
     {
       "text": "Next",
@@ -212,7 +212,7 @@ Event.create!(
 # Event 16
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
-  dialogue: "You find a lonely patch of shade and close your eyes for all but two minutes before you're shaken by a giant *SQUISH*",
+  dialogue: "You find a lonely patch of shade and close your eyes for all but a moment before you're shaken by a giant *SQUISH*",
   options: '[
     { "text": "“What in the?...”",
       "nextEvent": 17
@@ -238,7 +238,7 @@ Event.create!(
 # Event 18
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
-  dialogue: "The slime stares at you, boops your foot, then gloops a flower from its belly for you.",
+  dialogue: "The slime stares at you, boops your foot, then gloops out a flower from its belly.",
   petId: 3,
   options: '[
     { "text": "“...thanks?”",
