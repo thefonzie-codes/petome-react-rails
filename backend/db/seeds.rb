@@ -13,8 +13,8 @@ Game.create!(user: "default")
 
 
 # Create pets
-Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 2, play: 1, talk: 0, to_pet: -1, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
-Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 1, play: -1, talk: 2, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
+Pet.create!(species: "Wolf", name: "Fang", mood: 5, treat: 2, play: 1, talk: -1, to_pet: 0, pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png", pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png", pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png")
+Pet.create!(species: "Cat", name: "Noctis", mood: 5, treat: 1, play: -1, talk: 0, to_pet: 2, pet_happy: "http://localhost:3001/images/sprites/cat_happy.png", pet_sad: "http://localhost:3001/images/sprites/cat_sad.png", pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png")
 Pet.create!(species: "Slime", name: "Wiggy", mood: 5, treat: 0, play: 2, talk: 1, to_pet: 1, pet_happy: "http://localhost:3001/images/sprites/slime_happy.png", pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png", pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png")
 
 
@@ -330,7 +330,7 @@ Event.create!(
       "actionLabel": "talk"
     },
     {
-      "text": "Hes really fluffy. Risk it and pet him",
+      "text": "Hes really fluffy. Risk it and pet his ears.",
       "nextEvent": 24,
       "actionLabel": "to_pet"
     },
@@ -344,26 +344,26 @@ Event.create!(
 # Event 25 - Cat interaction event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/market_2.jpeg",
-  dialogue: "You go to the town. You hear the same meow down at your feet again.",
+  dialogue: "You head into town. You hear a familiar meow at your feet and find Noctis, the cat from before.",
   petId: 2,
   options: '[
     {
-      "text": "Give it a treat",
+      "text": "Give her a nibble of cheese",
       "nextEvent": 25,
       "actionLabel": "treat"
     },
     {
-      "text": "Dangle a string for it to play with",
+      "text": "Throw a piece of parchment for her to with",
       "nextEvent": 25,
       "actionLabel": "play"
     },
     {
-      "text": "Meow back at it",
+      "text": "Meow back at her",
       "nextEvent": 25,
       "actionLabel": "talk"
     },
     {
-      "text": "Give a belly rub",
+      "text": "Give her a belly rub",
       "nextEvent": 25,
       "actionLabel": "to_pet"
     },
@@ -377,7 +377,7 @@ Event.create!(
 # Event 26 - Slime interaction event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_2.jpeg",
-  dialogue: "You go to the field. You see the same slime from before.",
+  dialogue: "You go to the field. At the bottom of a willow tree you meet same slime from before, Wiggy.",
   petId: 3,
   options: '[
     {
@@ -422,7 +422,7 @@ Event.create!(
 # event 28 - New day
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "You wake up and it's time to start the next day.",
+  dialogue: "You wake up; more sun, more birds. It's time to start another day.",
   options: '[
     {
       "text": "Next",
@@ -447,7 +447,7 @@ Event.create!(
 # event 30
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
-  dialogue: "“where are you headed, little guy?”",
+  dialogue: "“Hold on there, where are you headed little guy?”",
   petId: 1,
   options: '[
     {
@@ -460,11 +460,11 @@ Event.create!(
 # event 31 - back home with monster
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "They follow you home and look around curiously.",
+  dialogue: "Your curious friend follows you home, entering comfortably as ever with a curious look around the room.",
   petId: 1,
   options: '[
     {
-      "text": "Sit in chair",
+      "text": "Sit in your chair",
       "nextEvent": 32
     }
   ]'
@@ -473,7 +473,7 @@ Event.create!(
 # event 32 - success event end wolf
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the wolf barks and curls up at your feet.",
+  dialogue: "As you sit down after a long week, the wolf gives a shy quip and curls up at your feet.",
   petId: 1,
   options: '[
     {
@@ -486,7 +486,7 @@ Event.create!(
 # event 33 - success event end cat
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the cat hops on your lap and falls asleep.",
+  dialogue: "As you sit down after a long week, the cat gracefully hops onto your lap, tucks into a ball, and falls asleep.",
   petId: 2,
   options: '[
     {
@@ -499,7 +499,7 @@ Event.create!(
 # event 34 - success event end slime
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the slime hops in the sink and settles in.",
+  dialogue: "As you sit down after a long week, the slime promptly jumps into your sink and settles in.",
   petId: 3,
   options: '[
     {
@@ -512,7 +512,7 @@ Event.create!(
 # event 35 - success event ending
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "You feel a smile creep across your face.",
+  dialogue: "You discover a smile creeping across your face... it's been a while since you've had a friend around.",
   petId: 1,
   options: '[
     {
@@ -525,7 +525,7 @@ Event.create!(
 # event 36 - success event ending with wife
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“Lucia, looks like we just got adopted.”",
+  dialogue: "“Lucia, it seems we just got adopted. You can rest easy now, my love.”",
   options: '[
     {
       "text": "Next",
