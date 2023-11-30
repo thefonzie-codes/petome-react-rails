@@ -43,7 +43,7 @@ Event.destroy_all
 # Event 1
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "You wake up and open your eyes, staring blankly at the ceiling.",
+  dialogue: "You wake up to the sun filtering into your eyes from the skylight, early birds still making their victory songs. 'Another day, more to do...' you take a moment to stare blankly at the ceiling.",
   options: '[
     {
       "text": "Next",
@@ -55,7 +55,7 @@ Event.create!(
 # Event 2
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "“Lucia... it feels like a dream.”",
+  dialogue: "With a deep sigh, your body finds itself again. “Lucia... it feels like a dream.” ...the war was over, and you were finally home.",
   options: '[
     {
       "text": "Next",
@@ -67,7 +67,7 @@ Event.create!(
 # Event 3
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“... you wouldn’t want me to keep sulking here, would you?”",
+  dialogue: "But it's not the same without her. “... you wouldn’t want me to keep sulking here, would you?”",
   options: '[
     {
       "text": "Next",
@@ -79,7 +79,7 @@ Event.create!(
 # Event 4
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“Heh, I guess not.”",
+  dialogue: "“Heh, defintiely not. You'd have a lot to say. I guess you're right, it's time to work.”",
   options: '[
     {
       "text": "Next",
@@ -91,10 +91,10 @@ Event.create!(
 # Event 5
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/depart.jpeg",
-  dialogue: "“...I should probably drop off the wood I chopped up yesterday to the town. The axe needs sharpening too, anyway. ”",
+  dialogue: "“...I should probably drop yesterday's cord into the town. The axe could use a sharpening too.”",
   options: '[
     {
-      "text": "Leave home",
+      "text": "Head Out",
       "nextEvent": 6
     }
   ]'
@@ -102,8 +102,8 @@ Event.create!(
 
 # Event 6
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "You get up and walk through the woods and hear some rustling in a nearby bush.",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  dialogue: "As you walk the familiar path from your secret lot into town you hear rustling from a bush beside you.",
   options: '[
     {
       "text": "Next",
@@ -114,15 +114,15 @@ Event.create!(
 
 # Event 7
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "“There's never anything around here… wonder what that could be…”",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  dialogue: "“Hm. There's never anything around here… wonder what that could be…”",
   options: '[
     {
-      "text": "I dont have time for this.",
+      "text": "Proably just a tree sprite.",
       "nextEvent": 8
     },
     {
-      "text": "I should check it out.",
+      "text": "I should check that out.",
       "nextEvent": 8
     }
   ]'
@@ -130,12 +130,12 @@ Event.create!(
 
 # Event 8
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "A wolf jumps out of the bush and growls at you.",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  dialogue: "You get close and a wolf pounces out of the bush with a low growl.",
   species: "Wolf",
   options: '[
     {
-      "text": "Maybe he’s hungry",
+      "text": "Maybe he’s hungry?",
       "nextEvent": 9
     }
   ]'
@@ -143,12 +143,12 @@ Event.create!(
 
 # Event 9
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
-  dialogue: "You toss it a piece of jerky and it eats it, sniffs your hand, and leaves.",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  dialogue: "You toss the beast a piece of your lunch. Without hesitancy it eats, sniffs your hand, then leaves.",
   species: "Wolf",
   options: '[
     {
-      "text": "Next",
+      "text": "Keep going",
       "nextEvent": 10
     }
   ]'
@@ -156,7 +156,7 @@ Event.create!(
 
 # Event 10
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_1.jpeg",
+  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
   dialogue: "“Never seen one of those around here before…”",
   options: '[
     {
@@ -168,8 +168,8 @@ Event.create!(
 
 # Event 11
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "You enter the town and hear a loud BOOM coming from a nearby shop.",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  dialogue: "You finish selling your firewood to close to market when you catch a loud *BOOM* coming from a nearby shop.",
   options: '[
     {
       "text": "Next",
@@ -180,10 +180,10 @@ Event.create!(
 
 # Event 12
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "“...what are those magicians up to this time?”",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  dialogue: "“Egh... what are those magicians up to this time?”",
   options: '[
-    { "text": "Next",
+    { "text": "Get a little closer",
       "nextEvent": 13
     }
   ]'
@@ -191,11 +191,11 @@ Event.create!(
 
 # Event 13
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "You turn away to keep walking and you hear a meow down at your feet.",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  dialogue: "You lurk outside the perimeter of a gathering crowd as your left ankle is met with a soft nudge and a *meow*.",
   species: "Cat",
   options: '[
-    { "text": "“Hey little grimmelkin, what can I do for you?”",
+    { "text": "“Oh hey little grimmelkin, what can I do for you?”",
       "nextEvent": 14
     },
     { "text": "Shoo it away",
@@ -206,11 +206,11 @@ Event.create!(
 
 # Event 14
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "The cat rubs against your leg and trots away.",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  dialogue: "The cat rubs its cheek against your leg then daintily trots away.",
   species: "Cat",
   options: '[
-    { "text": "Go drop off lumber and axe at the shop",
+    { "text": "Go drop your axe off at the smithy",
       "nextEvent": 15
     }
   ]'
@@ -218,8 +218,8 @@ Event.create!(
 
 # Event 15
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_1.jpeg",
-  dialogue: "“Lumber’s been dropped off, and the smith’s got my axe for a bit… might as well sit.”",
+  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  dialogue: "“Wood’s been dropped, and the smith’s got my axe for a bit… might as well sit.”",
   options: '[
     { "text": "Go sit in the field",
       "nextEvent": 16
@@ -229,10 +229,10 @@ Event.create!(
 
 # Event 16
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "You sit in the field and hear a loud *SQUISH*",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  dialogue: "You find a lonely patch of shade and close your eyes for all but a moment before you're shaken by a giant *SQUISH*",
   options: '[
-    { "text": "”What in the?...”",
+    { "text": "“What in the?...”",
       "nextEvent": 17
     }
   ]'
@@ -240,8 +240,8 @@ Event.create!(
 
 # Event 17
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "You get up and look down to see a slime. “Ah, sorry bud...”",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  dialogue: "Alarmed, you jump to your feet and look down to see a slime. “Ah, sorry bud...”",
   species: "Slime",
   options: '[
     { "text": "Sit down next it",
@@ -255,11 +255,11 @@ Event.create!(
 
 # Event 18
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "The slime stares at you, boops your foot, pops out a flower",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  dialogue: "The slime stares at you, boops your foot, then gloops out a flower from its belly.",
   species: "Slime",
   options: '[
-    { "text": "”...what is this all about?”",
+    { "text": "“...thanks?”",
       "nextEvent": 19
     }
   ]'
@@ -267,10 +267,10 @@ Event.create!(
 
 # Event 19
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_1.jpeg",
-  dialogue: "The slime squishes away into the distance.",
+  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  dialogue: "Content, the slime squishes away into an alley.",
   options: '[
-    { "text": "Go back home",
+    { "text": "Retrieve your axe and head home",
       "nextEvent": 20
     }
   ]'
@@ -279,7 +279,7 @@ Event.create!(
 # Event 20
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "“What a strange day... lots of them monsters out and about...”",
+  dialogue: "“What a strange day... lots of them monsters out and about now...”",
   options: '[
     { "text": "Go to sleep",
       "nextEvent": 21
@@ -289,8 +289,8 @@ Event.create!(
 
 # Event 21
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/dream.jpeg",
-  dialogue: "“...am I dreaming?”",
+  img: "http://localhost:3001/images/backgrounds/dream_2.jpeg",
+  dialogue: "“mhmmm...am I dreaming? Who...”",
   options: '[
     { "text": "Wake up",
       "nextEvent": 22
@@ -301,7 +301,7 @@ Event.create!(
 # Event 22
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "“Strange... I guess I should get my day started now.”",
+  dialogue: "“Wha? Strange... Anyway. Time to get going.”",
   options: '[
     { "text": "Next",
       "nextEvent": 23
@@ -312,7 +312,7 @@ Event.create!(
 # Event 23 - controller event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "What should I do today?",
+  dialogue: "What should I get up to?",
   options: '[
     { "text": "Go chop some wood",
       "nextEvent": 24
@@ -328,8 +328,8 @@ Event.create!(
 
 # Event 24 - Wolf interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_2.jpeg",
-  dialogue: "You go to the woods to chop some wood. You hear a rustling in the bushes and out comes the same wolf from before.",
+  img: "http://localhost:3001/images/backgrounds/forest_3.jpeg",
+  dialogue: "You go to your site to chop some wood. Rustling from a familiar bush reveals the same wolf from before, Fang.",
   species: "Wolf",
   options: '[
     {
@@ -343,12 +343,12 @@ Event.create!(
       "actionLabel": "play"
     },
     {
-      "text": "Talk to him",
+      "text": "Tell him about your day",
       "nextEvent": 24,
       "actionLabel": "talk"
     },
     {
-      "text": "He looks fluffy. Risk it and pet him",
+      "text": "Hes really fluffy. Risk it and pet his ears.",
       "nextEvent": 24,
       "actionLabel": "to_pet"
     },
@@ -361,27 +361,27 @@ Event.create!(
 
 # Event 25 - Cat interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_2.jpeg",
-  dialogue: "You go to the town. You hear the same meow down at your feet again.",
+  img: "http://localhost:3001/images/backgrounds/town_3.jpeg",
+  dialogue: "You head into town. You hear a familiar meow at your feet and find Noctis, the cat from before.",
   species: "Cat",
   options: '[
     {
-      "text": "Give it a treat",
+      "text": "Give her a nibble of cheese",
       "nextEvent": 25,
       "actionLabel": "treat"
     },
     {
-      "text": "Dangle a string for it to play with",
+      "text": "Throw a piece of parchment for her to with",
       "nextEvent": 25,
       "actionLabel": "play"
     },
     {
-      "text": "Meow back at it",
+      "text": "Meow back at her",
       "nextEvent": 25,
       "actionLabel": "talk"
     },
     {
-      "text": "Give a belly rub",
+      "text": "Give her a belly rub",
       "nextEvent": 25,
       "actionLabel": "to_pet"
     },
@@ -395,7 +395,7 @@ Event.create!(
 # Event 26 - Slime interaction event
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/field_2.jpeg",
-  dialogue: "You go to the field. You see the same slime from before.",
+  dialogue: "You go to the field. At the bottom of a willow tree you meet same slime from before, Wiggy.",
   species: "Slime",
   options: '[
     {
@@ -440,7 +440,7 @@ Event.create!(
 # event 28 - New day
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wake.jpeg",
-  dialogue: "You wake up and it's time to start the next day.",
+  dialogue: "You wake up; more sun, more birds. It's time to start another day.",
   options: '[
     {
       "text": "Next",
@@ -452,7 +452,7 @@ Event.create!(
 # event 29 - success event start
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
-  dialogue: "“...huh?“",
+  dialogue: "“...huh?”",
   species: "Wolf",
   options: '[
     {
@@ -465,7 +465,7 @@ Event.create!(
 # event 30
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/rest.jpeg",
-  dialogue: "“where are you headed, little guy?”",
+  dialogue: "“Hold on there, where are you headed little guy?”",
   species: "Wolf",
   options: '[
     {
@@ -478,11 +478,11 @@ Event.create!(
 # event 31 - back home with monster
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "They follow you home and look around curiously.",
+  dialogue: "Your curious friend follows you home, entering comfortably as ever with a curious look around the room.",
   species: "Wolf",
   options: '[
     {
-      "text": "Sit in chair",
+      "text": "Sit in your chair",
       "nextEvent": 32
     }
   ]'
@@ -491,7 +491,7 @@ Event.create!(
 # event 32 - success event end wolf
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the wolf barks and curls up at your feet.",
+  dialogue: "As you sit down after a long week, the wolf gives a shy quip and curls up at your feet.",
   species: "Wolf",
   options: '[
     {
@@ -504,7 +504,7 @@ Event.create!(
 # event 33 - success event end cat
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the cat hops on your lap and falls asleep.",
+  dialogue: "As you sit down after a long week, the cat gracefully hops onto your lap, tucks into a ball, and falls asleep.",
   species: "Cat",
   options: '[
     {
@@ -517,7 +517,7 @@ Event.create!(
 # event 34 - success event end slime
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "As you sit in the chair, the slime hops in the sink and settles in.",
+  dialogue: "As you sit down after a long week, the slime promptly jumps into your sink and settles in.",
   species: "Slime",
   options: '[
     {
@@ -530,7 +530,7 @@ Event.create!(
 # event 35 - success event ending
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/home.jpeg",
-  dialogue: "You feel a smile creep across your face.",
+  dialogue: "You discover a smile creeping across your face... it's been a while since you've had a friend around.",
   species: "Wolf",
   options: '[
     {
@@ -543,7 +543,7 @@ Event.create!(
 # event 36 - success event ending with wife
 Event.create!(
   img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
-  dialogue: "“Lucia, looks like we just got adopted.”",
+  dialogue: "“Lucia, it seems we just got adopted. You can rest easy now, my love.”",
   options: '[
     {
       "text": "Next",
@@ -554,7 +554,7 @@ Event.create!(
 
 # event 37 - Outro event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "http://localhost:3001/images/backgrounds/end.jpeg",
   dialogue: "The end.",
   options: '[
     {
@@ -566,7 +566,7 @@ Event.create!(
 
 # event 38 - Restart event page 
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "http://localhost:3001/images/backgrounds/end.jpeg",
   dialogue: "Restart?",
   options: '[
     {

@@ -71,6 +71,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       className="option"
       onClick={() => {
         fadeIn();
+        setLastAction(null);
         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
       }}
     >
@@ -78,20 +79,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
-  // onclick, send user to sleep event #4
-  const needEnergy = (option) => (
-    <button
-      className="option"
-      onClick={() => {
-        fadeIn();
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
-      }}
-    >
-      {option.text}
-    </button>
-  );
-
-  const noEnergy = (option) => (
+  const sleep = (option) => (
     <button
       className="option"
       onClick={() => {
@@ -105,13 +93,16 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   const options = JSON.parse(event.options).map((option) => {
+    // if event is sleep event, sleep
     if (eventId === 27) {
-      return noEnergy(option);
+      return sleep(option);
+    // if energy is drained, send to sleep event
     } else if (energy === 0) {
       dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 });
-      // return needEnergy(option);
+    // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
+    // if pet mood reaches 
     } else if (
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 15
