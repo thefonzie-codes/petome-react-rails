@@ -1,7 +1,6 @@
 import { showReaction } from "../hooks/helpers";
 
 export default function Reaction({ isReacting, lastAction, eventId }) {
-  console.log(lastAction);
 
   return (
     <div className="reaction">

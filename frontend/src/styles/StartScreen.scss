@@ -4,9 +4,13 @@
 
 .App-header {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   background-color: #282c34;
   height: 1024px;
   width: 768px;
+  max-height: 1024px;
+  max-width: 768px;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;

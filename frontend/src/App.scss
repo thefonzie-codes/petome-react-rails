@@ -1,8 +1,12 @@
+#root {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
   background-color: black;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-content: center;

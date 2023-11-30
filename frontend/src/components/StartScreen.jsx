@@ -23,7 +23,11 @@ export default function StartScreen(props) {
         from this aimless existence...
       </p>
     <img src={cat} className="mascot" />
-    <form>
+    <form
+    onSubmit={(evt) => {
+      evt.preventDefault();
+      createGame(document.getElementById('user').value, dispatch)
+    }}>
       <input 
       id="user"
       type="text" 
@@ -33,10 +37,7 @@ export default function StartScreen(props) {
       onChange={(evt) => {
         setUser(evt.target.value);
       }}
-      onSubmit={(evt) => {
-        evt.preventDefault();
-        createGame(evt.target.value)
-      }}>
+      >
       </input>
       <button type="submit">New Game</button>
     </form>
