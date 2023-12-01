@@ -100,7 +100,7 @@ Event.create!(
   dialogue: "“Hm. There's never anything around here… wonder what that could be…”",
   options: '[
     {
-      "text": "Proably just a tree sprite.",
+      "text": "Probably just a tree sprite.",
       "nextEvent": 8
     },
     {
