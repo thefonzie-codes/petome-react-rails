@@ -2,11 +2,13 @@
   background-color: black;
   width: 100vw;
   height: 100vh;
-  font-size: calc(1em + .6vmin);
+  font-size: 1.6em;
 }
 
 .App {
   text-align: center;
+  max-width: 768px;
+  max-height: 1024px;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -21,10 +23,6 @@
 .mascot {
   height: 40vmin;
   pointer-events: none;
-}
-
-.welcome {
-  animation: fadeIn 5s;
 }
 
 @keyframes fadeIn {
