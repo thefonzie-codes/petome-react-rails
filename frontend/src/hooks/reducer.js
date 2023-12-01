@@ -10,6 +10,7 @@ export const ACTIONS = {
   SLEEP: "SLEEP",
   SET_GAME_DATA: "SET_GAME_DATA",
   NEXT_EVENT: "NEXT_EVENT",
+  SET_DAY_ACTIONS: "SET_DAY_ACTIONS",
 };
 
 export function reducer(state, action) {
@@ -49,6 +50,12 @@ export function reducer(state, action) {
       return {
         ...state,
         game: { ...state.game, energy: 5, day: state.game.day + 1 },
+      };
+
+    case "SET_DAY_ACTIONS":
+      return {
+        ...state,
+        game: { ...state.game, dayActions: action.value },
       };
 
     default:

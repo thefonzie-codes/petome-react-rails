@@ -48,11 +48,16 @@ export default function Event({ state, dispatch, ACTIONS }) {
     }
   };
 
+  // set the day action to the event action
+
+
   // play with pet (action options)
   const performAction = (option) => (
+    console.log("dayActions", state.game.dayActions),
     <button
       className="option"
       onClick={() => {
+        if (!state.game.dayActions.includes(option.text)) {
         // fade in pet reaction to action
         react();
         // set last action to this action label (for reaction)
@@ -66,7 +71,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
             nextEvent: option.nextEvent,
           },
         });
+        // dispatch action to add action to day actions
+        dispatch({
+          type: ACTIONS.SET_DAY_ACTIONS,
+          value: [...state.game.dayActions, option.text],
+        });
       }}
+    }
     >
       {option.text}
     </button>
@@ -100,6 +111,11 @@ export default function Event({ state, dispatch, ACTIONS }) {
         fadeIn();
         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
         dispatch({ type: ACTIONS.SLEEP });
+        // dispatch action to clear day actions
+        dispatch({
+          type: ACTIONS.SET_DAY_ACTIONS,
+          value: [],
+        });
       }}
     >
       {option.text}

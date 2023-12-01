@@ -3,9 +3,6 @@ import { getBySpecies } from "../hooks/helpers";
 
 export default function MoodBar({ pets, event }) {
 
-  console.log("event:", event);
-  console.log("pets:", pets);
-
   const pet = getBySpecies(event.species, pets);
 
   return (
