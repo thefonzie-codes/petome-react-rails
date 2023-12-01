@@ -21,9 +21,6 @@
 
 
 .options-container {
-  // display: grid;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: 1fr;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -37,7 +34,6 @@
   height: calc(fit-content + 18px);
   margin-top: .5em;
   padding-left: 1.25em;
-  // margin-bottom: -1rem;
   border-radius: 30px;
   border-style: solid;
 } 

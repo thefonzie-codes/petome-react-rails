@@ -10,9 +10,6 @@ export default function Game(props) {
   const { event: eventId } = state.game;
 
   const event = getById(eventId, state.events);
-  // const lastEventId = eventId - 1;
-  // const lastEvent = getById(lastEventId, state.events);
-  // console.log(lastEvent);
 
   return (
     <div
