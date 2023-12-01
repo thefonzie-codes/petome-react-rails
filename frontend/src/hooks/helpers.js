@@ -9,17 +9,6 @@ export function getById(id, array) {
   return array.find((item) => item.id === id);
 }
 
-function getPetsByGameId(gameId) {
-  const petsArr = [];
-
-  for (let i = 0; i < 3; i++) {
-    const petId = gameId * 3 + i - 2;
-    petsArr.push(petId);
-  }
-
-  return petsArr;
-}
-
 export const createGame = (input, dispatch) => {
   const fetchEventsData = axios
     .get("/events.json")
@@ -44,71 +33,78 @@ export const createGame = (input, dispatch) => {
       return data.id;
     });
 
-  const petsData = [
-    {
-      species: "Wolf",
-      name: "Fang",
-      mood: 5,
-      treat: 1,
-      play: 2,
-      talk: 0,
-      to_pet: -1,
-      pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png",
-      pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png",
-      pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png",
-    },
-    {
-      species: "Cat",
-      name: "Noctis",
-      mood: 5,
-      treat: 2,
-      play: -1,
-      talk: 1,
-      to_pet: 0,
-      pet_happy: "http://localhost:3001/images/sprites/cat_happy.png",
-      pet_sad: "http://localhost:3001/images/sprites/cat_sad.png",
-      pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png",
-    },
-    {
-      species: "Slime",
-      name: "Wiggy",
-      mood: 5,
-      treat: 1,
-      play: 2,
-      talk: 1,
-      to_pet: 1,
-      pet_happy: "http://localhost:3001/images/sprites/slime_happy.png",
-      pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png",
-      pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png",
-    },
-  ];
+  // helper that creates Pet data using game_id and passes game_id to FetchPetsData
+  const createPetData = (gameId) => {
+    const petsData = [
+      {
+        species: "Wolf",
+        name: "Fang",
+        mood: 5,
+        treat: 1,
+        play: 2,
+        talk: 0,
+        to_pet: -1,
+        pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png",
+        pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png",
+        pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png",
+        game_id: gameId,
+      },
+      {
+        species: "Cat",
+        name: "Noctis",
+        mood: 5,
+        treat: 2,
+        play: -1,
+        talk: 1,
+        to_pet: 0,
+        pet_happy: "http://localhost:3001/images/sprites/cat_happy.png",
+        pet_sad: "http://localhost:3001/images/sprites/cat_sad.png",
+        pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png",
+        game_id: gameId,
+      },
+      {
+        species: "Slime",
+        name: "Wiggy",
+        mood: 5,
+        treat: 1,
+        play: 2,
+        talk: 1,
+        to_pet: 1,
+        pet_happy: "http://localhost:3001/images/sprites/slime_happy.png",
+        pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png",
+        pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png",
+        game_id: gameId,
+      },
+    ];
 
-  const petRequests = petsData.map((pet) => {
-    return axios.post("/pets.json", { pet });
-  });
+    // Create an array of promises for each pet
+    const petRequests = petsData.map((pet) => {
+      return axios.post("/pets.json", { pet });
+    });
 
-  axios
+  // Create all pets and return gameId
+  return axios
     .all(petRequests)
     .then(
       axios.spread((...responses) => {
-        // Handle responses here
         responses.forEach((response) => {
-          // Handle each response
           console.log("Pet created:", response.data);
         });
+        return gameId;
       })
     )
     .catch((error) => {
-      // Handle errors
       console.error("Error creating pets:", error);
     });
+};
 
-  const fetchPetsData = (arr) => {
+  // helper that fetches and sets Pet data using gameId
+  const fetchPetsData = (gameId) => {
     axios
       .get("/pets.json")
       .then((response) => response.data)
       .then((data) => {
-        return data.filter((pet) => arr.includes(pet.id));
+        return data.filter((pet) => pet.game_id === gameId);
       })
       .then((data) => {
         dispatch({ type: ACTIONS.SET_PETS_DATA, value: data });
@@ -118,13 +114,20 @@ export const createGame = (input, dispatch) => {
       });
   };
 
+  // helper that creates a promise for both fetches
   const allPromise = Promise.all([fetchEventsData, fetchGameData]);
 
+  // After game and event data is set, this helper creates Pet data using game_id and passes game_id to FetchPetsData
   allPromise
     .then((data) => {
-      return getPetsByGameId(data[1]);
+      return createPetData(data[1]);
     })
-    .then((arr) => fetchPetsData(arr));
+    .then((data) => {
+      fetchPetsData(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 export const adoptedPet = (pets) => {
