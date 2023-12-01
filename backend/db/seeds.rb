@@ -564,7 +564,7 @@ Event.create!(
   dialogue: "Restart?",
   options: '[
     {
-      "text": "Restart",
+      "text": "Start a new game",
       "nextEvent": 1
     }
   ]'
