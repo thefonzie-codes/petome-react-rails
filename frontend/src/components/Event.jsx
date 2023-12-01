@@ -113,12 +113,6 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
-  const petSuccess = (event) => {
-    setTimeout(() => {
-      dispatch({ type: ACTIONS.NEXT_EVENT, value: event });
-    }, 1000);
-  }
-
   const options = JSON.parse(event.options).map((option) => {
     // if event is sleep event, sleep
     if (eventId === 27) {
@@ -134,13 +128,21 @@ export default function Event({ state, dispatch, ACTIONS }) {
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 16
     ) {
-      petSuccess(29);
+      setTimeout(() => {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 29 });
+      }, 1000);
     } else if (eventId === 31 && pet.species === "Wolf") {
-      petSuccess(32);
+      setTimeout(() => {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 32 });
+      }, 3000);
     } else if (eventId === 31 && pet.species === "Cat") {
-      petSuccess(33);
+      setTimeout(() => {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 33 });
+      }, 3000);
     } else if (eventId === 31 && pet.species === "Slime") {
-      petSuccess(34);
+      setTimeout(() => {
+        dispatch({ type: ACTIONS.NEXT_EVENT, value: 34 });
+      }, 3000);
     } else if (eventId === 38) {
       return newGame(option);
     } else {
