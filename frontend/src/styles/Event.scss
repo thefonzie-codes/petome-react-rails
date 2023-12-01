@@ -49,6 +49,11 @@
   width: 5rem;
 }
 
+.no-click:hover {
+  cursor: default;
+  box-shadow: none;
+}
+
 // Fade out
 
 .event-contents-exit {

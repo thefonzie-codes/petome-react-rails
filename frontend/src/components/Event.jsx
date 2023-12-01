@@ -142,6 +142,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   // onclick, create new game using same player name
+  const transition = (option) => (
+    <button className="option no-click">{option.text}</button>
+  );
+
   const newGame = (option) => (
     <button
       className="option"
@@ -159,7 +163,8 @@ export default function Event({ state, dispatch, ACTIONS }) {
       return sleep(option);
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
-      eventTransition(dispatch, 27, 1000);
+      eventTransition(dispatch, 27, 2700);
+      return transition(option);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
