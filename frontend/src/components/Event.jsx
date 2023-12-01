@@ -16,14 +16,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const fadeIn = () => {
     dispatch({
       type: ACTIONS.SET_IS_ENTERING,
-      value: (isEntering) => !isEntering,
+      value: true,
     });
     return setTimeout(() => {
       dispatch({
         type: ACTIONS.SET_IS_ENTERING,
-        value: (isEntering) => !isEntering,
-      })}, 700
-    );
+        value: false,
+      });}, 700);
   };
 
   // pet reaction to events
@@ -185,7 +184,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   });
 
   return (
-    <CSSTransition in={isEntering} duration={700} classNames="event-contents">
+    <CSSTransition in={isEntering}  classNames="event-contents">
       <div className="event">
         <Reaction
           isReacting={isReacting}

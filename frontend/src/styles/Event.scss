@@ -56,12 +56,12 @@
 }
 
 .event-contents-exit-active {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1000ms;
 }
 
 .event-contents-exit-done {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1000ms;
 }
 
