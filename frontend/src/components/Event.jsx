@@ -46,35 +46,39 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // set the day action to the event action
 
   // play with pet (action options)
-  const performAction = (option) => (
-    <button
-      className="option"
-      onClick={() => {
-        if (!dayActions.includes(option.text)) {
-          // fade in pet reaction to action
-          react(dispatch);
-          // set last action to this action label (for reaction)
-          applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
-            key: "lastAction",
-            value: pet[option.actionLabel],
-          });
-          // dispatch action to update pet mood and drain energy
-          applyDispatch(dispatch, ACTIONS.PERFORM_ACTION, {
-            petId: petId,
-            newMood: pet.mood + pet[option.actionLabel],
-            nextEvent: option.nextEvent,
-          });
-          // dispatch action to add action to day actions
-          applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
-            key: "dayActions",
-            value: [...dayActions, option.text],
-          });
-        }
-      }}
-    >
-      {option.text}
-    </button>
-  );
+  const performAction = (option) => {
+    if (!dayActions.includes(option.text)) {
+      return (<button
+        className="option"
+        onClick={() => {
+          if (!dayActions.includes(option.text)) {
+            // fade in pet reaction to action
+            react(dispatch);
+            // set last action to this action label (for reaction)
+            applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+              key: "lastAction",
+              value: pet[option.actionLabel],
+            });
+            // dispatch action to update pet mood and drain energy
+            applyDispatch(dispatch, ACTIONS.PERFORM_ACTION, {
+              petId: petId,
+              newMood: pet.mood + pet[option.actionLabel],
+              nextEvent: option.nextEvent,
+            });
+            // dispatch action to add action to day actions
+            applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+              key: "dayActions",
+              value: [...dayActions, option.text],
+            });
+          }
+        }}
+      >
+        {option.text}
+      </button>
+      );
+    };
+    return (<button className="option option-null">{option.text} </button>);
+  };
 
   // onclick, move to next event
   const hasEnergy = (option) => (
@@ -114,6 +118,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
 
   // onclick, create new game using same player name
+  const transition = (option) => (
+    <button className="option option-null">{option.text}</button>
+  );
+
   const newGame = (option) => (
     <button
       className="option"
@@ -132,7 +140,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
       dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 27, 1000);
-      // return transition(option);
+      return transition(option);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
@@ -159,18 +167,18 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   return (
     <CSSTransition in={isEntering} classNames="event-contents">
-      <div className="event">
-        <Reaction
-          isReacting={isReacting}
-          lastAction={lastAction}
-          eventId={eventId}
-        />
-        {petId && <img className="sprite" src={sprite()} />}
-        <div className="event-box">
-          <p>{getById(eventId, state.events).dialogue}</p>
-          <div className="options-container">{options}</div>
+        <div className="event">
+          <Reaction
+            isReacting={isReacting}
+            lastAction={lastAction}
+            eventId={eventId}
+          />
+          {petId && <img className="sprite" src={sprite()} />}
+          <div className="event-box">
+            <p>{getById(eventId, state.events).dialogue}</p>
+            <div className="options-container">{options}</div>
+          </div>
         </div>
-      </div>
-    </CSSTransition>
-  );
+      </CSSTransition>
+      );
 }

@@ -45,6 +45,15 @@
   width: 5rem;
 }
 
+.option-null {
+  background-color: grey;
+}
+
+.option-null:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 // Fade out
 
 .event-contents-exit {

@@ -129,6 +129,12 @@ export const dispatchTimeout = (dispatch, type, value, timeout) => {
   }, timeout);
 };
 
+// export const fadeIn = (state, stateSetter, timeout) => {
+//   return setTimeout(() => {
+//     stateSetter((state)=(!state));
+//   }, timeout);
+// }
+
 export const applyDispatch = (dispatch, type, value) => {
   dispatch({ type: type, value: value });
 };
