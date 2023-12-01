@@ -21,9 +21,6 @@
 
 
 .options-container {
-  // display: grid;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: 1fr;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -34,10 +31,9 @@
   justify-content: flex-start;
   align-items: center;
   font-size: calc(.001em + 2vmin);
-  height: calc(1em + 18px);
+  height: calc(fit-content + 18px);
   margin-top: .5em;
   padding-left: 1.25em;
-  // margin-bottom: -1rem;
   border-radius: 30px;
   border-style: solid;
 } 
@@ -49,6 +45,15 @@
   width: 5rem;
 }
 
+.option-null {
+  background-color: grey;
+}
+
+.option-null:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 // Fade out
 
 .event-contents-exit {
@@ -56,12 +61,12 @@
 }
 
 .event-contents-exit-active {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1000ms;
 }
 
 .event-contents-exit-done {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1000ms;
 }
 
