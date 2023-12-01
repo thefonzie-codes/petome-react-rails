@@ -54,11 +54,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
           // fade in pet reaction to action
           react(dispatch);
           // set last action to this action label (for reaction)
-          applyDispatch(
-            dispatch,
-            ACTIONS.SET_LAST_ACTION,
-            pet[option.actionLabel]
-          );
+          applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+            key: "lastAction",
+            value: pet[option.actionLabel],
+          });
           // dispatch action to update pet mood and drain energy
           applyDispatch(dispatch, ACTIONS.PERFORM_ACTION, {
             petId: petId,
@@ -66,10 +65,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
             nextEvent: option.nextEvent,
           });
           // dispatch action to add action to day actions
-          applyDispatch(dispatch, ACTIONS.SET_DAY_ACTIONS, [
-            ...dayActions,
-            option.text,
-          ]);
+          applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+            key: "dayActions",
+            value: [...dayActions, option.text],
+          });
         }
       }}
     >
@@ -84,12 +83,18 @@ export default function Event({ state, dispatch, ACTIONS }) {
       onClick={() => {
         fadeIn(dispatch);
         // fix bug where reaction stays on screen
-        applyDispatch(dispatch, ACTIONS.SET_LAST_ACTION, null);
+        applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+          key: "lastAction",
+          value: null,
+        });
         applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
       }}
       onKeyUp={() => {
         fadeIn(dispatch);
-        applyDispatch(dispatch, ACTIONS.SET_LAST_ACTION, null);
+        applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+          key: "lastAction",
+          value: null,
+        });
         applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
       }}
     >
@@ -106,7 +111,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
         applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
         dispatch({ type: ACTIONS.SLEEP });
         // dispatch action to clear day actions
-        applyDispatch(dispatch, ACTIONS.SET_DAY_ACTIONS, []);
+        applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+          key: "dayActions",
+          value: [],
+        });
       }}
     >
       {option.text}
