@@ -1,7 +1,8 @@
 .welcome {
   font-family: 'Lobster', sans-serif;
   animation: fadeIn 5s;
-  width: 90%;
+  // width: 90%;
+  height: 10%;
 }
 
 .App-header {
@@ -22,7 +23,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(.3em + 2vmin);
   color: white;
 }
 
@@ -31,11 +31,21 @@
   font-size: .75em;
   text-align: left;
   margin-top: -.75em;
+  height: 30%;
 }
 
 .mascot {
   height: 20vmin;
   pointer-events: none;
+  animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 25% { transform: rotate(5deg) scale(1, 1.2); }
+ 50% { transform: rotate(0deg) scale(1, .8);  }
+ 75% { transform: rotate(-5deg) scale(1, 1.2); }
+100% { transform: rotate(0deg); }
 }
 
 .welcome {
