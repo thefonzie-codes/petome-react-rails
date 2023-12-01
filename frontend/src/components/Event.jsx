@@ -105,7 +105,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         // dispatch action to clear day actions
         applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
           key: "dayActions",
-          value: [],
+          value: [""],
         });
       }}
     >
@@ -132,6 +132,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
       dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 27, 1000);
+      // return transition(option);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);

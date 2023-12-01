@@ -28,3 +28,33 @@
   text-align: left;
   margin-top: -.75em;
 }
+
+.mascot {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.welcome {
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

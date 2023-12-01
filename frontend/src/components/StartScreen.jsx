@@ -1,6 +1,4 @@
-import { getById, fetchData, createGame } from "../hooks/helpers";
-import cat from "../mocks/sprites/neko.png";
-import background from "../mocks/background/image1_0.png";
+import { createGame } from "../hooks/helpers";
 import "../styles/StartScreen.scss";
 import { useState } from "react";
 
@@ -10,7 +8,7 @@ export default function StartScreen(props) {
   const [user, setUser] = useState("");
 
   return (
-    <header className="App-header" style={{ backgroundImage: `${background}` }}>
+    <header className="App-header">
       <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
         {" "}
@@ -23,7 +21,10 @@ export default function StartScreen(props) {
         nostalgia into the mundane woes of the present. I yearn to break free
         from this aimless existence...
       </p>
-      <img src={cat} className="mascot" />
+      <img
+        src={"http://localhost:3001/images/sprites/slime_neutral.png"}
+        className="mascot"
+      />
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
