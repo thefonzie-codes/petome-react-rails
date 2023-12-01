@@ -110,3 +110,9 @@ export const showReaction = (actionValue) => {
     return "";
   }
 };
+
+export const eventTransition = (dispatch, eventValue, timeout) => {
+  return setTimeout(() => {
+    dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
+  }, timeout);
+};

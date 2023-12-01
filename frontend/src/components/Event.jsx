@@ -4,6 +4,7 @@ import {
   showReaction,
   getBySpecies,
   createGame,
+  eventTransition,
 } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
@@ -113,13 +114,19 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
+  // const eventTransition = (dispatch, eventValue, timeout) => {
+  //   return setTimeout(() => {
+  //     dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
+  //   }, timeout);
+  // };
+
   const options = JSON.parse(event.options).map((option) => {
     // if event is sleep event, sleep
     if (eventId === 27) {
       return sleep(option);
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
-      setTimeout(() => dispatch({ type: ACTIONS.NEXT_EVENT, value: 27 }), 1000);
+      eventTransition(dispatch, 27, 1000);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
@@ -128,21 +135,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 16
     ) {
-      setTimeout(() => {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 29 });
-      }, 1000);
+      eventTransition(dispatch, 29, 1000);
     } else if (eventId === 31 && pet.species === "Wolf") {
-      setTimeout(() => {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 32 });
-      }, 3000);
+      eventTransition(dispatch, 32, 3000);
     } else if (eventId === 31 && pet.species === "Cat") {
-      setTimeout(() => {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 33 });
-      }, 3000);
+      eventTransition(dispatch, 33, 3000);
     } else if (eventId === 31 && pet.species === "Slime") {
-      setTimeout(() => {
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: 34 });
-      }, 3000);
+      eventTransition(dispatch, 34, 3000);
     } else if (eventId === 38) {
       return newGame(option);
     } else {
