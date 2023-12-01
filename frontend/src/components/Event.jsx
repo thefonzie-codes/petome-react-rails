@@ -1,7 +1,6 @@
 import {
   getById,
   adoptedPet,
-  showReaction,
   getBySpecies,
   createGame,
   eventTransition,
@@ -12,7 +11,7 @@ import { useState } from "react";
 import Reaction from "./Reaction";
 
 export default function Event({ state, dispatch, ACTIONS }) {
-  const { event: eventId, user, day, energy, pets, events } = state.game;
+  const { event: eventId, energy } = state.game;
 
   const [isEntering, setIsEntering] = useState(true);
   const [isReacting, setIsReacting] = useState(false);
@@ -23,19 +22,20 @@ export default function Event({ state, dispatch, ACTIONS }) {
     setTimeout(() => (setIsEntering((v) => !v), 700));
   };
 
+  // pet reaction to events
   const react = () => {
     setIsReacting((v) => !v);
     setTimeout(() => (setIsReacting(true), 2000));
   };
 
-  // get petId from event
+  // get event object from event state
   const event = getById(eventId, state.events);
+  // get petId from event species column
   const petId = event.species
     ? getBySpecies(event.species, state.pets).id
     : null;
-  console.log("petId:", petId);
-  // const petSpecies = getBySpecies(event.species, state.pets);
-  // get pet object from pet state using petId
+
+  // get pet object from pet state using adoptedPet or petId
   const pet = adoptedPet(state.pets) || getById(petId, state.pets);
   // get sprite from petId
   const sprite = () => {
@@ -47,14 +47,15 @@ export default function Event({ state, dispatch, ACTIONS }) {
       return pet.pet_happy;
     }
   };
-  // console.log(sprite)
 
-  // play with pet
+  // play with pet (action options)
   const performAction = (option) => (
     <button
       className="option"
       onClick={() => {
+        // fade in pet reaction to action
         react();
+        // set last action to this action label (for reaction)
         setLastAction(pet[option.actionLabel]);
         // dispatch action to update pet mood and drain energy
         dispatch({
@@ -77,6 +78,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       className={option.text === "next" ? "next" : "option"}
       onClick={() => {
         fadeIn();
+        // fix bug where reaction stays on screen
         setLastAction(null);
         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
       }}
@@ -90,6 +92,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
+  // onclick, cause sleep ACTION
   const sleep = (option) => (
     <button
       className="option"
@@ -103,6 +106,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
+  // onclick, create new game using same player name
   const newGame = (option) => (
     <button
       className="option"
@@ -114,12 +118,6 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
-  // const eventTransition = (dispatch, eventValue, timeout) => {
-  //   return setTimeout(() => {
-  //     dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
-  //   }, timeout);
-  // };
-
   const options = JSON.parse(event.options).map((option) => {
     // if event is sleep event, sleep
     if (eventId === 27) {
@@ -130,7 +128,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
-      // if pet mood reaches
+      // if pet mood reaches 16, send to specific pet success event
     } else if (
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 16
@@ -142,8 +140,10 @@ export default function Event({ state, dispatch, ACTIONS }) {
       eventTransition(dispatch, 33, 3000);
     } else if (eventId === 31 && pet.species === "Slime") {
       eventTransition(dispatch, 34, 3000);
+      // if event is restart? event, create new game
     } else if (eventId === 38) {
       return newGame(option);
+      // otherwise, the player has energy, so move to next event
     } else {
       return hasEnergy(option);
     }
