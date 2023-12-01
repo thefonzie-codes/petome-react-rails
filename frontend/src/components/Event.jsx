@@ -22,7 +22,8 @@ export default function Event({ state, dispatch, ACTIONS }) {
       dispatch({
         type: ACTIONS.SET_IS_ENTERING,
         value: (isEntering) => !isEntering,
-      })}, 700
+      });
+    }, 700
     );
   };
 
@@ -34,10 +35,11 @@ export default function Event({ state, dispatch, ACTIONS }) {
       value: true,
     });
     return setTimeout(() => {
-        dispatch({
-          type: ACTIONS.SET_IS_REACTING,
-          value: false,
-        })}, 1000);
+      dispatch({
+        type: ACTIONS.SET_IS_REACTING,
+        value: false,
+      });
+    }, 1000);
   };
 
   // get event object from event state
@@ -63,38 +65,41 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // set the day action to the event action
 
   // play with pet (action options)
-  const performAction = (option) => (
-    <button
-      className="option"
-      onClick={() => {
-        if (!dayActions.includes(option.text)) {
-          // fade in pet reaction to action
-          react();
-          // set last action to this action label (for reaction)
-          dispatch({
-            type: ACTIONS.SET_LAST_ACTION,
-            value: pet[option.actionLabel],
-          });
-          // dispatch action to update pet mood and drain energy
-          dispatch({
-            type: ACTIONS.PERFORM_ACTION,
-            value: {
-              petId: petId,
-              newMood: pet.mood + pet[option.actionLabel],
-              nextEvent: option.nextEvent,
-            },
-          });
-          // dispatch action to add action to day actions
-          dispatch({
-            type: ACTIONS.SET_DAY_ACTIONS,
-            value: [...dayActions, option.text],
-          });
-        }
-      }}
-    >
-      {option.text}
-    </button>
-  );
+  const performAction = (option) => {
+    if (!dayActions.includes(option.text)) {
+      return (
+        <button
+          className="option"
+          onClick={() => {
+            // fade in pet reaction to action
+            react();
+            // set last action to this action label (for reaction)
+            dispatch({
+              type: ACTIONS.SET_LAST_ACTION,
+              value: pet[option.actionLabel],
+            });
+            // dispatch action to update pet mood and drain energy
+            dispatch({
+              type: ACTIONS.PERFORM_ACTION,
+              value: {
+                petId: petId,
+                newMood: pet.mood + pet[option.actionLabel],
+                nextEvent: option.nextEvent,
+              },
+            });
+            // dispatch action to add action to day actions
+            dispatch({
+              type: ACTIONS.SET_DAY_ACTIONS,
+              value: [...dayActions, option.text],
+            });
+          }}
+        >
+          {option.text}
+        </button>
+      );
+    }
+    return (<button className="option option-null">{option.text} </button>);
+  };
 
   // onclick, move to next event
   const hasEnergy = (option) => (
@@ -143,7 +148,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   // onclick, create new game using same player name
   const transition = (option) => (
-    <button className="option no-click">{option.text}</button>
+    <button className="option option-null">{option.text}</button>
   );
 
   const newGame = (option) => (

@@ -49,8 +49,12 @@
   width: 5rem;
 }
 
-.no-click:hover {
-  cursor: default;
+.option-null {
+  background-color: grey;
+}
+
+.option-null:hover {
+  cursor: not-allowed;
   box-shadow: none;
 }
 
