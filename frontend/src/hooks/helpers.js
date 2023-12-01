@@ -145,20 +145,19 @@ export const adoptedPet = (pets) => {
 };
 
 export const showReaction = (actionValue) => {
-  if (actionValue === 0) {
-    return "😑";
-  }
-  if (actionValue === 1) {
-    return "😄";
-  }
-  if (actionValue === 2) {
-    return "💓";
-  }
-  if (actionValue === -1) {
-    return "💢";
-  }
-  if (actionValue === null) {
-    return "";
+  switch (actionValue) {
+    case 0:
+      return "😑";
+    case 1:
+      return "😄";
+    case 2:
+      return "💓";
+    case -1:
+      return "💢";
+    case null:
+      return "";
+    default:
+      return "";
   }
 };
 
