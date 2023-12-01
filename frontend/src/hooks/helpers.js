@@ -37,10 +37,22 @@ export const createGame = (input, dispatch) => {
     .then((response) => response.data)
     .then((data) => {
       dispatch({ type: ACTIONS.SET_GAME_DATA, value: data });
-      dispatch({ type: ACTIONS.SET_DAY_ACTIONS, value: [""] });
-      dispatch({ type: ACTIONS.SET_IS_ENTERING, value: true });
-      dispatch({ type: ACTIONS.SET_IS_REACTING, value: false });
-      dispatch({ type: ACTIONS.SET_LAST_ACTION, value: null });
+      dispatch({
+        type: ACTIONS.SET_GAME_STATE,
+        value: { key: "dayActions", value: [""] },
+      });
+      dispatch({
+        type: ACTIONS.SET_GAME_STATE,
+        value: { key: "isEntering", value: true },
+      });
+      dispatch({
+        type: ACTIONS.SET_GAME_STATE,
+        value: { key: "isReacting", value: false },
+      });
+      dispatch({
+        type: ACTIONS.SET_GAME_STATE,
+        value: { key: "lastAction", value: null },
+      });
       return data.id;
     });
 
@@ -150,14 +162,52 @@ export const showReaction = (actionValue) => {
   }
 };
 
-export const eventTransition = (dispatch, eventValue, timeout) => {
+export const dispatchTimeout = (dispatch, type, value, timeout) => {
   return setTimeout(() => {
-    dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
+    dispatch({ type: type, value: value });
   }, timeout);
 };
 
-export const fadeIn = (state, stateSetter, timeout) => {
-  return setTimeout(() => {
-    stateSetter((state)=(!state));
-  }, timeout);
-}
+// export const fadeIn = (state, stateSetter, timeout) => {
+//   return setTimeout(() => {
+//     stateSetter((state)=(!state));
+//   }, timeout);
+// }
+
+export const applyDispatch = (dispatch, type, value) => {
+  dispatch({ type: type, value: value });
+};
+
+// fade in and stay on screen
+export const fadeIn = (dispatch) => {
+  applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+    key: "isEntering",
+    value: true,
+  });
+  dispatchTimeout(
+    dispatch,
+    ACTIONS.SET_GAME_STATE,
+    {
+      key: "isEntering",
+      value: false,
+    },
+    700
+  );
+};
+
+// pet reaction to events
+export const react = (dispatch) => {
+  applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
+    key: "isReacting",
+    value: true,
+  });
+  dispatchTimeout(
+    dispatch,
+    ACTIONS.SET_GAME_STATE,
+    {
+      key: "isReacting",
+      value: false,
+    },
+    1000
+  );
+};
