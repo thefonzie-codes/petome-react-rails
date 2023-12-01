@@ -155,3 +155,9 @@ export const eventTransition = (dispatch, eventValue, timeout) => {
     dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
   }, timeout);
 };
+
+export const fadeIn = (state, stateSetter, timeout) => {
+  return setTimeout(() => {
+    stateSetter((state)=(!state));
+  }, timeout);
+}

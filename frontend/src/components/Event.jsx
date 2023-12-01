@@ -163,7 +163,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       return sleep(option);
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
-      eventTransition(dispatch, 27, 2700);
+      eventTransition(dispatch, 27, 2400);
       return transition(option);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
@@ -173,7 +173,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 16
     ) {
-      eventTransition(dispatch, 29, 1000);
+      eventTransition(dispatch, 29, 200);
     } else if (eventId === 31 && pet.species === "Wolf") {
       eventTransition(dispatch, 32, 3000);
     } else if (eventId === 31 && pet.species === "Cat") {
@@ -190,7 +190,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   });
 
   return (
-    <CSSTransition in={isEntering} duration={700} classNames="event-contents">
+    <CSSTransition in={isEntering} duration={1200} classNames="event-contents">
       <div className="event">
         <Reaction
           isReacting={isReacting}
