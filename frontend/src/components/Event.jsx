@@ -4,42 +4,24 @@ import {
   getBySpecies,
   createGame,
   dispatchTimeout,
+  applyDispatch,
+  fadeIn,
+  react,
 } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
 import Reaction from "./Reaction";
 
 export default function Event({ state, dispatch, ACTIONS }) {
-  const { event: eventId, user, energy, isEntering, isReacting, lastAction, dayActions } = state.game;
-
-
-  const fadeIn = () => {
-    dispatch({
-      type: ACTIONS.SET_IS_ENTERING,
-      value: true,
-    });
-    // return setTimeout(() => {
-    //   dispatch({
-    //     type: ACTIONS.SET_IS_ENTERING,
-    //     value: false,
-    //   });}, 700);
-    return dispatchTimeout(dispatch, ACTIONS.SET_IS_ENTERING, false, 700);
-  };
-
-  // pet reaction to events
-  const react = () => {
-    console.log("reacting", isReacting);
-    dispatch({
-      type: ACTIONS.SET_IS_REACTING,
-      value: true,
-    });
-    // return setTimeout(() => {
-    //     dispatch({
-    //       type: ACTIONS.SET_IS_REACTING,
-    //       value: false,
-    //     })}, 1000);
-    return dispatchTimeout(dispatch, ACTIONS.SET_IS_REACTING, false, 1000);
-  };
+  const {
+    event: eventId,
+    user,
+    energy,
+    isEntering,
+    isReacting,
+    lastAction,
+    dayActions,
+  } = state.game;
 
   // get event object from event state
   const event = getById(eventId, state.events);
@@ -70,26 +52,24 @@ export default function Event({ state, dispatch, ACTIONS }) {
       onClick={() => {
         if (!dayActions.includes(option.text)) {
           // fade in pet reaction to action
-          react();
+          react(dispatch);
           // set last action to this action label (for reaction)
-          dispatch({
-            type: ACTIONS.SET_LAST_ACTION,
-            value: pet[option.actionLabel],
-          });
+          applyDispatch(
+            dispatch,
+            ACTIONS.SET_LAST_ACTION,
+            pet[option.actionLabel]
+          );
           // dispatch action to update pet mood and drain energy
-          dispatch({
-            type: ACTIONS.PERFORM_ACTION,
-            value: {
-              petId: petId,
-              newMood: pet.mood + pet[option.actionLabel],
-              nextEvent: option.nextEvent,
-            },
+          applyDispatch(dispatch, ACTIONS.PERFORM_ACTION, {
+            petId: petId,
+            newMood: pet.mood + pet[option.actionLabel],
+            nextEvent: option.nextEvent,
           });
           // dispatch action to add action to day actions
-          dispatch({
-            type: ACTIONS.SET_DAY_ACTIONS,
-            value: [...dayActions, option.text],
-          });
+          applyDispatch(dispatch, ACTIONS.SET_DAY_ACTIONS, [
+            ...dayActions,
+            option.text,
+          ]);
         }
       }}
     >
@@ -102,21 +82,15 @@ export default function Event({ state, dispatch, ACTIONS }) {
     <button
       className={option.text === "next" ? "next" : "option"}
       onClick={() => {
-        fadeIn();
+        fadeIn(dispatch);
         // fix bug where reaction stays on screen
-        dispatch({
-          type: ACTIONS.SET_LAST_ACTION,
-          value: null,
-        });
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+        applyDispatch(dispatch, ACTIONS.SET_LAST_ACTION, null);
+        applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
       }}
       onKeyUp={() => {
-        fadeIn();
-        dispatch({
-          type: ACTIONS.SET_LAST_ACTION,
-          value: null,
-        });
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+        fadeIn(dispatch);
+        applyDispatch(dispatch, ACTIONS.SET_LAST_ACTION, null);
+        applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
       }}
     >
       {option.text}
@@ -128,14 +102,11 @@ export default function Event({ state, dispatch, ACTIONS }) {
     <button
       className="option"
       onClick={() => {
-        fadeIn();
-        dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
+        fadeIn(dispatch);
+        applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
         dispatch({ type: ACTIONS.SLEEP });
         // dispatch action to clear day actions
-        dispatch({
-          type: ACTIONS.SET_DAY_ACTIONS,
-          value: [],
-        });
+        applyDispatch(dispatch, ACTIONS.SET_DAY_ACTIONS, []);
       }}
     >
       {option.text}
@@ -186,7 +157,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   });
 
   return (
-    <CSSTransition in={isEntering}  classNames="event-contents">
+    <CSSTransition in={isEntering} classNames="event-contents">
       <div className="event">
         <Reaction
           isReacting={isReacting}

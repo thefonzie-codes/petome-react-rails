@@ -155,3 +155,19 @@ export const dispatchTimeout = (dispatch, type, value, timeout) => {
     dispatch({ type: type, value: value });
   }, timeout);
 };
+
+export const applyDispatch = (dispatch, type, value) => {
+  dispatch({ type: type, value: value });
+};
+
+// fade in and stay on screen
+export const fadeIn = (dispatch) => {
+  applyDispatch(dispatch, ACTIONS.SET_IS_ENTERING, true);
+  return dispatchTimeout(dispatch, ACTIONS.SET_IS_ENTERING, false, 700);
+};
+
+// pet reaction to events
+export const react = (dispatch) => {
+  applyDispatch(dispatch, ACTIONS.SET_IS_REACTING, true);
+  return dispatchTimeout(dispatch, ACTIONS.SET_IS_REACTING, false, 1000);
+};
