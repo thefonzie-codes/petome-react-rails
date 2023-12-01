@@ -7,22 +7,28 @@
   aspect-ratio: 3/4;
   top: 50%;
   left: 50%;
-  height: 100%;
   width: 100%;
-  max-width: 768px;
-  max-height: 1024px;
+  max-height: 95%;
+  max-width: 40%;
+  min-height: 532px;
+  min-width: 399px;
   background-color: black;
   z-index: 99;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
-.game .fade-in{
+.game .fade-in {
   animation: fadeIn 5s 1;
 }
 
 @keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .sprite {

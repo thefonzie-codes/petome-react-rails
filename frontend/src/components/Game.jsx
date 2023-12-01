@@ -27,7 +27,7 @@ export default function Game(props) {
   return (
     <div
       className={fadeIn ? "game" : "game fade-in"}
-      style={{ backgroundImage: `url(${event.img})`, backgroundSize: "cover"}}
+      style={{ backgroundImage: `url(${event.img})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center"}}
     >
       {/* <img className="background" src={event.img}/> */}
       <>
