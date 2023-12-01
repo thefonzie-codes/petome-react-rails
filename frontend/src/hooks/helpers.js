@@ -150,8 +150,8 @@ export const showReaction = (actionValue) => {
   }
 };
 
-export const eventTransition = (dispatch, eventValue, timeout) => {
+export const dispatchTimeout = (dispatch, type, value, timeout) => {
   return setTimeout(() => {
-    dispatch({ type: ACTIONS.NEXT_EVENT, value: eventValue });
+    dispatch({ type: type, value: value });
   }, timeout);
 };

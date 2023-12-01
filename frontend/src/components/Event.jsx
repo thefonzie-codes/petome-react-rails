@@ -3,7 +3,7 @@ import {
   adoptedPet,
   getBySpecies,
   createGame,
-  eventTransition,
+  dispatchTimeout,
 } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
@@ -18,11 +18,12 @@ export default function Event({ state, dispatch, ACTIONS }) {
       type: ACTIONS.SET_IS_ENTERING,
       value: true,
     });
-    return setTimeout(() => {
-      dispatch({
-        type: ACTIONS.SET_IS_ENTERING,
-        value: false,
-      });}, 700);
+    // return setTimeout(() => {
+    //   dispatch({
+    //     type: ACTIONS.SET_IS_ENTERING,
+    //     value: false,
+    //   });}, 700);
+    return dispatchTimeout(dispatch, ACTIONS.SET_IS_ENTERING, false, 700);
   };
 
   // pet reaction to events
@@ -32,11 +33,12 @@ export default function Event({ state, dispatch, ACTIONS }) {
       type: ACTIONS.SET_IS_REACTING,
       value: true,
     });
-    return setTimeout(() => {
-        dispatch({
-          type: ACTIONS.SET_IS_REACTING,
-          value: false,
-        })}, 1000);
+    // return setTimeout(() => {
+    //     dispatch({
+    //       type: ACTIONS.SET_IS_REACTING,
+    //       value: false,
+    //     })}, 1000);
+    return dispatchTimeout(dispatch, ACTIONS.SET_IS_REACTING, false, 1000);
   };
 
   // get event object from event state
@@ -158,7 +160,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       return sleep(option);
       // if energy is drained, send to sleep event
     } else if (energy === 0) {
-      eventTransition(dispatch, 27, 1000);
+      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 27, 1000);
       // if event is an action event, perform action
     } else if (option.actionLabel) {
       return performAction(option);
@@ -167,13 +169,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
       (eventId === 24 || eventId === 25 || eventId === 26) &&
       pet.mood >= 16
     ) {
-      eventTransition(dispatch, 29, 1000);
+      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 29, 1000);
     } else if (eventId === 31 && pet.species === "Wolf") {
-      eventTransition(dispatch, 32, 3000);
+      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 32, 3000);
     } else if (eventId === 31 && pet.species === "Cat") {
-      eventTransition(dispatch, 33, 3000);
+      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 33, 3000);
     } else if (eventId === 31 && pet.species === "Slime") {
-      eventTransition(dispatch, 34, 3000);
+      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 34, 3000);
       // if event is restart? event, create new game
     } else if (eventId === 38) {
       return newGame(option);
