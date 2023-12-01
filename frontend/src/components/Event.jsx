@@ -89,14 +89,6 @@ export default function Event({ state, dispatch, ACTIONS }) {
         });
         applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
       }}
-      onKeyUp={() => {
-        fadeIn(dispatch);
-        applyDispatch(dispatch, ACTIONS.SET_GAME_STATE, {
-          key: "lastAction",
-          value: null,
-        });
-        applyDispatch(dispatch, ACTIONS.NEXT_EVENT, option.nextEvent);
-      }}
     >
       {option.text}
     </button>
