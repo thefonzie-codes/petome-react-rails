@@ -11,6 +11,9 @@ export const ACTIONS = {
   SET_GAME_DATA: "SET_GAME_DATA",
   NEXT_EVENT: "NEXT_EVENT",
   SET_DAY_ACTIONS: "SET_DAY_ACTIONS",
+  SET_IS_ENTERING: "SET_IS_ENTERING",
+  SET_IS_REACTING: "SET_IS_REACTING",
+  SET_LAST_ACTION: "SET_LAST_ACTION",
 };
 
 export function reducer(state, action) {
@@ -56,6 +59,24 @@ export function reducer(state, action) {
       return {
         ...state,
         game: { ...state.game, dayActions: action.value },
+      };
+    
+    case "SET_IS_ENTERING":
+      return {
+        ...state,
+        game: { ...state.game, isEntering: action.value },
+      };
+
+    case "SET_IS_REACTING":
+      return {
+        ...state,
+        game: { ...state.game, isReacting: action.value },
+      };
+
+    case "SET_LAST_ACTION":
+      return {
+        ...state,
+        game: { ...state.game, lastAction: action.value },
       };
 
     default:

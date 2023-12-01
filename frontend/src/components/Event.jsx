@@ -7,25 +7,37 @@ import {
 } from "../hooks/helpers";
 import "../styles/Event.scss";
 import { CSSTransition } from "react-transition-group";
-import { useState } from "react";
 import Reaction from "./Reaction";
 
 export default function Event({ state, dispatch, ACTIONS }) {
-  const { event: eventId, energy } = state.game;
+  const { event: eventId, user, energy, isEntering, isReacting, lastAction, dayActions } = state.game;
 
-  const [isEntering, setIsEntering] = useState(true);
-  const [isReacting, setIsReacting] = useState(false);
-  const [lastAction, setLastAction] = useState(null);
 
   const fadeIn = () => {
-    setIsEntering((v) => !v);
-    setTimeout(() => (setIsEntering((v) => !v), 700));
+    dispatch({
+      type: ACTIONS.SET_IS_ENTERING,
+      value: (isEntering) => !isEntering,
+    });
+    return setTimeout(() => {
+      dispatch({
+        type: ACTIONS.SET_IS_ENTERING,
+        value: (isEntering) => !isEntering,
+      })}, 700
+    );
   };
 
   // pet reaction to events
   const react = () => {
-    setIsReacting((v) => !v);
-    setTimeout(() => (setIsReacting(true), 2000));
+    console.log("reacting", isReacting);
+    dispatch({
+      type: ACTIONS.SET_IS_REACTING,
+      value: true,
+    });
+    return setTimeout(() => {
+        dispatch({
+          type: ACTIONS.SET_IS_REACTING,
+          value: false,
+        })}, 1000);
   };
 
   // get event object from event state
@@ -50,34 +62,35 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   // set the day action to the event action
 
-
   // play with pet (action options)
   const performAction = (option) => (
-    console.log("dayActions", state.game.dayActions),
     <button
       className="option"
       onClick={() => {
-        if (!state.game.dayActions.includes(option.text)) {
-        // fade in pet reaction to action
-        react();
-        // set last action to this action label (for reaction)
-        setLastAction(pet[option.actionLabel]);
-        // dispatch action to update pet mood and drain energy
-        dispatch({
-          type: ACTIONS.PERFORM_ACTION,
-          value: {
-            petId: petId,
-            newMood: pet.mood + pet[option.actionLabel],
-            nextEvent: option.nextEvent,
-          },
-        });
-        // dispatch action to add action to day actions
-        dispatch({
-          type: ACTIONS.SET_DAY_ACTIONS,
-          value: [...state.game.dayActions, option.text],
-        });
+        if (!dayActions.includes(option.text)) {
+          // fade in pet reaction to action
+          react();
+          // set last action to this action label (for reaction)
+          dispatch({
+            type: ACTIONS.SET_LAST_ACTION,
+            value: pet[option.actionLabel],
+          });
+          // dispatch action to update pet mood and drain energy
+          dispatch({
+            type: ACTIONS.PERFORM_ACTION,
+            value: {
+              petId: petId,
+              newMood: pet.mood + pet[option.actionLabel],
+              nextEvent: option.nextEvent,
+            },
+          });
+          // dispatch action to add action to day actions
+          dispatch({
+            type: ACTIONS.SET_DAY_ACTIONS,
+            value: [...dayActions, option.text],
+          });
+        }
       }}
-    }
     >
       {option.text}
     </button>
@@ -90,12 +103,18 @@ export default function Event({ state, dispatch, ACTIONS }) {
       onClick={() => {
         fadeIn();
         // fix bug where reaction stays on screen
-        setLastAction(null);
+        dispatch({
+          type: ACTIONS.SET_LAST_ACTION,
+          value: null,
+        });
         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
       }}
       onKeyUp={() => {
         fadeIn();
-        setLastAction(null);
+        dispatch({
+          type: ACTIONS.SET_LAST_ACTION,
+          value: null,
+        });
         dispatch({ type: ACTIONS.NEXT_EVENT, value: option.nextEvent });
       }}
     >
@@ -127,7 +146,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
     <button
       className="option"
       onClick={() => {
-        createGame(state.game.user, dispatch);
+        createGame(user, dispatch);
       }}
     >
       {option.text}

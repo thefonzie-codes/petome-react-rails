@@ -38,6 +38,9 @@ export const createGame = (input, dispatch) => {
     .then((data) => {
       dispatch({ type: ACTIONS.SET_GAME_DATA, value: data });
       dispatch({ type: ACTIONS.SET_DAY_ACTIONS, value: [""] });
+      dispatch({ type: ACTIONS.SET_IS_ENTERING, value: true });
+      dispatch({ type: ACTIONS.SET_IS_REACTING, value: false });
+      dispatch({ type: ACTIONS.SET_LAST_ACTION, value: null });
       return data.id;
     });
 
