@@ -97,6 +97,17 @@ export default function Event({ state, dispatch, ACTIONS }) {
       {option.text}
     </button>
   );
+  const successEventOptions = (option, eventId) => {
+    return (<button
+      className={option.text === "next" ? "next" : "option"}
+      onClick={() => {
+        applyDispatch(dispatch, ACTIONS.NEXT_EVENT, eventId);
+      }}
+    >
+      {option.text}
+    </button>
+    );
+  };
 
   // onclick, cause sleep ACTION
   const sleep = (option) => (
@@ -151,11 +162,11 @@ export default function Event({ state, dispatch, ACTIONS }) {
     ) {
       dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 29, 1000);
     } else if (eventId === 31 && pet.species === "Wolf") {
-      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 32, 3000);
+      return successEventOptions(option, 32,);
     } else if (eventId === 31 && pet.species === "Cat") {
-      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 33, 3000);
+      return successEventOptions(option, 33,);
     } else if (eventId === 31 && pet.species === "Slime") {
-      dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 34, 3000);
+      return successEventOptions(option, 34,);
       // if event is restart? event, create new game
     } else if (eventId === 38) {
       return newGame(option);
@@ -167,18 +178,18 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   return (
     <CSSTransition in={isEntering} classNames="event-contents">
-        <div className="event">
-          <Reaction
-            isReacting={isReacting}
-            lastAction={lastAction}
-            eventId={eventId}
-          />
-          {petId && <img className="sprite" src={sprite()} />}
-          <div className="event-box">
-            <p>{getById(eventId, state.events).dialogue}</p>
-            <div className="options-container">{options}</div>
-          </div>
+      <div className="event">
+        <Reaction
+          isReacting={isReacting}
+          lastAction={lastAction}
+          eventId={eventId}
+        />
+        {petId && <img className="sprite" src={sprite()} />}
+        <div className="event-box">
+          <p>{getById(eventId, state.events).dialogue}</p>
+          <div className="options-container">{options}</div>
         </div>
-      </CSSTransition>
-      );
+      </div>
+    </CSSTransition>
+  );
 }
