@@ -295,6 +295,9 @@ Event.create!(
     },
     { "text": "Go for a walk in the field",
       "nextEvent": 26
+    },
+    { "text": "Go back to bed",
+      "nextEvent": 27
     }
   ]'
 )
