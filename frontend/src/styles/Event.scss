@@ -17,6 +17,7 @@
 .event-box {
   position: relative;
   z-index: 5;
+  padding-bottom: .25em;
 }
 
 
@@ -34,6 +35,9 @@
   height: calc(fit-content + 20px);
   margin-top: .5em;
   padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: .2em;
+  padding-bottom: .2em;
   border-radius: 30px;
   border-style: solid;
 } 
