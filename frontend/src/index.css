@@ -5,9 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Belanosima:wght@400;600;700&family=Mansalva&family=Palanquin+Dark:wght@400;500;600&family=Rubik+Moonrocks&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap');

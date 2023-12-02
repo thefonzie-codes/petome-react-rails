@@ -1,0 +1,91 @@
+
+.event {
+  position: absolute;
+  background-color: white;
+  color: black;
+  bottom: 3%;
+  left: 2.5%;
+  width: 90%;
+  max-height: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 30px;
+  border: black solid 3px;
+  box-shadow: 2px 2px 5px 2px black;
+}
+
+.event-box {
+  position: relative;
+  z-index: 5;
+  padding-bottom: .25em;
+}
+
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.option, .next {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: calc(.001em + 2vmin);
+  height: calc(fit-content + 20px);
+  margin-top: .5em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  border-radius: 30px;
+  border-style: solid;
+} 
+
+.next {
+  align-self: flex-end;
+  justify-self: flex-end;
+  justify-content: center;
+  width: 5rem;
+}
+
+.option-null {
+  background-color: grey;
+}
+
+.option-null:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+// Fade out
+
+.event-contents-exit {
+  opacity: 1;
+}
+
+.event-contents-exit-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.event-contents-exit-done {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+// Fade in
+
+.event-contents-enter {
+  opacity: 0;
+}
+
+.event-contents-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.event-contents-enter-done {
+  opacity: 1;
+  transition: opacity 1000ms;
+}

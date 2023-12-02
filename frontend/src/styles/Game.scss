@@ -1,0 +1,74 @@
+.game {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 3/4;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-height: 95%;
+  max-width: 40%;
+  min-height: 532px;
+  min-width: 399px;
+  background-color: black;
+  z-index: 99;
+  font-family: "Roboto Mono", monospace;
+}
+
+.game .fade-in {
+  animation: fadeIn 2s 1;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.sprite {
+  position: absolute;
+  width: 15em;
+  transform: translate(-50%, -100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reaction {
+  position: absolute;
+  right: 28%;
+  bottom: 120%;
+  z-index: 5;
+}
+
+.reaction-hidden {
+  position: absolute;
+  right: 28%;
+  bottom: 120%;
+  font-size: 5em;
+  opacity: 0;
+  transform: translate(50px, 20px);
+  animation-duration: 3s;
+  animation-name: slidein, fadeOut;
+  z-index: 5;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-150%);
+  }
+}
+
+.fade-in {
+  transition: 2s linear;
+}

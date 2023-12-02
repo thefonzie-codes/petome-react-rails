@@ -1,0 +1,63 @@
+.user-stats {
+  max-height: calc(fit-content + 1px);
+  position: absolute;
+  margin-top: 2em;
+  margin-left: 2em;
+  background-color: whitesmoke;
+  color: black;
+  width: 30%;
+  border-radius: 25px;
+  border: black solid 3px;
+  box-shadow: 2px 2px 5px 2px black;
+  padding: 0.5em;
+}
+
+.energy-bar-container {
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-direction: column;
+  border: darkgray solid 1px;
+  background-color: lightgray;
+  height: 1em;
+  z-index: 900;
+  align-content: flex-start;
+  padding: 0.25em;
+  margin-top: .4em;
+  margin-bottom: .4em;
+}
+
+.energy-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: width 0.6s;
+}
+
+.energy {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+.energy-green {
+  display: flex;
+  align-self: flex-start;
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  padding: none;
+  z-index: 900;
+}
+
+.energy-text {
+  margin-top: .4em;
+  margin-bottom: .6em;
+}
