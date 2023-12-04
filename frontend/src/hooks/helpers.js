@@ -98,16 +98,11 @@ export const createGame = (input, dispatch) => {
   // Create all pets and return gameId
   return axios
     .all(petRequests)
-    .then(
-      axios.spread((...responses) => {
-        responses.forEach((response) => {
-          console.log("Pet created:", response.data);
-        });
-        return gameId;
-      })
-    )
+    .then((responses) => {
+      return gameId;
+    })
     .catch((error) => {
-      console.error("Error creating pets:", error);
+      console.error(error);
     });
 };
 
