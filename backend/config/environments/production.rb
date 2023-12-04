@@ -7,7 +7,7 @@ Rails.application.configure do
   config.enable_reloading = false
 
   # Read dev host from Railway environment variable
-  config.hosts << petome-backend-production.up.railway.app
+  config.hosts << "petome-backend-production.up.railway.app"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

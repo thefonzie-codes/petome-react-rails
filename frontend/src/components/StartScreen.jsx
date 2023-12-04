@@ -14,10 +14,12 @@ export default function StartScreen(props) {
     <header className="App-header">
       <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
-        <Typerwriter text={intro} delay={25} infinite={Infinity}/>
+        <Typerwriter text={intro} delay={25} infinite={Infinity} />
       </p>
       <img
-        src={"http://localhost:3001/images/sprites/slime_neutral.png"}
+        src={
+          "http://petome-backend-production.up.railway.app/images/sprites/slime_neutral.png"
+        }
         className="mascot"
       />
       <form
@@ -37,7 +39,9 @@ export default function StartScreen(props) {
             setUser(evt.target.value);
           }}
         ></input>
-        <button className="new-game" type="submit">New Game</button>
+        <button className="new-game" type="submit">
+          New Game
+        </button>
       </form>
     </header>
   );

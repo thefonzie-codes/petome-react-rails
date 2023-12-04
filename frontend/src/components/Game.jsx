@@ -27,15 +27,29 @@ export default function Game(props) {
   return (
     <div
       className={fadeIn ? "game" : "game fade-in"}
-      style={{ backgroundImage: `url(${event.img})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center"}}
+      style={{
+        backgroundImage: `url(${event.img})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+      }}
     >
       {/* <img className="background" src={event.img}/> */}
       <>
-      { (eventId === 24 || eventId === 25 || eventId === 26) && <MoodBar event={event} pets={state.pets} /> }
-      { (eventId === 24 || eventId === 25 || eventId === 26) && <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS} /> }
+        {(eventId === 24 || eventId === 25 || eventId === 26) && (
+          <MoodBar event={event} pets={state.pets} />
+        )}
+        {(eventId === 24 || eventId === 25 || eventId === 26) && (
+          <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS} />
+        )}
       </>
       <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
-      <audio id="audio" loop src="http://localhost:3001/audio/Passing Time - Kevin MacLeod -50db.mp3" autoPlay/>
+      <audio
+        id="audio"
+        loop
+        src="http://petome-backend-production.up.railway.app/audio/Passing Time - Kevin MacLeod -50db.mp3"
+        autoPlay
+      />
     </div>
   );
 }
