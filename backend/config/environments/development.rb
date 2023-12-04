@@ -9,7 +9,7 @@ Rails.application.configure do
   config.enable_reloading = true
 
   # Read dev host from Railway environment variable
-  config.hosts << ENV['DEVELOPMENT_HOSTS']
+  config.hosts << petome-backend-production.up.railway.app
 
   # Do not eager load code on boot.
   config.eager_load = false
