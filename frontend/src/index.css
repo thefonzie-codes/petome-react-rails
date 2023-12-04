@@ -6,6 +6,11 @@ body {
   font-size: 10px;
 }
 
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
