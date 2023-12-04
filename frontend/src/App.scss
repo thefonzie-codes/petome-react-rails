@@ -50,3 +50,9 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+}

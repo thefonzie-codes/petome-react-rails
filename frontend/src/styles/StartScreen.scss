@@ -1,7 +1,10 @@
 .welcome {
+  display: flex;
+  align-items: center;
   font-family: 'Lobster', sans-serif;
   animation: fadeIn 5s;
   // width: 90%;
+  font-size: 3vw;
   height: 10%;
 }
 
@@ -11,9 +14,9 @@
   flex-direction: column;
   background-color: #282c34;
   aspect-ratio: 3/4;
-  width: 100%;
+  // width: 100%;
   max-height: 95%;
-  max-width: 40%;
+  // max-width: 40%;
   min-height: 532px;
   min-width: 399px;
   transform: translate(-50%, -50%);
@@ -27,15 +30,19 @@
 }
 
 .intro {
+  display: flex;
+  flex-direction: row;
   width: 80%;
-  font-size: .75em;
+  font-size: 1.5vw;
   text-align: left;
   margin-top: -.75em;
   height: 30%;
+  text-align: center;
+  align-items: center;
 }
 
 .mascot {
-  height: 20vmin;
+  height: 20%;
   pointer-events: none;
   animation: wiggle 2s infinite;
 }
@@ -121,3 +128,6 @@ input {
   }
 }
 
+@media screen and (max-width: 400px){
+  
+}
