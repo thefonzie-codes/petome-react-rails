@@ -1,0 +1,9 @@
+entrypoint: bundle exec rackup --port $PORT
+env: flex
+runtime: ruby
+
+env_variables:
+  SECRET_KEY_BASE: 4784a28ba21b1269ac8a5d805e49559022ade8c1f1cdb14fd263740ce90eb025bb127a2be856c75ed428e88d3432d7bd32e3a346bd89f545a49c391400f5a3fd
+
+beta_settings:
+  cloud_sql_instances: petome:northamerica-northeast1:petome-instance

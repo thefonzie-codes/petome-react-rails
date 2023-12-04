@@ -7,9 +7,13 @@ export const petsData = [
     play: 2,
     talk: 0,
     to_pet: -1,
-    pet_happy: "http://localhost:3001/images/sprites/wolf_happy.png",
-    pet_sad: "http://localhost:3001/images/sprites/wolf_sad.png",
-    pet_neutral: "http://localhost:3001/images/sprites/wolf_neutral.png",
+    pet_happy:
+      "https://petome-backend-production.up.railway.app//images/sprites/wolf_happy.png",
+    pet_sad:
+      "https://petome-backend-production.up.railway.app//images/sprites/wolf_sad.png",
+    pet_neutral:
+      "https://petome-backend-production.up.railway.app//images/sprites/wolf_neutral.png",
+    game_id: gameId,
   },
   {
     species: "Cat",
@@ -19,9 +23,13 @@ export const petsData = [
     play: -1,
     talk: 1,
     to_pet: 0,
-    pet_happy: "http://localhost:3001/images/sprites/cat_happy.png",
-    pet_sad: "http://localhost:3001/images/sprites/cat_sad.png",
-    pet_neutral: "http://localhost:3001/images/sprites/cat_neutral.png",
+    pet_happy:
+      "https://petome-backend-production.up.railway.app//images/sprites/cat_happy.png",
+    pet_sad:
+      "https://petome-backend-production.up.railway.app//images/sprites/cat_sad.png",
+    pet_neutral:
+      "https://petome-backend-production.up.railway.app//images/sprites/cat_neutral.png",
+    game_id: gameId,
   },
   {
     species: "Slime",
@@ -31,8 +39,12 @@ export const petsData = [
     play: 2,
     talk: 1,
     to_pet: 1,
-    pet_happy: "http://localhost:3001/images/sprites/slime_happy.png",
-    pet_sad: "http://localhost:3001/images/sprites/slime_neutral.png",
-    pet_neutral: "http://localhost:3001/images/sprites/slime_neutral.png",
+    pet_happy:
+      "https://petome-backend-production.up.railway.app//images/sprites/slime_happy.png",
+    pet_sad:
+      "https://petome-backend-production.up.railway.app//images/sprites/slime_neutral.png",
+    pet_neutral:
+      "https://petome-backend-production.up.railway.app//images/sprites/slime_neutral.png",
+    game_id: gameId,
   },
 ];
