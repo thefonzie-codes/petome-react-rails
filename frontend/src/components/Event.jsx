@@ -49,6 +49,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const performAction = (option) => {
     if (!dayActions.includes(option.text)) {
       return (<button
+        key={option.text}
         className="option"
         onClick={() => {
           if (!dayActions.includes(option.text)) {
@@ -77,12 +78,13 @@ export default function Event({ state, dispatch, ACTIONS }) {
       </button>
       );
     };
-    return (<button className="option option-null">{option.text} </button>);
+    return (<button key={option.text} className="option option-null">{option.text} </button>);
   };
 
   // onclick, move to next event
   const hasEnergy = (option) => (
     <button
+      key={option.text}
       className={option.text === "next" ? "next" : "option"}
       onClick={() => {
         fadeIn(dispatch);
@@ -99,6 +101,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   );
   const successEventOptions = (option, eventId) => {
     return (<button
+      key={option.text}
       className={option.text === "next" ? "next" : "option"}
       onClick={() => {
         applyDispatch(dispatch, ACTIONS.NEXT_EVENT, eventId);
@@ -112,6 +115,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   // onclick, cause sleep ACTION
   const sleep = (option) => (
     <button
+    key={option.text}
       className="option"
       onClick={() => {
         fadeIn(dispatch);
@@ -130,11 +134,12 @@ export default function Event({ state, dispatch, ACTIONS }) {
 
   // onclick, create new game using same player name
   const transition = (option) => (
-    <button className="option option-null">{option.text}</button>
+    <button key={option.text} className="option option-null">{option.text}</button>
   );
 
   const newGame = (option) => (
     <button
+    key={option.text}
       className="option"
       onClick={() => {
         createGame(user, dispatch);
@@ -144,7 +149,9 @@ export default function Event({ state, dispatch, ACTIONS }) {
     </button>
   );
 
-  const options = JSON.parse(event.options).map((option) => {
+  const optionsArr = JSON.parse(event.options);
+  const options = optionsArr.map((option) => {
+
     // if event is sleep event, sleep
     if (eventId === 27) {
       return sleep(option);
@@ -177,7 +184,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   });
 
   return (
-    <CSSTransition in={isEntering} classNames="event-contents">
+    <CSSTransition in={isEntering} timeout={2000} classNames="event-contents">
       <div className="event">
         <Reaction
           isReacting={isReacting}

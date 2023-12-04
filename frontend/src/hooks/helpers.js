@@ -109,24 +109,20 @@ export const createGame = (input, dispatch) => {
       );
     });
 
-    // Create all pets and return gameId
-    return axios
-      .all(petRequests)
-      .then(
-        axios.spread((...responses) => {
-          responses.forEach((response) => {
-            console.log("Pet created:", response.data);
-          });
-          return gameId;
-        })
-      )
-      .catch((error) => {
-        console.error("Error creating pets:", error);
-      });
-  };
+  // Create all pets and return gameId
+  return axios
+    .all(petRequests)
+    .then((responses) => {
+      return gameId;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
   // helper that fetches and sets Pet data using gameId
   const fetchPetsData = (gameId) => {
+    
     axios
       .get("https://petome-backend-production.up.railway.app//pets.json")
       .then((response) => response.data)

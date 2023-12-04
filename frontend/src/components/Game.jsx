@@ -22,7 +22,7 @@ export default function Game(props) {
     setTimeout(() => {
       setFadeIn(false);
     }, 2000);
-  }, bg);
+  }, []);
 
   return (
     <div
