@@ -8,8 +8,8 @@
 /.bundle
 
 # Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
+# /.env*
+# !/.env*.erb
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -35,4 +35,4 @@
 /config/master.key
 
 # Ignore yml files.
-/config/database.yml
+# /config/database.yml
