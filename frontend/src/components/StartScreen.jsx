@@ -11,7 +11,7 @@ export default function StartScreen(props) {
   const [user, setUser] = useState("");
 
   return (
-    <header className="App-header">
+    <header className="StartScreen">
       <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
         <Typerwriter text={intro} delay={25} infinite={Infinity}/>

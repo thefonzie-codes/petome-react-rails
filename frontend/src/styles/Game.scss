@@ -7,11 +7,11 @@
   aspect-ratio: 3/4;
   top: 50%;
   left: 50%;
-  width: 100%;
-  max-height: 95%;
-  max-width: 40%;
+  width: 98%;
+  max-width: 768px;
+  max-height: 1024px;
   min-height: 532px;
-  min-width: 399px;
+  min-width: 375px;
   background-color: black;
   z-index: 99;
   font-family: "Roboto Mono", monospace;
@@ -33,7 +33,7 @@
 
 .sprite {
   position: absolute;
-  width: 15em;
+  width: 40%;
   transform: translate(-50%, -100%);
   background-size: contain;
   background-repeat: no-repeat;

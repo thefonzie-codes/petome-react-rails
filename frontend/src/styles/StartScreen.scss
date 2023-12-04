@@ -4,12 +4,11 @@
   font-family: 'Lobster', sans-serif;
   animation: fadeIn 5s;
   // width: 90%;
-  font-size: 3vw;
+  font-size: 3rem;
   height: 10%;
 }
 
-.App-header {
-  position: absolute;
+.StartScreen {
   display: flex;
   flex-direction: column;
   background-color: #282c34;
@@ -18,27 +17,24 @@
   max-height: 95%;
   // max-width: 40%;
   min-height: 532px;
-  min-width: 399px;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  min-width: 375px;
+  max-width: 768px;
+  max-height: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  align-self: center;
 }
 
 .intro {
   display: flex;
   flex-direction: row;
   width: 80%;
-  font-size: 1.5vw;
-  text-align: left;
-  margin-top: -.75em;
+  font-size: 1.4rem;
   height: 30%;
   text-align: center;
-  align-items: center;
 }
 
 .mascot {
@@ -128,6 +124,20 @@ input {
   }
 }
 
-@media screen and (max-width: 400px){
-  
+@media screen and (max-width: 768px){
+  .intro {
+    font-size: 3vw;
+  }
+  .welcome {
+    font-size: 6vw;
+  }
+  .mascot {
+    height: 20vw;
+  }
+  .input {
+    font-size: 3vw;
+  }
+  .new-game {
+    font-size: 3vw;
+  }
 }

@@ -1,15 +1,18 @@
 .user-stats {
   max-height: calc(fit-content + 1px);
   position: absolute;
-  margin-top: 2em;
-  margin-left: 2em;
+  // margin-top: .5rem;
+  // margin-left: .5rem;
+  top: 1%;
+  left: 1%;
   background-color: whitesmoke;
   color: black;
   width: 30%;
   border-radius: 25px;
   border: black solid 3px;
   box-shadow: 2px 2px 5px 2px black;
-  padding: 0.5em;
+  padding: 0.3rem;
+  font-size: 1rem;
 }
 
 .energy-bar-container {
@@ -58,6 +61,6 @@
 }
 
 .energy-text {
-  margin-top: .4em;
-  margin-bottom: .6em;
+  margin-top: .3rem;
+  margin-bottom: .3rem;
 }

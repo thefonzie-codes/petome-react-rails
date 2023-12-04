@@ -193,7 +193,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
         />
         {petId && <img className="sprite" src={sprite()} />}
         <div className="event-box">
-          <p>{getById(eventId, state.events).dialogue}</p>
+          <p className="event-dialogue">{getById(eventId, state.events).dialogue}</p>
           <div className="options-container">{options}</div>
         </div>
       </div>
