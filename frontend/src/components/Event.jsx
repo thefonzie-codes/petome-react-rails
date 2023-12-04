@@ -177,7 +177,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   });
 
   return (
-    <CSSTransition in={isEntering} classNames="event-contents">
+    <CSSTransition in={isEntering} timeout={2000} classNames="event-contents">
       <div className="event">
         <Reaction
           isReacting={isReacting}
