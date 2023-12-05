@@ -82,6 +82,33 @@ form {
   }
 }
 
+.horse {
+  position: relative;
+  left: 0;
+  bottom: 4;
+  opacity: 0;
+  transform: translate(-100%, 0%);
+  height: 3em;
+  width: 3em;
+}
+
+.run{
+  animation: run 10s 1;
+}
+
+@keyframes run {
+  0% {
+    transform: translate(-100%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 0%);
+    opacity: 1;
+  }
+}
+
+
+
 // @keyframes fadeOut {
 //   0% {
 //     opacity: 0;
