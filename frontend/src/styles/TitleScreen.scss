@@ -20,7 +20,7 @@ h2 {
   background-color: rgba(0, 0, 0, 0);
   font-size: 7rem;
   font-family: 'Lobster', sans-serif;
-  animation: fadeInAndOut 5s;
+  animation: fadeInAndOut 7s;
   opacity: 0;
 }
 
@@ -28,10 +28,13 @@ h2 {
   0% {
     opacity: 0;
   }
-  40% {
+  20% {
+    opacity: 0;
+  }
+  45% {
     opacity: 1;
   }
-  70% {
+  75% {
     opacity: 1;
   }
   100% {
