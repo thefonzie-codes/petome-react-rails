@@ -3,6 +3,7 @@ html {
 }
 
 #root {
+  position: relative;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -16,6 +17,7 @@ html {
 }
 
 .App {
+  position: abasolute;
   text-align: center;
   height: 100%;
   width: 100%;
