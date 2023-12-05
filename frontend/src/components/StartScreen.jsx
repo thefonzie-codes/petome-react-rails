@@ -30,34 +30,41 @@ export default function StartScreen(props) {
   return (
     <header className="StartScreen">
       <div className="StartScreen-container">
-      {/* <h1 className="welcome">Welcome to Petome!</h1>
+        {/* <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
         <Typerwriter text={intro} delay={25} infinite={Infinity}/>
       </p> */}
-      <img
-        src={"http://localhost:3001/images/sprites/slime_neutral.png"}
-        className="mascot"
-      />
-      <form
-        onSubmit={(evt) => {
-          evt.preventDefault();
-          createGame(document.getElementById("player").value, dispatch);
-        }}
-      >
-        <input
-          id="player"
-          type="text"
-          label="player"
-          placeholder="What's your name?"
-          maxLength="12"
-          value={user}
-          onChange={(evt) => {
-            setUser(evt.target.value);
+        <img
+          src={
+            "https://petome-backend-production.up.railway.app/images/sprites/slime_neutral.png"
+          }
+          className="mascot"
+        />
+        <form
+          onSubmit={(evt) => {
+            evt.preventDefault();
+            createGame(document.getElementById("player").value, dispatch);
           }}
-        ></input>
-        <button className="new-game" type="submit">New Game</button>
-      </form>
-      <img src={require('../assets/images/horse.png')} className={run ? "horse run" : "horse"}/>
+        >
+          <input
+            id="player"
+            type="text"
+            label="player"
+            placeholder="What's your name?"
+            maxLength="12"
+            value={user}
+            onChange={(evt) => {
+              setUser(evt.target.value);
+            }}
+          ></input>
+          <button className="new-game" type="submit">
+            New Game
+          </button>
+        </form>
+        <img
+          src={require("../assets/images/horse.png")}
+          className={run ? "horse run" : "horse"}
+        />
       </div>
     </header>
   );
