@@ -13,7 +13,7 @@ function App() {
 
   const [screen, setScreen] = useState(0);
 
-  const [playSound] = useSound(mySound, { volume : 0.5 });
+  const [playSound] = useSound(mySound, { volume : 0.3 });
 
   useEffect(() => {
     // const onKeyDown = (e) => {
