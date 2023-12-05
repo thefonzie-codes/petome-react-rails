@@ -35,7 +35,6 @@ export default function Game(props) {
       { (eventId === 24 || eventId === 25 || eventId === 26) && <UserStats game={state.game} dispatch={dispatch} ACTIONS={ACTIONS} /> }
       </>
       <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
-      <audio id="audio" loop src="http://localhost:3001/audio/Passing Time - Kevin MacLeod -50db.mp3" autoPlay/>
     </div>
   );
 }

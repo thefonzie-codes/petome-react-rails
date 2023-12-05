@@ -42,6 +42,7 @@ function App() {
         <TitleScreen />
         <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} /> */}
       {/* )} */}
+      <audio id="audio" loop src="http://localhost:3001/audio/Passing Time - Kevin MacLeod -50db.mp3" autoPlay/>
     </div>
   );
 }
