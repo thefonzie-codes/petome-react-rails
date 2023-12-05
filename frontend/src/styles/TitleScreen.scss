@@ -28,15 +28,15 @@ h2 {
   0% {
     opacity: 0;
   }
-  20% {
-    opacity: 0;
-  }
-  45% {
+  // 20% {
+  //   opacity: 0;
+  // }
+  40% {
     opacity: 1;
   }
-  75% {
-    opacity: 1;
-  }
+  // 75% {
+  //   opacity: 1;
+  // }
   100% {
     opacity: 0;
   }
@@ -53,7 +53,7 @@ h2 {
 
 .intro {
   border: black solid 3px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.97);
   color: black;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 25px;

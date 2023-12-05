@@ -4,11 +4,11 @@ import Typewriter from "./Typewriter";
 
 export default function TitleScreen(props) {
 
-  const { state, dispatch, ACTIONS } = props;
+  const { state, dispatch, ACTIONS, screen } = props;
 
   return (
     <header className="TitleScreen">
-      <h2>Petome</h2>
+      {screen === 1 && <h2>Petome</h2>}
     </header>
   );
 }
