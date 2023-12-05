@@ -1,21 +1,39 @@
 import { createGame } from "../hooks/helpers";
 import "../styles/StartScreen.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import intro from "../assets/intro";
-import Typerwriter from "./Typerwriter";
+import Typerwriter from "./Typewriter";
 
 export default function StartScreen(props) {
+
+  const [run, setRun] = useState(false);
+  
+    useEffect(() => {
+      const onKeyDown = (e) => {
+        if(e.key === '~'){
+          setRun(true);
+          return;
+       }
+       
+       setTimeout(setRun(false), 5000)
+       return;
+      }
+
+      window.addEventListener('keydown', onKeyDown)
+      return () => window.removeEventListener('keydown', onKeyDown)
+     },[run])
 
   const { state, dispatch, ACTIONS } = props;
 
   const [user, setUser] = useState("");
 
   return (
-    <header className="App-header">
-      <h1 className="welcome">Welcome to Petome!</h1>
+    <header className="StartScreen">
+      <div className="StartScreen-container">
+      {/* <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
         <Typerwriter text={intro} delay={25} infinite={Infinity}/>
-      </p>
+      </p> */}
       <img
         src={"http://localhost:3001/images/sprites/slime_neutral.png"}
         className="mascot"
@@ -39,6 +57,8 @@ export default function StartScreen(props) {
         ></input>
         <button className="new-game" type="submit">New Game</button>
       </form>
+      <img src={require('../assets/images/horse.png')} className={run ? "horse run" : "horse"}/>
+      </div>
     </header>
   );
 }

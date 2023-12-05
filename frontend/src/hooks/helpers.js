@@ -145,7 +145,7 @@ export const createGame = (input, dispatch) => {
 };
 
 export const adoptedPet = (pets) => {
-  const adoptedPet = pets.find((pet) => pet.mood >= 16);
+  const adoptedPet = pets.find((pet) => pet.mood >= 12);
   return adoptedPet;
 };
 
