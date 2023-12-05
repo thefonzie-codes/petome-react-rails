@@ -7,7 +7,6 @@
   left: 1.5%;
   width: 92.5%;
   // max-height: 50%;
-  margin: 0 auto;
   padding: 10px;
   border-radius: 30px;
   border: black solid 3px;
@@ -98,6 +97,8 @@
   transition: opacity 1000ms;
 }
 
-// @media screen and (max-width: 600px) {
-  
-// }
+@media screen and (max-width: 450px) {
+  .event {
+    left: .6%;
+  }
+}

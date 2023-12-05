@@ -24,9 +24,24 @@ function App() {
   
        return
      }
+
+    const onClick = (e) => {
+      if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 2){
+        setScreen(screen + 1);
+        return
+       }
+
+       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen === 2){
+        return () => window.removeEventListener('click', onClick)
+       }
+  
+       return
+     }
+
    
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    window.addEventListener('click', onClick)
+    return (() => window.removeEventListener('keydown', onKeyDown), () => window.removeEventListener('click', onClick))
    },[screen])
 
   return (
