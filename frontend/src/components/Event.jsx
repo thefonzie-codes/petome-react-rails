@@ -165,7 +165,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
       // if pet mood reaches 16, send to specific pet success event
     } else if (
       (eventId === 24 || eventId === 25 || eventId === 26) &&
-      pet.mood >= 16
+      pet.mood >= 12
     ) {
       dispatchTimeout(dispatch, ACTIONS.NEXT_EVENT, 29, 1000);
     } else if (eventId === 31 && pet.species === "Wolf") {
