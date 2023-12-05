@@ -4,20 +4,27 @@
   background-color: white;
   color: black;
   bottom: 3%;
-  left: 2.5%;
-  width: 90%;
-  max-height: 50%;
-  margin: 0 auto;
+  left: 1.5%;
+  width: 92.5%;
+  // max-height: 50%;
   padding: 10px;
   border-radius: 30px;
   border: black solid 3px;
-  box-shadow: 2px 2px 5px 2px black;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
 }
 
 .event-box {
   position: relative;
   z-index: 5;
   padding-bottom: .25em;
+}
+
+.event-dialogue {
+  position: relative;
+  z-index: 5;
+  padding-bottom: .25em;
+  font-size: 1rem;
 }
 
 
@@ -31,7 +38,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: calc(.001em + 2vmin);
+  // font-size: calc(.001em + 2vmin);
   height: calc(fit-content + 20px);
   margin-top: .5em;
   padding-left: 1.25em;
@@ -88,4 +95,10 @@
 .event-contents-enter-done {
   opacity: 1;
   transition: opacity 1000ms;
+}
+
+@media screen and (max-width: 450px) {
+  .event {
+    left: .6%;
+  }
 }

@@ -44,12 +44,6 @@ export default function Game(props) {
         )}
       </>
       <Event state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
-      <audio
-        id="audio"
-        loop
-        src="http://petome-backend-production.up.railway.app/audio/Passing Time - Kevin MacLeod -50db.mp3"
-        autoPlay
-      />
     </div>
   );
 }
