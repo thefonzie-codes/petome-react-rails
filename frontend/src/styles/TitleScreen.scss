@@ -1,0 +1,61 @@
+.TitleScreen {
+  display: flex;
+  aspect-ratio: 3/4;
+  width: 100%;
+  max-height: 95%;
+  min-height: 532px;
+  min-width: 375px;
+  // max-width: 40%;
+  max-width: 768px;
+  max-height: 1024px;
+  color: white;
+  background-image: url("../assets/images/field.jpg");
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-size: cover;
+}
+
+h2 {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 7rem;
+  font-family: 'Lobster', sans-serif;
+  animation: fadeInAndOut 5s;
+  opacity: 0;
+}
+
+@keyframes fadeInAndOut {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.intro {
+  border: black solid 3px;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 25px;
+  padding: 1rem;
+  animation: fadeIn 5s;
+}
+

@@ -2,7 +2,7 @@ import { createGame } from "../hooks/helpers";
 import "../styles/StartScreen.scss";
 import { useState } from "react";
 import intro from "../assets/intro";
-import Typerwriter from "./Typerwriter";
+import Typerwriter from "./Typewriter";
 
 export default function StartScreen(props) {
 
@@ -12,10 +12,11 @@ export default function StartScreen(props) {
 
   return (
     <header className="StartScreen">
-      <h1 className="welcome">Welcome to Petome!</h1>
+      <div className="StartScreen-container">
+      {/* <h1 className="welcome">Welcome to Petome!</h1>
       <p className="intro">
         <Typerwriter text={intro} delay={25} infinite={Infinity}/>
-      </p>
+      </p> */}
       <img
         src={"http://localhost:3001/images/sprites/slime_neutral.png"}
         className="mascot"
@@ -39,6 +40,7 @@ export default function StartScreen(props) {
         ></input>
         <button className="new-game" type="submit">New Game</button>
       </form>
+      </div>
     </header>
   );
 }
