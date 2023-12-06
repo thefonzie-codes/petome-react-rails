@@ -15,58 +15,50 @@ function App() {
 
   const [playSound] = useSound(mySound, { volume : 0.2 });
 
-  useEffect(() => {
-    // const onKeyDown = (e) => {
-    //   if(e.key && screen < 3){
-    //     setScreen(screen + 1);
-    //     return
-    //    }
+  const userClick = (e) => {
+    if (
+      (e.pointerType === "mouse" ||
+        e.pointerType === "touchstart" ||
+        e.pointerType === "touch") &&
+      screen < 3
+    ) {
+      setScreen(screen + 1);
+      return;
+    }
 
-    //    if(e.key && screen === 3){
-    //     return () => window.removeEventListener('keydown', onKeyDown)
-    //    }
-  
-    //    return
-    //  }
+    if (
+      (e.pointerType === "mouse" ||
+        e.pointerType === "touchstart" ||
+        e.pointerType === "touch") &&
+      screen === 3
+    ) {
+      return () =>
+        window.removeEventListener("click", userClick);
+    }
 
-    // let touchEvent = ("ontouchstart" in window) ? "touchstart" : "click";
-    // const pointerType = (e) => {
-    //   e.pointerType === "mouse" ||
-    //   e.pointerType === "touchstart" ||
-    //   e.pointerType === "touch" ||
-    //   e.pointerType === "touchmove"
-    //     ? "touchstart"
-    //     : "click";
-    // }
+    return;
+  };
 
-    const touchEvent = "click" || "touchstart" || "touchmove" || "touch";
-
-    const onClick = (e) => {
-      if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch" || e.pointerType === "touchmove") && screen < 3){
-        setScreen(screen + 1);
-        return
-       }
-
-       if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch" || e.pointerType === "touchmove") && screen === 3){
-        return () => window.removeEventListener(touchEvent, onClick)
-       }
-  
-       return
-     }
-
-   
+  useEffect(() => {   
     // window.addEventListener('keydown', onKeyDown)
-    window.addEventListener(touchEvent, onClick)
-    return () => window.removeEventListener(touchEvent, onClick)
+    window.addEventListener('click', userClick)
+    return () => window.removeEventListener('click', userClick)
    },[screen])
 
   return (
     <div className="App">
+      <span onClick={(e) => userClick(e)} id="span" ></span>
       {playSound()}
-      {((screen === 1 || screen === 0) && !state.pets[2]) && <TitleScreen screen={screen}/>}
-      {(screen === 2 && !state.pets[2]) && <IntroText />}
-      {(screen === 3 && !state.pets[2]) && <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />}
-      {(state.pets[2] && screen === 3) && <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />}
+      {(screen === 1 || screen === 0) && !state.pets[2] && (
+        <TitleScreen screen={screen} />
+      )}
+      {screen === 2 && !state.pets[2] && <IntroText />}
+      {screen === 3 && !state.pets[2] && (
+        <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
+      )}
+      {state.pets[2] && screen === 3 && (
+        <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
+      )}
       {/* {screen === 0 ?  : <></>}
       {(state.pets[2] && screen === 1) ? (
         <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
