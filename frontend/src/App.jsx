@@ -28,7 +28,7 @@ function App() {
   
     //    return
     //  }
-    let touchEvent = "ontouchstart" in window ? "onmousedown" : "click";
+    let touchEvent = "onpointerdown" in window ? "onmousedown" : "click";
 
     const onClick = (e) => {
       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 3){
