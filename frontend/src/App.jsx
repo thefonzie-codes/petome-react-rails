@@ -33,7 +33,7 @@ function App() {
       screen === 3
     ) {
       return () =>
-        window.removeEventListener("click", userClick);
+        window.removeEventListener('click' || 'touchstart', userClick);
     }
 
     return;
@@ -41,8 +41,8 @@ function App() {
 
   useEffect(() => {   
     // window.addEventListener('keydown', onKeyDown)
-    window.addEventListener('click', userClick)
-    return () => window.removeEventListener('click', userClick)
+    window.addEventListener('click' || 'touchstart', userClick)
+    return () => window.removeEventListener('click' || 'touchstart', userClick)
    },[screen])
 
   return (
