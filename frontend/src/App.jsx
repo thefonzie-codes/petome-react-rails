@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <span onClick={(e) => userClick(e)} id="span" ></span>
+      <span onClick={(e) => userClick(e)} className="span" id="span" ></span>
       {playSound()}
       {(screen === 1 || screen === 0) && !state.pets[2] && (
         <TitleScreen screen={screen} />
