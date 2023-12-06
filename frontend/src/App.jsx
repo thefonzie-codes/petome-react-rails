@@ -5,6 +5,7 @@ import StartScreen from "./components/StartScreen";
 import { useState, useEffect } from "react";
 import TitleScreen from "./components/TitleScreen";
 import IntroText from "./components/IntroText";
+import { iOS } from "./hooks/helpers";
 
 function App() {
   const { state, dispatch, ACTIONS } = useApplicationData();
@@ -26,12 +27,12 @@ function App() {
      }
 
     const onClick = (e) => {
-      if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 2){
+      if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen < 2){
         setScreen(screen + 1);
         return
        }
 
-       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen === 2){
+       if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen === 2){
         return () => window.removeEventListener('click', onClick)
        }
   
