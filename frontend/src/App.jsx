@@ -15,50 +15,61 @@ function App() {
 
   const [playSound] = useSound(mySound, { volume : 0.2 });
 
-  const userClick = (e) => {
-    if (
-      (e.pointerType === "mouse" ||
-        e.pointerType === "touchstart" ||
-        e.pointerType === "touch") &&
-      screen < 3
-    ) {
-      setScreen(screen + 1);
-      return;
+  useEffect(() => {
+    // const onKeyDown = (e) => {
+    //   if(e.key && screen < 3){
+    //     setScreen(screen + 1);
+    //     return
+    //    }
+
+    //    if(e.key && screen === 3){
+    //     return () => window.removeEventListener('keydown', onKeyDown)
+    //    }
+  
+    //    return
+    //  }
+
+    const iOS = () => {
+      return (
+        [
+          "iPad Simulator",
+          "iPhone Simulator",
+          "iPod Simulator",
+          "iPad",
+          "iPhone",
+          "iPod",
+        ].includes(navigator.platform) ||
+        // iPad on iOS 13 detection
+        (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      );
     }
 
-    if (
-      (e.pointerType === "mouse" ||
-        e.pointerType === "touchstart" ||
-        e.pointerType === "touch") &&
-      screen === 3
-    ) {
-      return () =>
-        window.removeEventListener('click' || 'touchstart', userClick);
-    }
+    const onClick = (e) => {
+      if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS === true && screen < 3){
+        setScreen(screen + 1);
+        return
+       }
 
-    return;
-  };
+       if((e.pointerType === "mouse" || e.pointerType === "touch")  || iOS === true && screen === 3){
+        return () => window.removeEventListener('click', onClick)
+       }
+  
+       return
+     }
 
-  useEffect(() => {   
+   
     // window.addEventListener('keydown', onKeyDown)
-    window.addEventListener('click' || 'touchstart', userClick)
-    return () => window.removeEventListener('click' || 'touchstart', userClick)
+    window.addEventListener('click', onClick)
+    return () => window.removeEventListener('click', onClick)
    },[screen])
 
   return (
     <div className="App">
-      <span onClick={(e) => userClick(e)} className="span" id="span" ></span>
       {playSound()}
-      {(screen === 1 || screen === 0) && !state.pets[2] && (
-        <TitleScreen screen={screen} />
-      )}
-      {screen === 2 && !state.pets[2] && <IntroText />}
-      {screen === 3 && !state.pets[2] && (
-        <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
-      )}
-      {state.pets[2] && screen === 3 && (
-        <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
-      )}
+      {((screen === 1 || screen === 0) && !state.pets[2]) && <TitleScreen screen={screen}/>}
+      {(screen === 2 && !state.pets[2]) && <IntroText />}
+      {(screen === 3 && !state.pets[2]) && <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />}
+      {(state.pets[2] && screen === 3) && <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />}
       {/* {screen === 0 ?  : <></>}
       {(state.pets[2] && screen === 1) ? (
         <Game state={state} dispatch={dispatch} ACTIONS={ACTIONS} />
