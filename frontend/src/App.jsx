@@ -28,6 +28,7 @@ function App() {
   
     //    return
     //  }
+    const userAgent = navigator.userAgent.toLowerCase();
     let touchEvent = (userAgent.indexOf('iphone') != -1) ? "tap" : "click";
 
     const onClick = (e) => {
