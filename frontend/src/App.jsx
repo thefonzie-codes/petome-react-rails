@@ -32,12 +32,12 @@ function App() {
 
 
     const onClick = (e) => {
-      if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen < 3){
+      if(((e.pointerType === "mouse" || e.pointerType === "touch") || iOS) && screen < 3){
         setScreen(screen + 1);
         return
        }
 
-       if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen === 3){
+       if(((e.pointerType === "mouse" || e.pointerType === "touch") || iOS) && screen === 3){
         return () => window.removeEventListener('click', onClick)
        }
   
