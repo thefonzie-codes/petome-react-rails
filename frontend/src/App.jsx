@@ -28,8 +28,7 @@ function App() {
   
     //    return
     //  }
-    const userAgent = navigator.userAgent.toLowerCase();
-    let touchEvent = (userAgent.indexOf('iphone') != -1) ? "tap" : "click";
+    let touchEvent = "ontouchstart" in window ? "onmousedown" : "click";
 
     const onClick = (e) => {
       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 3){
