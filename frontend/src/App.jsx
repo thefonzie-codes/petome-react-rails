@@ -29,20 +29,9 @@ function App() {
     //    return
     //  }
 
-    const iOS = () => {
-      return (
-        [
-          "iPad Simulator",
-          "iPhone Simulator",
-          "iPod Simulator",
-          "iPad",
-          "iPhone",
-          "iPod",
-        ].includes(navigator.platform) ||
-        // iPad on iOS 13 detection
-        (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-      );
-    }
+    const iOS =
+      /iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
     const onClick = (e) => {
       if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS === true && screen < 3){
