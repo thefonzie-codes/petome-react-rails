@@ -30,18 +30,24 @@ function App() {
     //  }
 
     // let touchEvent = ("ontouchstart" in window) ? "touchstart" : "click";
-    const touchEvent =
-      e.pointerType === "mouse" ||
-      e.pointerType === "touchstart" ||
-      e.pointerType === "touch";
+    // const pointerType = (e) => {
+    //   e.pointerType === "mouse" ||
+    //   e.pointerType === "touchstart" ||
+    //   e.pointerType === "touch" ||
+    //   e.pointerType === "touchmove"
+    //     ? "touchstart"
+    //     : "click";
+    // }
+
+    const touchEvent = "click" || "touchstart" || "touchmove" || "touch";
 
     const onClick = (e) => {
-      if((touchEvent) && screen < 3){
+      if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch" || e.pointerType === "touchmove") && screen < 3){
         setScreen(screen + 1);
         return
        }
 
-       if((touchEvent) && screen === 3){
+       if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch" || e.pointerType === "touchmove") && screen === 3){
         return () => window.removeEventListener(touchEvent, onClick)
        }
   
