@@ -16,7 +16,7 @@ Event.destroy_all
 
 # Event 1
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/wake.jpeg",
   dialogue: "You wake up to the sun filtering in from the skylight, early birds still singing their victory songs. 'Another day, more to do...' you take a moment to stare at the ceiling.",
   options: '[
     {
@@ -40,7 +40,7 @@ Event.create!(
 
 # Event 3
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/wifu.jpeg",
   dialogue: "But it's not the same without her. “... but you wouldn’t want me to keep sulking here, would you?”",
   options: '[
     {
@@ -52,7 +52,7 @@ Event.create!(
 
 # Event 4
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/wifu.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/wifu.jpeg",
   dialogue: "“Yeah, definitely not. You'd have a lot to say... I guess you're right, it's time to work.”",
   options: '[
     {
@@ -64,7 +64,7 @@ Event.create!(
 
 # Event 5
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/depart.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/depart.jpeg",
   dialogue: "“...I should probably drop yesterday's cord of wood into the town. The axe could use a sharpening too.”",
   options: '[
     {
@@ -76,7 +76,7 @@ Event.create!(
 
 # Event 6
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/forest_4.jpeg",
   dialogue: "As you walk the familiar path from your secret timber lot into town you hear rustling from a bush beside you.",
   options: '[
     {
@@ -88,7 +88,7 @@ Event.create!(
 
 # Event 7
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/forest_4.jpeg",
   dialogue: "“Hm. There's never much around here… wonder what that could be…”",
   options: '[
     {
@@ -104,7 +104,7 @@ Event.create!(
 
 # Event 8
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/forest_4.jpeg",
   dialogue: "You get close and a grey wolf pounces out of the bush with a low growl.",
   species: "Wolf",
   options: '[
@@ -117,7 +117,7 @@ Event.create!(
 
 # Event 9
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/forest_4.jpeg",
   dialogue: "You toss the beast a piece of your lunch. Without hesitating it eats, sniffs your hand, then leaves.",
   species: "Wolf",
   options: '[
@@ -142,7 +142,7 @@ Event.create!(
 
 # Event 11
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/market_4.jpeg",
   dialogue: "You finish selling your firewood close to market when you catch a loud *BOOM* from a nearby shop.",
   options: '[
     {
@@ -165,7 +165,7 @@ Event.create!(
 
 # Event 13
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/market_4.jpeg",
   dialogue: "You lurk outside the perimeter of a gathering crowd as your left ankle is met with a soft nudge and a little *meow*.",
   species: "Cat",
   options: '[
@@ -180,7 +180,7 @@ Event.create!(
 
 # Event 14
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/market_4.jpeg",
   dialogue: "The cat rubs its bum against your leg then daintily trots away.",
   species: "Cat",
   options: '[
@@ -192,7 +192,7 @@ Event.create!(
 
 # Event 15
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/market_4.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/market_4.jpeg",
   dialogue: "“Great. Wood’s been dropped, and the smith’s got my axe for a bit… might as well sit.”",
   options: '[
     { "text": "Go sit in the field",
@@ -203,7 +203,7 @@ Event.create!(
 
 # Event 16
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/field_3.jpeg",
   dialogue: "You find a lonely patch of shade and close your eyes for all but a moment before you're shaken alert by a giant *SQUISH*",
   options: '[
     { "text": "“WHAT in the?...”",
@@ -214,7 +214,7 @@ Event.create!(
 
 # Event 17
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/field_3.jpeg",
   dialogue: "Alarmed, you jump to your feet and look down to see a blobby slime. “Oh, uh, sorry bud...”",
   species: "Slime",
   options: '[
@@ -241,7 +241,7 @@ Event.create!(
 
 # Event 19
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_3.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/field_3.jpeg",
   dialogue: "Obviously content, the slime squishes away into a cropping.",
   options: '[
     { "text": "Grab your axe and head home",
@@ -252,7 +252,7 @@ Event.create!(
 
 # Event 20
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/home.jpeg",
   dialogue: "“What a strange day... lots of those monsters out and about now...”",
   options: '[
     { "text": "Go to sleep",
@@ -263,7 +263,7 @@ Event.create!(
 
 # Event 21
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/dream_2.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/dream_2.jpeg",
   dialogue: "“mhmmm...am I dreaming? Who... no... what?”",
   options: '[
     { "text": "Wake up",
@@ -274,7 +274,7 @@ Event.create!(
 
 # Event 22
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/wake.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/wake.jpeg",
   dialogue: "“Wha? Strange... Anyway.. A new day it is.”",
   options: '[
     { "text": "Head out",
@@ -305,7 +305,7 @@ Event.create!(
 
 # Event 24 - Wolf interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/forest_3.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/forest_3.jpeg",
   dialogue: "You go to your timber site to chop some wood. Rustling from a familiar bush reveals the same wolf from before, Fang.",
   species: "Wolf",
   options: '[
@@ -338,7 +338,7 @@ Event.create!(
 
 # Event 25 - Cat interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/town_3.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/town_3.jpeg",
   dialogue: "You make your way into town. At the market you hear a familiar meow at your feet and find Noctis, the cat from before.",
   species: "Cat",
   options: '[
@@ -371,7 +371,7 @@ Event.create!(
 
 # Event 26 - Slime interaction event
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/field_2.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/field_2.jpeg",
   dialogue: "You go for a stroll in the field. At the bottom of a willow tree you meet the same slime from before, Wiggy.",
   species: "Slime",
   options: '[
@@ -404,7 +404,7 @@ Event.create!(
 
 # event 27 - end of day 
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/rest.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/rest.jpeg",
   dialogue: "“... been a long day.”",
   options: '[
     {
@@ -441,7 +441,7 @@ Event.create!(
 
 # event 30
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/rest.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/rest.jpeg",
   dialogue: "“Hold on there, where are you headed to? Wait up!”",
   species: "Wolf",
   options: '[
@@ -467,7 +467,7 @@ Event.create!(
 
 # event 32 - success event end wolf
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, Fang gives a shy quip and curls up at your feet.",
   species: "Wolf",
   options: '[
@@ -480,7 +480,7 @@ Event.create!(
 
 # event 33 - success event end cat
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, Noctis gracefully hops onto your lap, tucks into a ball, and falls asleep.",
   species: "Cat",
   options: '[
@@ -493,7 +493,7 @@ Event.create!(
 
 # event 34 - success event end slime
 Event.create!(
-  img: "http://localhost:3001/images/backgrounds/home.jpeg",
+  img: "https://petome-backend-production.up.railway.app/images/backgrounds/home.jpeg",
   dialogue: "As you sit down after a long week, Wiggy promptly jumps into your sink and settles in.",
   species: "Slime",
   options: '[
