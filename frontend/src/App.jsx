@@ -29,16 +29,16 @@ function App() {
     //    return
     //  }
 
-    let touchEvent = "ontouchstart" ? "touchstart" : "click";
+    // let touchEvent = ("ontouchstart" in window) ? "touchstart" : "click";
 
     const onClick = (e) => {
-      if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 3){
+      if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch") && screen < 3){
         setScreen(screen + 1);
         return
        }
 
-       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen === 3){
-        return () => window.removeEventListener(touchEvent, onClick)
+       if((e.pointerType === "mouse" || e.pointerType === "touchstart" || e.pointerType === "touch") && screen === 3){
+        return () => window.removeEventListener('click', onClick)
        }
   
        return
@@ -46,8 +46,8 @@ function App() {
 
    
     // window.addEventListener('keydown', onKeyDown)
-    window.addEventListener(touchEvent, onClick)
-    return () => window.removeEventListener(touchEvent, onClick)
+    window.addEventListener('click', onClick)
+    return () => window.removeEventListener('click', onClick)
    },[screen])
 
   return (

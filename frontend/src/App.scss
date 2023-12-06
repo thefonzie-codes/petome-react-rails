@@ -17,7 +17,7 @@ html {
 }
 
 .App {
-  position: abasolute;
+  position: absolute;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -29,6 +29,7 @@ html {
   align-content: center;
   flex-wrap: wrap;
   align-items: center;
+  cursor: pointer;
 }
 
 button {
