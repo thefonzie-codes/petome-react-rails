@@ -23,7 +23,7 @@ default: &default
 # db env comes from Railway
 development:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  url: "postgresql://postgres:Eg3Aa1bFg*2d363GFag35Gbd1D-B*5Dg@viaduct.proxy.rlwy.net:33658/railway"
   host: <%= ENV["PGHOST"] %>
   database: <%= ENV["PGDATABASE"] %>
   username: <%= ENV["PGUSER"] %>
