@@ -7,6 +7,7 @@ import TitleScreen from "./components/TitleScreen";
 import IntroText from "./components/IntroText";
 import { useSound } from "use-sound";
 import mySound from './assets/audio/Passing Time - Kevin MacLeod -55db.mp3' // Your sound file path here
+import { iOS } from "./hooks/helpers";
 
 function App() {
   const { state, dispatch, ACTIONS } = useApplicationData();
@@ -30,12 +31,12 @@ function App() {
     //  }
 
     const onClick = (e) => {
-      if((e.pointerType === "mouse" || e.pointerType === "touch") && screen < 3){
+      if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen < 2){
         setScreen(screen + 1);
         return
        }
 
-       if((e.pointerType === "mouse" || e.pointerType === "touch") && screen === 3){
+       if((e.pointerType === "mouse" || e.pointerType === "touch") || iOS && screen === 2){
         return () => window.removeEventListener('click', onClick)
        }
   
