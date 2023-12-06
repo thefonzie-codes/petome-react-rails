@@ -218,3 +218,6 @@ export const react = (dispatch) => {
     1000
   );
 };
+
+export const iOS = /iPad|iPhone|iPod/.test(navigator.platform) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);

@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 import TitleScreen from "./components/TitleScreen";
 import IntroText from "./components/IntroText";
 import { useSound } from "use-sound";
-import mySound from './assets/audio/Passing Time - Kevin MacLeod -55db.mp3' // Your sound file path here
+import mySound from './assets/audio/Passing Time - Kevin MacLeod -55db.mp3' 
+import { iOS } from "./hooks/helpers";
 
 function App() {
   const { state, dispatch, ACTIONS } = useApplicationData();
@@ -29,9 +30,6 @@ function App() {
     //    return
     //  }
 
-    const iOS =
-      /iPad|iPhone|iPod/.test(navigator.platform) ||
-      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
     const onClick = (e) => {
       if(((e.pointerType === "mouse" || e.pointerType === "touch") || iOS) && screen < 3){
