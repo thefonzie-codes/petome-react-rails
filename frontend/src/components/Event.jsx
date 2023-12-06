@@ -36,7 +36,7 @@ export default function Event({ state, dispatch, ACTIONS }) {
   const sprite = () => {
     if (pet.mood <= 4) {
       return pet.pet_sad;
-    } else if (pet.mood <= 9 || eventId >= 29) {
+    } else if (pet.mood <= 8 || eventId >= 29) {
       return pet.pet_neutral;
     } else {
       return pet.pet_happy;

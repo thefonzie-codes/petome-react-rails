@@ -44,13 +44,13 @@ function App() {
 
    
     // window.addEventListener('keydown', onKeyDown)
+    playSound()
     window.addEventListener('click', onClick)
     return () => window.removeEventListener('click', onClick)
    },[screen])
 
   return (
     <div className="App">
-      {playSound()}
       {((screen === 1 || screen === 0) && !state.pets[2]) && <TitleScreen screen={screen}/>}
       {(screen === 2 && !state.pets[2]) && <IntroText />}
       {(screen === 3 && !state.pets[2]) && <StartScreen state={state} dispatch={dispatch} ACTIONS={ACTIONS} />}
